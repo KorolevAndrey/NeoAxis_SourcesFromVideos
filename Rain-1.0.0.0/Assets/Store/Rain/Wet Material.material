@@ -1,0 +1,342 @@
+.component NeoAxis.Component_Material
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1217, 879\"><KW V=\"1\" A=\"9564A28F9DCF40A00E84C98D4F0985E8\"><CGD /><WS UN=\"0908086B2CDB4446E68F2F374FEBE85C\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"7AB984F0D847496444B7902CCDFF92EA\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"9564A28F9DCF40A00E84C98D4F0985E8\"><KP UN=\"9564A28F9DCF40A00E84C98D4F0985E8\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"D94BC6CA28E94B944D8FA2B7461861F7\" S=\"False\"><CPD ObjPath=\"$Shader graph\" /></KP><KP UN=\"87CF93B11806434D0DB911ED07F2EC41\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 1\\$Shader\" /></KP><KP UN=\"2ED39986AD704F7B2ABAC2DDDC7B0ED9\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 2\\$Shader1\" /></KP><KP UN=\"04D3417E91EA47BC3DB6A520474C876E\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 3\\$Shader2\" /></KP><KP UN=\"038E5F78ED064CBF39AC724E992E7E18\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 4\\$Shader3\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	ClearCoat = 1
+	RayTracingReflection = 1
+	EditorAutoUpdate = False
+	wetness = 1
+	BaseColor
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 3\\$Shader2\\__parameter_ReturnValue"
+	}
+	Roughness
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 4\\$Shader3\\__parameter_ReturnValue"
+	}
+	Normal
+	{
+		GetByReference = "this:$Shader graph\\$Node Texture Sample 2\\$Texture Sample\\RGBA"
+	}
+	ClearCoatRoughness
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+	}
+	ClearCoatNormal
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 2\\$Shader1\\__parameter_ReturnValue"
+	}
+	.component NeoAxis.Component_FlowGraph
+	{
+		Name = Shader graph
+		EditorScrollPosition = -15.5674597487457 -3.31349216546121
+		EditorZoomIndex = 7
+		Specialization
+		{
+			GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = "Node "
+			Position = 10 -7
+			ControlledObject
+			{
+				GetByReference = "this:..\\.."
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 1
+			Position = -8 -15
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\PaintedLargeBricks_1024_albedo_dark.dds"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 2
+			Position = -38 4
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\PaintedLargeBricks_1024_normal1.png"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 3
+			Position = -40 -11
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\PaintedLargeBricks_1024_roughness.png"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 4
+			Position = -41 -34
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\PaintedLargeBricks_1024_drops1.png"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader Parameter 1
+			Position = -32 -2
+			ControlledObject
+			{
+				GetByReference = "this:$Shader Parameter"
+			}
+			.component NeoAxis.Component_ShaderParameter
+			{
+				Name = Shader Parameter
+				Source
+				{
+					GetByReference = "this:..\\..\\$Node Invoke Member 1\\$Invoke Member\\__value_Value"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 1
+			Position = -13 -4
+			ControlledObject
+			{
+				GetByReference = "this:$Shader"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader
+				Code = "/*!public*/ float Method(float colorv, float timev)\r\n{\r\n    float v = sin(timev/10);\r\n\treturn lerp(colorv, 0, v);\r\n}\r\n"
+				__parameter_Colorv
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 3\\$Texture Sample\\R"
+				}
+				__parameter_Timev
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 2
+			Position = -8 10
+			ControlledObject
+			{
+				GetByReference = "this:$Shader1"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader1
+				Code = "/*!public*/ vec4 Method(vec4 color1, vec4 color2, vec4 color3, float timev)\r\n{\r\n    \r\n    float v = abs(sin(timev/10));\r\n    float r;\r\n    float g;\r\n    float b;\r\n\r\n    if (color3.r > 0.05 && v > 0.05) {       \r\n       r = lerp(color1.r,0.5,v);\r\n       g = lerp(color1.g,0.5,v);\r\n       b = lerp(color1.b,1,v);\r\n    } else {\r\n       r = color1.r;\r\n       g = color1.g;\r\n       b = color1.b;    \r\n    }\r\n\treturn vec4(r,g,b,1);\r\n}\r\n"
+				__parameter_Color2 = 0 0 0 0
+				__parameter_Color1
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 2\\$Texture Sample\\RGBA"
+				}
+				__parameter_Color3
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 5\\$Texture Sample\\RGBA"
+				}
+				__parameter_Timev
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Invoke Member 1
+			Position = 18 13
+			ControlledObject
+			{
+				GetByReference = "this:$Invoke Member"
+			}
+			.component NeoAxis.Component_InvokeMember
+			{
+				Name = Invoke Member
+				Member
+				{
+					GetByReference = "NeoAxis.EngineApp|property:EngineTime"
+				}
+				Exit
+				{
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 5
+			Position = -34 16
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\mask2.png"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 3
+			Position = -5 -24
+			ControlledObject
+			{
+				GetByReference = "this:$Shader2"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader2
+				Code = "/*!public*/ vec4 Method(vec4 color1, vec4 color2, float timev)\r\n{\r\n    \r\n    float v = abs(sin(timev/10));\r\n    float r;\r\n    float g;\r\n    float b;\r\n\r\n    if(v > 0.5) {\r\n       r = color1.r - color2.r * v * 0.02;\r\n       g = color1.g - color2.g * v * 0.02;\r\n       b = color1.b - color2.b * v * 0.02;\r\n    } else {\r\n       r = color1.r;\r\n       g = color1.g;\r\n       b = color1.b;    \r\n    }\r\n    \r\n\treturn vec4(r,g,b,1);\r\n}"
+				__parameter_Color1
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 1\\$Texture Sample\\RGBA"
+				}
+				__parameter_Color2
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 5\\$Texture Sample\\RGBA"
+				}
+				__parameter_Timev
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 4
+			Position = -24 -23
+			ControlledObject
+			{
+				GetByReference = "this:$Shader3"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader3
+				Code = "/*!public*/ float Method(float color1, float color2, float color3, float color4, float timev)\r\n{\r\n    float v = abs(sin(timev*3.0));\r\n    float v1 = abs(sin(1+timev*3.0));\r\n    float v2 = abs(sin(2+timev*3.0));\r\n    float r;\r\n    \r\n    r = color1.r - color2.r * v  - color3.r * v1  - color4.r * v2;\r\n    \r\n\treturn r;\r\n}\r\n"
+				__parameter_Color1
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 3\\$Texture Sample\\R"
+				}
+				__parameter_Color2
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 4\\$Texture Sample\\B"
+				}
+				__parameter_Color3
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 6\\$Texture Sample\\B"
+				}
+				__parameter_Color4
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 7\\$Texture Sample\\B"
+				}
+				__parameter_Timev
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 6
+			Position = -56 -27
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\PaintedLargeBricks_1024_drops2.png"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 7
+			Position = -58 -18
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\Rain\\Textures\\PaintedLargeBricks_1024_drops3.png"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = comment1
+			Position = 23 9
+			Comment = Use wetness Property instead of EngineTime for manual control
+		}
+	}
+	.component NeoAxis.Component_Property
+	{
+		Name = wetness
+		DefaultValueSpecified = True
+		DefaultValue = 0
+		Type
+		{
+			GetByReference = System.Single
+		}
+	}
+}

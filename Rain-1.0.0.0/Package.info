@@ -1,0 +1,4 @@
+Name = Rain
+Version = 1.0.0.0
+Author = Andrey Korolev
+Description = "Rain post effect shader + Wet material."

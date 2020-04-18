@@ -1,0 +1,660 @@
+.component NeoAxis.Component_Scene
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1217, 879\"><KW V=\"1\" A=\"56689B98C0474324A7B82BED666B6549\"><CGD /><WS UN=\"4A87E34386084E14BC81ED10FBED4D99\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WS UN=\"05FA0F482899434094A78E4EC5AC4777\" S=\"T,0,50:T,0,50\" D=\"Vertical\"><WC UN=\"009CBB2950424C5015B492E2990F4D01\" S=\"T,0,50:T,0,575\" NM=\"BarTabGroup\" AR=\"True\" SP=\"56689B98C0474324A7B82BED666B6549\"><KP UN=\"56689B98C0474324A7B82BED666B6549\" S=\"False\"><CPD ObjPath=\"\" /></KP></WC><WS UN=\"94FB0D47CC464D3B90A094B4FDEE96EC\" S=\"T,0,50:T,0,299\" D=\"Horizontal\"><WC UN=\"F4DFEB2368454BDC52A311497581E08F\" S=\"T,0,483:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"CF774D4F9A5048479FB93280930BCB50\"><KP UN=\"CF774D4F9A5048479FB93280930BCB50\" S=\"False\"><CPD ObjPath=\"$Rendering Pipeline\\$Scene Effects\\$Code Generated\\$Shader graph\" /></KP></WC><WC UN=\"93D21ADCD7214A948EB1A89C48EB4A1F\" S=\"T,0,729:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"B0DC0E15016341F539800520309F2D7A\"><KP UN=\"B0DC0E15016341F539800520309F2D7A\" S=\"False\"><CPD ObjPath=\"$Rendering Pipeline\\$Scene Effects\\$Code Generated\\$Shader graph\\$Node Shader 1\\$Shader\" /></KP></WC></WS></WS></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	BackgroundColor = 0.1490196 0.1490196 0.1490196
+	DisplayTextInfo = True
+	RenderingPipeline
+	{
+		GetByReference = "root:$Rendering Pipeline"
+	}
+	CameraEditor
+	{
+		GetByReference = "this:$Camera Editor"
+	}
+	CameraEditor2D
+	{
+		GetByReference = "this:$Camera Editor 2D"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor
+		Visible = False
+		Transform = "7.87254330024085 -0.163753576938386 2.71166296843949; -0.200179033929517 -0.093266364602316 0.884064113381049 -0.41189851060752; 1 1 1"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor 2D
+		Visible = False
+		Transform = "2.64918580053222 3.02745193504869 10; -0.502493739596367 0.497493760429674 0.497493760429674 0.502493739596367; 1 1 1"
+		Projection = Orthographic
+		Height = 16.8586419336498
+		FixedUp = 0 1 0
+		FarClipPlane = 100
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Ambient Light
+		Transform = "18.5822734231225 -5.39737456891382 0.8606866051066; 0.177025544047126 0 0 0.98420625722194; 1 1 1"
+		Type = Ambient
+		Brightness = 16869.854883232
+	}
+	.component NeoAxis.Component_RenderingPipeline_Default
+	{
+		Name = Rendering Pipeline
+		.component NeoAxis.Component
+		{
+			Name = Background Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Scene Effects
+			.component NeoAxis.Component_RenderingEffect_AmbientOcclusion
+			{
+				Name = Ambient Occlusion
+			}
+			.component NeoAxis.Component_RenderingEffect_MotionBlur
+			{
+				Name = Motion Blur
+			}
+			.component NeoAxis.Component_RenderingEffect_Bloom
+			{
+				Enabled = False
+				Name = Bloom
+				BrightThreshold = 0.223
+				Scale = 0.519
+				BlurFactor = 3.470415
+			}
+			.component NeoAxis.Component_RenderingEffect_LensEffects
+			{
+				Name = Lens Effects
+			}
+			.component NeoAxis.Component_RenderingEffect_ToneMapping
+			{
+				Name = Tone Mapping
+			}
+			.component NeoAxis.Component_RenderingEffect_ToLDR
+			{
+				Name = To LDR
+			}
+			.component NeoAxis.Component_RenderingEffect_Antialiasing
+			{
+				Name = Antialiasing
+			}
+			.component NeoAxis.Component_RenderingEffect_Sharpen
+			{
+				Name = Sharpen
+				Shader = "Base\\Shaders\\Effects\\Sharpen_fs.sc"
+			}
+			.component NeoAxis.Component_RenderingEffect_CodeGenerated
+			{
+				Name = Code Generated
+				Color
+				{
+					GetByReference = "this:$Shader graph\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+				}
+				.component NeoAxis.Component_FlowGraph
+				{
+					Name = Shader graph
+					EditorScrollPosition = -4.04846948902396 -3.76941600930006
+					EditorZoomIndex = 6
+					Specialization
+					{
+						GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+					}
+					.component NeoAxis.Component_FlowGraphNode
+					{
+						Name = Node Code Generated
+						Position = 6 -7
+						ControlledObject
+						{
+							GetByReference = "this:..\\.."
+						}
+					}
+					.component NeoAxis.Component_FlowGraphNode
+					{
+						Name = Node Shader 1
+						Position = -9 -8
+						ControlledObject
+						{
+							GetByReference = "this:$Shader"
+						}
+						.component NeoAxis.Component_ShaderScript
+						{
+							Name = Shader
+							Code = "float random1(float dt) {\r\n    highp float c = 43758.5453;\r\n    highp float sn = mod(dt, 3.14);\r\n    return fract(sin(sn) * c);\r\n}\r\n\r\n\r\n/*\r\n *  Returns a random drop position for the given seed value\r\n */\r\nvec2 random_drop_pos(float val, vec2 screen_dim, vec2 velocity) {\r\n    float max_x_move = velocity.x * abs(screen_dim.y / velocity.y);\r\n    float x = -max_x_move * step(0.0, max_x_move) + (screen_dim.x + abs(max_x_move)) * random1(val);\r\n    float y = (1.0 + 0.05 * random1(1.234 * val)) * screen_dim.y;\r\n\r\n    return vec2(x, y);\r\n}\r\n\r\n/*\r\n * Calculates the drop trail color at the given pixel position\r\n */\r\nvec3 trail_color(vec2 pixel, vec2 pos, vec2 velocity_dir, float width, float size) {\r\n    vec2 pixel_dir = pixel - pos;\r\n    float projected_dist = dot(pixel_dir, -velocity_dir);\r\n    float tanjential_dist_sq = dot(pixel_dir, pixel_dir) - pow(projected_dist, 2.0);\r\n    float width_sq = pow(width, 2.0);\r\n\r\n    float line1 = step(0.0, projected_dist) * (1.0 - smoothstep(width_sq / 2.0, width_sq, tanjential_dist_sq));\r\n    float dashed_line = line1 * step(0.5, cos(0.3 * projected_dist - PI / 3.0));\r\n    float fading_dashed_line = dashed_line * (1.0 - smoothstep(size / 5.0, size, projected_dist));\r\n\r\n    return vec3(fading_dashed_line,fading_dashed_line,fading_dashed_line);\r\n}\r\n\r\n\r\n/*\r\n * Calculates the background color at the given pixel position\r\n */\r\nvec3 background_color(vec2 pixel, vec2 screen_dim, float time) {\r\n    return vec3(0.0, 0.0, 0.0);// - smoothstep(-1.0, 0.8 + 0.2 * cos(0.5 * time), pixel.y / screen_dim.y));\r\n}\r\n\r\n/*\r\n * The main program\r\n */\r\nvec4 mainproc(float time, vec2 gl_FragCoord) {\r\n   // Set the total number of rain drops that are visible at a given time\r\n    float n_drops = 50.0 + abs(sin(PI - time/10))*300;\r\n\r\n    // Set the drop trail radius\r\n    float trail_width = 0.0005 + abs(sin(PI - time/10))*0.001;\r\n\r\n    // Set the drop trail size\r\n    float trail_size = 0.1;\r\n\r\n    // Set the drop wave size\r\n    float wave_size = 20.0;\r\n\r\n    // Set the drop fall time in seconds\r\n    float fall_time = 0.2;\r\n\r\n    // Set the drop total life time\r\n    float life_time = fall_time + 0.5;\r\n    \r\n    vec2 resolution = vec2(1.0, 1.0);\r\n\r\n    // Set the drop velocity in pixels per second\r\n    vec2 velocity = vec2(0.05 * resolution.x, 1.0 * resolution.y) / fall_time;\r\n    vec2 velocity_dir = normalize(velocity);\r\n\r\n    // Iterate over the drops to calculate the pixel color\r\n    vec3 pixel_color = vec3(0.0,0.0,0.0);\r\n\r\n    for (float i = 0.0; i < n_drops; ++i) {\r\n        // Offset the running time for each drop\r\n        float time1 = time + life_time * (i + i / n_drops);\r\n\r\n        // Calculate the time since the drop appeared on the screen\r\n        float ellapsed_time = mod(time1, life_time);\r\n\r\n        // Calculate the drop initial position\r\n        vec2 initial_pos = 1.0-random_drop_pos(i + floor(time1 / life_time - i) * n_drops, resolution, velocity);\r\n\r\n        // Add the drop to the pixel color\r\n        if (ellapsed_time < fall_time) {\r\n            // Calculate the drop current position\r\n            vec2 current_pos = initial_pos + ellapsed_time * velocity;\r\n\r\n            // Add the trail color to the pixel color\r\n            pixel_color += trail_color(gl_FragCoord.xy, current_pos, velocity_dir, trail_width, trail_size);\r\n        } else {\r\n            // Calculate the drop final position\r\n            //vec2 final_pos = initial_pos + fall_time * velocity;\r\n\r\n            // Add the wave color to the pixel color\r\n            //pixel_color += wave_color(gl_FragCoord.xy, final_pos, wave_size, ellapsed_time - fall_time);\r\n        }\r\n    }\r\n\r\n    // Add the background color to the pixel color\r\n    pixel_color += background_color(gl_FragCoord.xy, resolution, time);\r\n\r\n    // Fragment shader output\r\n    return vec4(pixel_color, 1.0);\r\n}\r\n\r\n\r\n/*!public*/ vec4 MyMethod(vec4 sourceColor, vec2 texCoord, float time)\r\n{\r\n\tvec2 texCoord2 = vec2(texCoord.x, texCoord.y); \r\n\tvec4 color = texture2D(s_sourceTexture, texCoord2);\r\n\tcolor = color + mainproc(time, texCoord2)/20.0;\r\n\t//color.b = saturate(cos(time));\r\n\t\r\n\treturn color;\r\n}\r\n"
+							__parameter_SourceColor
+							{
+								GetByReference = "this:..\\..\\$Node Invoke Member 3\\$Invoke Member\\__value_Value"
+							}
+							__parameter_TexCoord
+							{
+								GetByReference = "this:..\\..\\$Node Invoke Member 1\\$Invoke Member\\__value_Value"
+							}
+							__parameter_Time
+							{
+								GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+							}
+						}
+					}
+					.component NeoAxis.Component_FlowGraphNode
+					{
+						Name = Node Invoke Member 1
+						Position = -24 -7
+						ControlledObject
+						{
+							GetByReference = "this:$Invoke Member"
+						}
+						.component NeoAxis.Component_InvokeMember
+						{
+							Name = Invoke Member
+							Member
+							{
+								GetByReference = "NeoAxis.ShaderConstants|property:TexCoord0"
+							}
+							Exit
+							{
+							}
+						}
+					}
+					.component NeoAxis.Component_FlowGraphNode
+					{
+						Name = Node Invoke Member 3
+						Position = -24 -11
+						ControlledObject
+						{
+							GetByReference = "this:$Invoke Member"
+						}
+						.component NeoAxis.Component_InvokeMember
+						{
+							Name = Invoke Member
+							Member
+							{
+								GetByReference = "NeoAxis.ShaderConstants|property:Color0"
+							}
+							Exit
+							{
+							}
+						}
+					}
+					.component NeoAxis.Component_FlowGraphNode
+					{
+						Name = Node Shader Parameter 1
+						Position = -24 -3
+						ControlledObject
+						{
+							GetByReference = "this:$Shader Parameter"
+						}
+						.component NeoAxis.Component_ShaderParameter
+						{
+							Name = Shader Parameter
+							Source
+							{
+								GetByReference = NeoAxis.EngineApp|EngineTime
+							}
+						}
+					}
+				}
+			}
+			.component NeoAxis.Component_RenderingEffect_ScreenSpaceReflection
+			{
+				Enabled = False
+				Name = Screen Space Reflection
+			}
+			.component NeoAxis.Component_RenderingEffect_DepthOfField
+			{
+				Enabled = False
+				Name = Depth Of Field
+				BlurFactor = 1.521
+			}
+		}
+		.component NeoAxis.Component
+		{
+			Name = Final Image Effects
+		}
+	}
+	.component NeoAxis.Component_GameMode
+	{
+		Name = Game Mode
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Light 1
+		Transform = "23.4737008768449 -15.0814890020227 22.8055842838911; -0.48553441582008 -0.67324283509012 0.472744885192886 -0.295825437679109; 1 1 1"
+		Type = Directional
+		Brightness = 33170.543247776
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+		ShadowIntensity = 0.351
+	}
+	.component NeoAxis.Component_Light
+	{
+		Enabled = False
+		Name = Light 2
+		Transform = "-16.276133519817 -13.7764744895929 8.5727637121304; -0.918707493479473 -0.258076444736056 0.283466108036511 0.0949739737596269; 1 1 1"
+		Type = Spotlight
+		Brightness = 237304.6875
+		AttenuationFar = 466.489
+		AttenuationPower = 3.6
+		SpotlightInnerAngle = 147
+		SpotlightOuterAngle = 153
+	}
+	.component NeoAxis.Component_GroupOfObjects
+	{
+		Name = Group Of Objects
+		BaseObjects
+		{
+			Count = 1
+			0 "NeoAxis.Reference<NeoAxis.Component>"
+			{
+				GetByReference = "root:$Ground"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Ground
+		CanBeSelected = False
+		Transform = "0 0 0; 0 0 0 1; 1 1 1"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Plane
+			{
+				Name = Mesh Geometry
+				Dimensions = 100 100
+				UVTilesPerUnit = 0.25 0.25
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform
+			{
+				GetByReference = "this:..\\Transform"
+			}
+			.component NeoAxis.Component_CollisionShape_Mesh
+			{
+				Mesh
+				{
+					GetByReference = "this:..\\..\\Mesh"
+				}
+				Vertices
+				{
+				}
+				Indices
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 2
+		Transform = "4.49360677901418 -4.50704155860103 -0.0513929697945159; 0 0 0 1; 3.68198043808408 2.56616028127799 0.330166544870435"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 6
+		Transform = "4.49360677901418 1.24281492191651 -0.0507963980406503; 0 0 0 1; 3.68198043808408 2.56616028127799 0.330166544870435"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 3
+		Transform = "0.951124284302656 -4.50704155860103 -0.0826609891173617; 0 0 0 1; 3.68198043808408 2.56616028127799 0.330166544870435"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 5
+		Transform = "0.951124284302656 1.24281492191651 -0.0826609891173617; 0 0 0 1; 3.68198043808408 2.56616028127799 0.330166544870435"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 4
+		Transform = "8.15292898285703 -4.50704155860103 -0.0517037064648069; 0 0 0 1; 3.68198043808408 2.56616028127799 0.330166544870435"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 7
+		Transform = "8.15173256656344 1.24281492191651 -0.0517037064648069; 0 0 0 1; 3.68198043808408 2.56616028127799 0.330166544870435"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\Rain\\Wet Material.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = street_lamp
+		Transform = "5.24588599050891 -3.96167984432297 -1.27358298211895; 0 0 0 1; 2.3799999691546 2.3799999691546 2.3799999691546"
+		Mesh
+		{
+			GetByReference = "Store\\Rain\\street_lamp.FBX|$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Light
+		{
+			Name = Light
+			Type = Spotlight
+			Brightness = 327680
+			Color = 0.9154902 1 0.7681569
+			AttenuationNear = 4.489
+			AttenuationFar = 47.089
+			AttenuationPower = 3.025
+			SpotlightInnerAngle = 99
+			SpotlightOuterAngle = 144
+			SpotlightFalloff = 0.767
+			ShadowIntensity = 0.217
+			Transform
+			{
+				GetByReference = "this:$Attach Transform Offset\\Result"
+			}
+			.component NeoAxis.Component_TransformOffset
+			{
+				Name = Attach Transform Offset
+				PositionOffset = -0.00011936324650197 -0.00231675350214489 1.38970952404118
+				RotationOffset = 0 0.707106781186547 0 0.707106781186548
+				ScaleOffset = 0.420168072672376 0.420168072672376 0.420168072672376
+				Source
+				{
+					GetByReference = "this:..\\..\\Transform"
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = street_lamp 3
+		Transform = "10.0060635972972 -3.96167984432297 -1.27358298211895; 0 0 0 1; 2.3799999691546 2.3799999691546 2.3799999691546"
+		Mesh
+		{
+			GetByReference = "Store\\Rain\\street_lamp.FBX|$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Light
+		{
+			Name = Light
+			Type = Spotlight
+			Brightness = 189494.137443357
+			Color = 0.9154902 1 0.7681569
+			AttenuationNear = 4.489
+			AttenuationFar = 27.889
+			AttenuationPower = 2.67289
+			SpotlightInnerAngle = 66
+			SpotlightOuterAngle = 93
+			SpotlightFalloff = 0.55
+			ShadowIntensity = 0.217
+			Transform
+			{
+				GetByReference = "this:$Attach Transform Offset\\Result"
+			}
+			.component NeoAxis.Component_TransformOffset
+			{
+				Name = Attach Transform Offset
+				PositionOffset = -0.00011936324650197 -0.00231675350214489 1.38970952404118
+				RotationOffset = 0 0.707106781186547 0 0.707106781186548
+				ScaleOffset = 0.420168072672376 0.420168072672376 0.420168072672376
+				Source
+				{
+					GetByReference = "this:..\\..\\Transform"
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = street_lamp 2
+		Transform = "-0.499826074687026 -3.96167984432297 -1.27358298211895; 0 0 0 1; 2.3799999691546 2.3799999691546 2.3799999691546"
+		Mesh
+		{
+			GetByReference = "Store\\Rain\\street_lamp.FBX|$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Light
+		{
+			Name = Light
+			Type = Spotlight
+			Brightness = 148628.987203643
+			Color = 0.9154902 1 0.7681569
+			AttenuationNear = 4.489
+			AttenuationFar = 27.889
+			AttenuationPower = 2.67289
+			SpotlightInnerAngle = 84
+			SpotlightOuterAngle = 126
+			SpotlightFalloff = 0.75
+			ShadowIntensity = 0.217
+			Transform
+			{
+				GetByReference = "this:$Attach Transform Offset\\Result"
+			}
+			.component NeoAxis.Component_TransformOffset
+			{
+				Name = Attach Transform Offset
+				PositionOffset = -0.00011936324650197 -0.00231675350214489 1.38970952404118
+				RotationOffset = 0 0.707106781186547 0 0.707106781186548
+				ScaleOffset = 0.420168072672376 0.420168072672376 0.420168072672376
+				Source
+				{
+					GetByReference = "this:..\\..\\Transform"
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = house_obj
+		Transform = "4.29312371062918 -7.40497796984332 0.0503964668723857; 0 0 1 0.00000000000000015; 0.00658182279729144 0.00658182279729144 0.00658182279729144"
+		Mesh
+		{
+			GetByReference = "Store\\Rain\\house_obj\\house_obj.obj|$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+	}
+	.component NeoAxis.Component_SurfaceArea
+	{
+		Name = Surface Area
+		Transform = "-3.69980247701465 -1.80662913236843 0.00306006205252829; 0 0 0 1; 1 1 1"
+		Strength = 0.052
+		Surface
+		{
+			GetByReference = "Base\\Surfaces\\Default.surface"
+		}
+		.component NeoAxis.Component_GroupOfObjects
+		{
+			Name = Group Of Objects
+			Objects = "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"
+			BaseObjects
+			{
+				Count = 1
+				0 "NeoAxis.Reference<NeoAxis.Component>"
+				{
+					GetByReference = "root:$Ground"
+				}
+			}
+			.component NeoAxis.Component_GroupOfObjectsElement_Surface
+			{
+				Name = Surface
+				AutoAlign = False
+				Surface
+				{
+					GetByReference = "Samples\\Nature Demo\\Surfaces\\Trees.surface"
+				}
+			}
+		}
+		.component NeoAxis.Component_AreaPoint
+		{
+			Name = Point 1
+			Transform = "-7.95717383485306 -11.0303608161131 0.0122408527411304; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_AreaPoint
+		{
+			Name = Point 2
+			Transform = "-2.19815569645612 -11.7336818958278 0.00000004110392027; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_AreaPoint
+		{
+			Name = Point 3
+			Transform = "-0.303734382622366 4.59042786683732 -0.00000047889450805; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_AreaPoint
+		{
+			Name = Point 4
+			Transform = "-7.58171852245512 5.17605260534458 -0.00000016674042946; 0 0 0 1; 1 1 1"
+		}
+	}
+	.component NeoAxis.Component_ReflectionProbe
+	{
+		Name = Reflection Probe
+		Transform = "7.59995209158298 -1.33060494895031 1.00345710436956; 0 0 0 1; 1 1 1"
+		Mode = Capture
+	}
+	.component NeoAxis.Component_SoundSource
+	{
+		Name = Sound Source
+		Transform = "4.16305252263526 -3.99795602900712 0.128027023696328; 0 0 0 1; 1 1 1"
+		Sound
+		{
+			GetByReference = "Store\\Rain\\rain.ogg"
+		}
+	}
+}
