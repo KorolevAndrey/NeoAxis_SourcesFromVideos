@@ -1,0 +1,53 @@
+.component NeoAxis.UIWindow
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1857, 879\"><KW V=\"1\" A=\"4FA0230F51CA4A966983D2D936D2B005\"><CGD /><WS UN=\"4A87E34386084E14BC81ED10FBED4D99\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"E90CD3F701D34C8E7EB72553C33F8A6F\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"4FA0230F51CA4A966983D2D936D2B005\"><KP UN=\"4FA0230F51CA4A966983D2D936D2B005\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"0D88C94C836B47D562A5F7B016E5997A\" S=\"False\"><CPD ObjPath=\"$Button\\$C# Script\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	Text = Next Level
+	Size = Units 800 600
+	HorizontalAlignment = Center
+	VerticalAlignment = Center
+	EditorScrollPosition = 0 0
+	.component NeoAxis.UIText
+	{
+		Name = Text
+		Text = loaded
+		Size = Units 686.896883493296 62.8656301352547
+		Margin = Units 55.2876953304737 261.614840096069 0 0
+		EditorScrollPosition = 0 0
+		FontSize = Screen 0.06
+		Font
+		{
+			GetByReference = "Store\\AndreyKorolev\\5MinGame\\Stars.ttf"
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button
+		Text = OK
+		Size = Units 200 40
+		Margin = Units 295.576479769927 452.544558210087 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button_Click(NeoAxis.UIButton sender)\r\n{\r\n\r\n\tsender.Parent.Dispose();\r\n\t\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+}

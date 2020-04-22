@@ -1,0 +1,36 @@
+.component Project.File
+{
+	Size = Parent 1 1
+	EditorScrollPosition = 0 0
+	EnemiesKill = 0
+	Level = 1
+	.component NeoAxis.UIProgressBar
+	{
+		Name = Progress Bar
+		Size = Units 400 40
+		Margin = Units 681.797161288063 820.664896978891 0 0
+		BackgroundColor = 1 1 1 0.162
+		ColorMultiplier = 0.02972549 0.654902 0 0.532
+		EditorScrollPosition = 0 0
+		Value = 100
+	}
+	.component NeoAxis.UIText
+	{
+		Name = Enemies kill
+		Text = 0
+		Size = Units 400 30
+		Margin = Units 679.269435442307 873.699279484263 0 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIText
+	{
+		Name = WIN Text
+		Text = YOU WIN!
+		Visible = False
+		Size = Screen 0.500142207051283 0.170774870433573
+		Margin = Screen 0.241040955632454 0.412084439388194 0 0
+		EditorScrollPosition = 0 0
+		FontSize = Screen 0.2
+		Color = 0.2927843 1 0.4585098
+	}
+}

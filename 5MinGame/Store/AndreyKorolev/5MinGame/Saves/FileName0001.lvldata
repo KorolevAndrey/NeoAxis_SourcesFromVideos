@@ -1,0 +1,12 @@
+EnemiesKill 3
+{
+}
+Level 1
+{
+}
+CheckPoint "$Room 5\\$Sensor"
+{
+}
+hasWeapon True
+{
+}
