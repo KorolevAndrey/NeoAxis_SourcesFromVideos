@@ -1,0 +1,118 @@
+.component Project.MenuWindow
+{
+	Text = Menu
+	Size = Units 800 520
+	HorizontalAlignment = Center
+	VerticalAlignment = Center
+	Margin = Parent -0.000711035267352497 0 0.000711035267352497 0
+	EditorScrollPosition = -0.357991773378365 -0.573678059339237
+	Style
+	{
+		GetByReference = "Base\\UI\\Styles\\Simple.uistyle"
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Scenes
+		Text = Scenes
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		Margin = Units 0 80 0 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Main Menu
+		Text = Main Menu
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		Margin = Units 0 200 0 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Exit
+		Text = Exit
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		Margin = Units 1.26386292287792 371.237517380862 -1.26386292287792 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Save
+		Text = Save
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		Margin = Units 0 258.73593730249 0 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Load
+		Text = Load
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		Margin = Units 1.26386292287792 311.826570597902 -1.26386292287792 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Close
+		Text = Close
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		VerticalAlignment = Bottom
+		Margin = Units 0 0 0 40
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button Options
+		Text = Options
+		Size = Units 200 40
+		HorizontalAlignment = Center
+		Margin = Units 0 140 0 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIWindow
+	{
+		Name = Window
+		Text = SaveLoad
+		Visible = False
+		Size = Units 567.449222190456 435.671849323727
+		Margin = Units 113.345569534847 51.6047366568709 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.UIEdit
+		{
+			Name = FileNameEdit
+			Text = FileName0001
+			Size = Units 400 40
+			Margin = Units 78.4243006738809 173.818733409177 0 0
+			EditorScrollPosition = 0 0
+			.component NeoAxis.UIText
+			{
+				Name = Text
+				CanBeSelected = False
+				Size = Parent 1 1
+				HorizontalAlignment = Stretch
+				VerticalAlignment = Stretch
+				Margin = Units 4 2 4 2
+				EditorScrollPosition = 0 0
+				TextHorizontalAlignment = Left
+				ClipRectangle = True
+				Text
+				{
+					GetByReference = "this:..\\DisplayText"
+				}
+			}
+		}
+		.component NeoAxis.UIButton
+		{
+			Name = OKButton
+			Text = OK
+			Size = Units 200 40
+			Margin = Units 179.688163596759 274.943749209961 0 0
+			EditorScrollPosition = 0 0
+		}
+	}
+}
