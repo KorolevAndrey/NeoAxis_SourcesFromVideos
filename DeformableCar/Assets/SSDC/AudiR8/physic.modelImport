@@ -1,0 +1,18 @@
+sourceFile = "Types\\Units\\SSDC\\AudiR8\\physic.obj"
+generateMaterials = False
+objects
+{
+	mesh
+	{
+		name = physic
+		pivotPosition = 0 -0.004217505 0.7043045
+		sources
+		{
+			item
+			{
+				name = physic
+				rotation = 0.7071068 0 0 0.7071068
+			}
+		}
+	}
+}

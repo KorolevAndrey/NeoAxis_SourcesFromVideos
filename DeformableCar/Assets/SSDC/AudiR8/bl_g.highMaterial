@@ -1,0 +1,14 @@
+highLevelMaterial bl_g
+{
+	template = PhysicallyBasedMaterial
+	blending = AlphaBlend
+	baseColor = 1 1 1 0.2431373
+	reflectionSpecificCubemap = "Types\\Units\\SSDC\\NatureSky\\Normal\\normal.tga"
+	useReflection = True
+	dynamicProperties = True
+	useFresnelModifier = True
+	metallic = 1.5
+	roughness = 0.5
+	cavity = 0
+	fresnel = 0.5
+}

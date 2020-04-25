@@ -1,0 +1,17 @@
+highLevelMaterial shrubL
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	alphaToCoverage = True
+	halfLambert = True
+	emissionColor = 0.2784314 0.2627451 0.2039216
+	diffuse1Map
+	{
+		texture = ".\\shrubL512.png"
+	}
+	emissionMap
+	{
+		texture = ".\\shrubL512.png"
+	}
+}

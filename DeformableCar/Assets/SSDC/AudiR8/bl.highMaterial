@@ -1,0 +1,21 @@
+highLevelMaterial bl
+{
+	template = PhysicallyBasedMaterial
+	emissionColor = 0.7176471 0.7176471 0.7176471
+	metallic = 0
+	roughness = 0
+	cavity = 0
+	fresnel = 0
+	baseColor1Map
+	{
+		texture = ".\\bl.png"
+	}
+	baseColor2Map
+	{
+		texture = ".\\bl.png"
+	}
+	emissionMap
+	{
+		texture = ".\\bl.png"
+	}
+}

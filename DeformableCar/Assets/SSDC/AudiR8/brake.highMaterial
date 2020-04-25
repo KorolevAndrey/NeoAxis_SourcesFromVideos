@@ -1,0 +1,10 @@
+highLevelMaterial brake
+{
+	template = ShaderBaseMaterial
+	blending = AlphaBlend
+	receiveShadows = False
+	diffuse1Map
+	{
+		texture = ".\\brake.png"
+	}
+}

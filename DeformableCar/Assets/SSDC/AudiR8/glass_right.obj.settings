@@ -1,0 +1,97 @@
+.component NeoAxis.Component_Import3D
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1073, 879\"><KW V=\"1\" A=\"5891A195DC26475A7696F49FFC8468A7\"><CGD /><WS UN=\"772479F4C2164FC240A07F25BF13A3C9\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"653BEB0EDF484099F28AD32CA979B6BF\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"5891A195DC26475A7696F49FFC8468A7\"><KP UN=\"98D07D7119234B5E5CA8B0EC6AA303AD\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"4302600144E64C40E4A15F75A033935A\" S=\"False\"><CPD ObjPath=\"$Mesh\" /></KP><KP UN=\"5E52967027B4433871914D19D4D05437\" S=\"False\"><CPD ObjPath=\"$Materials\\$glass\\$glass shader graph\" /></KP><KP UN=\"5891A195DC26475A7696F49FFC8468A7\" S=\"False\"><CPD ObjPath=\"$Materials\\$glass\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	.component NeoAxis.Component
+	{
+		Name = Materials
+		.component NeoAxis.Component_Material
+		{
+			Name = glass
+			BlendMode = Transparent
+			TwoSided = True
+			BaseColor = 0 0 0
+			Metallic = 0.168
+			Roughness = 0.15
+			Reflectance = 0.681
+			Opacity = 0.106
+			ReceiveDecals = False
+			.component NeoAxis.Component_FlowGraph
+			{
+				Name = glass shader graph
+				EditorScrollPosition = 0 0
+				Specialization
+				{
+					GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node glass
+					Position = 10 -7
+					ControlledObject
+					{
+						GetByReference = "this:..\\.."
+					}
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_Mesh
+	{
+		Name = Mesh
+		.component NeoAxis.Component_MeshGeometry
+		{
+			Name = glass_right_gr_Plane.001
+			VertexStructure
+			{
+				Value
+				{
+					Length = 4
+					0
+					{
+						Offset = 0
+						Type = Float3
+						Semantic = Position
+					}
+					1
+					{
+						Offset = 12
+						Type = Float3
+						Semantic = Normal
+					}
+					2
+					{
+						Offset = 24
+						Type = Float4
+						Semantic = Tangent
+					}
+					3
+					{
+						Offset = 40
+						Type = Float2
+						Semantic = TextureCoordinate0
+					}
+				}
+			}
+			Vertices
+			{
+				Value
+				{
+					Length = 3840
+					.elements = "6pY1vwebDj/s2WM/cHtqv5cL6T15CMU+LAzLPjGHzj72GlM/AACAP7x6MT8DeWY/AHI2v/z/CD/Zs2M/50Bpv6zNAz4Obsg+mk3RPh/dzT5ZvFE/AACAP+2bLz/UDmM/u0IzvzroCj/hfGo/g8Vov6As2D1iI84+W5XRPg7GzT4YsFE/AACAP4jYND8KLmI/dZEyv16BED8Le2o/KHtqv1IL6T3gCcU+YA/LPv5pzj5WIVM/AACAP4qUNj97pGU/i288v8aFwz5hqWI/nNhiv+DL/D2KuOQ+89HpPpYsyz5h1Us/AACAP0p8Ij8kK0s/uRs4v7Fvxz7siWo/iOVhv7a+4D1SPuo+9gHsPujzyj7wQUs/AACAP0OuKD/c8kk/cmo3v/mh0j4WiGo/bmVjvy8l1T1XD+U+nR/mPkSmyz65w0w/AACAP3JrKj/GaE0/dZQ7v7q7zj50z2I/nNhiv+LK/D2auOQ+9dHpPvAryz6J1Us/AACAP7xcJD+KlE4/MgM5v9ld8D6vQWM/oaJnv3ov9j34IdE+rF7XPmBLzT7KVVA/AACAP4v9KT8P0Vg/j1Y1vzc59D6Egmo/VuxlvzCq5D1Vwdk+omjdPjCMzD5y7k4/AACAP62iLz/7ylc/AWsdvxjOHT9pcYw/KANovy4OJjw0VNg+lPzHPvDGzT5mBFQ/AACAP+RNWj+P418/dnAgv7DnGz/aIIk/DoFpv3Ewtzzcj9E+ZBrEPrrxzT674VQ/AACAPzwzVT/AtGA//iYgv21ZFj+RmYk/xv5nv0ruBD1s09c+ZsjLPsCxzT65IVM/AACAP5FHVD9e8Vw/uvccv5pBGD8V/ow/MgNov74qJjz+U9g+zPzHPnjGzT52BFQ/AACAP6GEWT/PElw/+tAZv/bU4j7L1pA/Kythv5DQDz1C7/I+nSrlPuRnzD4v2Ew/AACAP78KVD8cXUE/MUQav/Lt7T4fSpA/oNhhv4bisDy60vA+/K/gPvGqzD4nBE4/AACAPz3SVD/tLUU/RG4ev5IH6j7ObYw/vr1ivxpAIT0Z1uw+eWLgPpubzD4RHU4/AACAPy/ETj8cXEY/zCQevwvr3j6G5ow/Githv+DQDz1+7/I+ui7lPtJRzD6K3Ew/AACAP7LZTT+amEI/9Z0bv0GcBz8apI4/eHtjv/zS0Dzkeuo+65HbPpP8zD7yT08/AACAPygqVz9uoFA/mUofv6OuBT+wA4s/BxJlv3Dd8DykFuQ+YHPWPsIqzT51mlA/AACAPwaFUT/WplE/9YApv4c0Fj9XXn4/vVZpv87kOD0yVtE+dkvIPocCzj5P41M/AACAP3bjRT8XKmM/3bQpv9OgED8K2H4/jA1pvzgGiz06ANE+2oDMPgzWzT5D7FI/AACAP8mPRD8Ijl8/QyArv00t0z6+FYE/0k9iv3ZyuT1Myuo+kpLoPrSsyz67EEw/AACAP5FEOz9SSEY/W+wqv9ZU3j7t2IA/r6Riv4kYkj1NP+s+/ynlPvf/yz4/8kw/AACAPy2YPD9g5Ek/lFAqvy7L/z55IoA/hNJlvzKYjz2eq94+jXDZPgvTzD6v6U8/AACAP+qTQD8kuVQ/9OEVvzxQp7y855Q/fuFcvxsbp7ytTgE/PSYBv95O7bwX6Vy/AACAvxCtHT8SLuw+7zobv7hz4bzwNZA/RRBev/aNiLwvmv4+O1H+vtO37LwfEF6/AACAv/MgJT9UHeo+6iMcvxBYGb6+3Y4/U7tcvz7O0rsOqAE/QpABv9Vp7bzxqly/AACAvyqpJz8gQ78+Xr0Wv3KKDr7FcpM//Tdcv5rRH7wtgwI/rGYCv+kL7rxWLFy/AACAv1FOID+wi8I+hZUWv4of4z1h/pQ/ii5gvz7OALwRLvc+7fv2vqWC67y+H2C/AACAv8QjHT9rLA0//64bv3lz2D2WW5A/dPVfv2qVz7rCBPg+MOX3vnI+7Lwg31+/AACAv9dtJD95dww/T5MZv5Z72T7xZJE/TDNhvyhycjwMXfM+Knvzvsx+7LxEFGG/AACAv9PeID/hekQ//fodv3V31T4MWY0/qjhhvw1udDyqSPM+UGfzvp627LyUGWG/AACAv/s7Jz/USEM/nKgdv035wD59zo0/YTJhv4TfdTyRX/M+k37zvtt77LxYE2G/AACAv1THJj9gOzw/ZykZv1W9xD5G8JE/VjNhvxyOcjzkXPM+CXvzvlGB7LxNFGG/AACAv65IID9+Vj0/ceZDvxe2Dr+Z1lo/jPhYv2qBSL1/SQc/qhMHv7Nj8bwWVVm/AACAvyAkXz+gPMw9+yBDv1sKHL8jMFo/oqpYv976mL3mAAc/8tgGv2yb77wHelm/AACAv16CXz8A3oI9hnRAv2mrGr9UrF4/TcpYvybijb2H/gY/zNEGv+q677xtflm/AACAv/vlWz8Ik4k9SilAvzbJC796HWE/FxdZvwz6Rr26Ggc/5eQGv9Aq8bwwclm/AACAv5kRWj9YI9s9CHM/v2LA8r79M2M/FGRbvxniG7x85gM/ZsoDvy8W7bxjWFu/AACAv0c5WD9A9R8+LQlEv/vq+r5ngFs/e1Zbv56MJLxv/AM/pt8Dv10r7byYS1u/AACAvwR1Xj98dRU+BVI2vzi+Kr8/4Ww/cbJZvxp8h718oQU/rHMFvyjn67z9Vlq/AACAv9BEUD/AOrk8Dr0tv3cSEb+6EX4/QHpZvxImb71gOQY/vQYGv/gH7rxC/Fm/AACAvxefQj9Yhrg9lGkwv3pxEr+JlXk/QU1Zv+Fbdr0pdQY/VUMGv48q7rzq1lm/AACAv4o7Rj9Q0bE9wcg3v6pGK796bWo/G7FZv+OIh710owU/kHUFv2QU7LzJVVq/AACAv089Uj8AT6889KYuv3CVn76P/34/i4xcvwI5JjyW8wE/9PcBv0vC7Lwbbly/AACAvxkcQT+4xoc+MxU+v4f6tb56GWU/B2hcv3aOJjx0MQI/1zUCv6qK7LyiSVy/AACAv/8FVj/wMnM+vLAxv1NA2r7PTno/wXFbv2QwCbwE0QM/dLYDv+wP7bxfZFu/AACAvyOGRT9UdT8+cO4jv2bAwb7QtIg/m4Rbv8aL7ru0sgM/pZkDv0kB7bysdVu/AACAv/7SMj8k9V4+pDgfv3swib7Jcow/gkZcvwNV8TtNbQI/Q2wCv6e67LxgKVy/AACAvxIyLD+U85U+jlcsvy/BOb6oHoE/Aa1cvxmNeTspwgE/t7oBv+AO7bwXkly/AACAv+m5PT+EaLU+M4s8vwsqWr4jv2Y/hC5dv323EzyN4AA/3+IAv1uu7LyXEF2/AACAv3XKUz/8jKs+v0Urv//sR72KIII/CWNev2YVN7tQnP0+Wnj9vpVi7LwqTl6/AACAv7t8Oz/U6uM+j1A7v5eQj71IFmg/4qtev7xfNTzejPw+TZr8vp+s7Lw9jV6/AACAv5XYUT94uN0+bvsqvztuuD1Hc4I/C2Bgv6ehjTsEgPY+sHT2vj8m7LzHRGC/AACAvzBMOj/EWAo/3Ec6v4NpmD3wFWk/NDVgv96ZUjzXB/c+Sh33vv0O7bwkFmC/AACAv6oqUD+oOgg/FjIrvxJryT5dNYE/hDdhvxYceDz+S/M+lmvzvo+y7LxrGGG/AACAv4dTOj+Ksj8/QGk4v69evT5sI2o/jD1hv1JCgTzyMvM+SlXzvrPJ7LxsHmG/AACAv/BqTT9gHDw/xqM4vxdhqj7EB2o/9jVhvzvIgDxOT/M+X3HzvpXM7LzUFmG/AACAv/W+TT/QmDU/OSYrvzKttT40aYE/NDZhvy+Jezz5T/M+d3Dzvniu7LwbF2G/AACAvyRDOj8I6jg/SP0lvz2e7r7ohoY/xVpav+itD71AVAU/GyIFv68n7bxqiFq/AACAv22PNj/QuyE+XFgfv82Vub6kjow/1Yxbv6SH27uFpQM/P40Dv/sn7bwQfVu/AACAvzGXLD/odGk+b7opv9539L54Y4M/PLZZv7PhHr0kTwY/LxsGv3UO77xn71m/AACAv/WhOz8wSBo+Bi08vzPgLL9NEmM/ORxZv4GKlL3cXQY/QzQGv2YY7rw44Fm/AACAv6smWD8AipE8BW84v3GOFr/mIGw/dClZvwzthL3diQY/Z1oGv6qZ7ryTyFm/AACAv8MQUT8wsp09S5FAv6t5Lr8Pt1s/4mdZv/sSlr113AU/ALQFvzua7LxuL1q/AACAvwYQXj8Aimc88zlDv49xvb5od1w/+6Fcv4VILzxvzgE/7tMBvweV7Lxig1y/AACAv6z+XD+cv2k+v/FBv+z3ZL4UlV0/jAFdvzq9bTw4JQE/nzIBv7Br7LwW4ly/AACAvz4lWz+iQ6g+5fE0v5MCA7898nM/FctZv3SiJ72sIgY/VO4Fv1R/7rwiC1q/AACAv77ZSj/M7AM+i6lAv/AYnr3Asl4/J5tfv0UBXDzgMfk+Y0n5vtU67bzke1+/AACAv1VMWT/ap9s+VmE/v3O9jT1b0F8/+IZgv6CtgDzz0vU+nvT1vu457byiZ2C/AACAv7x0Vz8ahgc/7tA8v45auT6iC2I/2j1hv9VCgTzNMfM+JVTzvv7M7Ly7HmG/AACAvxnIUz9T6jo/+yI9vw+dpj5ExGE/DDlhv6SwgjzeQvM+9GXzvlbh7LzmGWG/AACAv5s9VD/EfTQ/BwhCvy4CL79KQ1k/tqpYv+b3mL3VAAc/49gGv9CW77wTelm/AACAv4UIYD+ArlM8wOsXv1GChj5TkpM/bsZgv59AJDyX/vQ+9Aj1vujO67xrqGC/AACAvx+GHj8h6Sc/aLEcv7N+gz7oLo8/1xVhv/D+Kzzr2PM+SeXzvpde7LyS92C/AACAvxppJT/1Eic/cQIrvyXndD6nBII/uvZgv7YoQjyHR/Q+P1n0vq2y7LwC2GC/AACAvzASOj+CkCQ/elM5vyjRYj7dtGk/HihhvyS7dzwQhfM+iKTzvs/X7Lz6CGG/AACAvzS7Tj9BDiI/Ihk+v+vJXD4H7mA/Zi9hv6AQeTzNafM+oInzvifr7Lw+EGG/AACAvzCeVT82OCE/5BMav3O5gb7Sw5A/nVxcv0gd/juORwI/RkcCv1DA7LxEP1y/AACAv2U5JT8erZo+"
+				}
+			}
+			Indices
+			{
+				Value
+				{
+					Length = 336
+					.elements = 0 1 2 0 2 3 8 2 1 8 7 6 8 6 9 8 9 2 4 6 7 4 5 6 22 23 6 22 6 5 24 9 6 24 6 23 24 2 9 24 23 16 24 16 19 24 19 12 24 12 21 24 21 2 22 16 23 22 17 16 14 16 17 14 15 16 18 19 16 18 16 15 18 12 19 18 13 12 10 12 13 10 11 12 20 12 11 20 21 12 20 3 2 20 2 21 25 26 27 25 27 28 25 29 30 25 30 26 52 27 26 52 26 30 52 30 54 74 75 30 74 30 29 76 54 30 76 30 75 52 54 55 76 55 54 76 77 55 76 75 33 76 33 59 76 59 58 76 58 77 74 33 75 74 34 33 31 32 33 31 33 34 56 59 33 56 33 32 56 58 59 56 57 58 71 58 57 71 72 58 78 77 58 78 58 72 78 70 55 78 55 77 69 55 70 52 55 53 69 53 55 69 67 51 69 51 53 52 53 51 52 51 50 52 50 27 45 50 51 45 51 46 66 46 51 66 51 67 45 27 50 45 49 27 79 28 27 79 27 49 45 48 49 79 49 48 79 48 61 45 47 48 60 61 48 60 48 62 68 62 48 68 48 47 45 39 47 68 47 39 68 64 43 68 43 62 68 39 38 68 38 37 68 37 64 60 62 43 60 43 42 41 42 43 41 43 44 63 44 43 63 43 64 63 64 37 63 37 65 73 65 37 73 37 36 35 36 37 35 37 38 35 38 39 35 39 40 45 46 39 66 40 39 66 39 46
+				}
+			}
+			Material
+			{
+				GetByReference = "root:$Materials\\$glass"
+			}
+		}
+	}
+}

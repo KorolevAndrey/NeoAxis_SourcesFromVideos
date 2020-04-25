@@ -1,0 +1,90 @@
+
+
+
+		//
+		//https://gist.github.com/aeroson/043001ca12fe29ee911e
+		//
+		public static double sqrMagnitude3(Vector3 vec)
+		{
+			return vec.X * vec.X + vec.Y * vec.Y + vec.Z * vec.Z;
+		}
+
+		public static double sqrMagnitude4(Quaternion vec)
+		{
+			return vec.X * vec.X + vec.Y * vec.Y + vec.Z * vec.Z + vec.W * vec.W;
+		}
+
+
+		public static Quaternion Inverse(Quaternion rotation)
+		{
+			var lengthSq = sqrMagnitude4(rotation);
+			if (lengthSq != 0.0)
+			{
+				double i = 1.0 / lengthSq;
+				return new Quaternion(rotation.X * -i, rotation.Y * -i, rotation.Z * -i, rotation.W * i);
+			}
+			return rotation;
+		}
+
+		public static Quaternion AngleAxis(float degress, Vector3 axis)
+		{
+			if (sqrMagnitude3(axis) == 0.0)
+				return Quaternion.Identity;
+
+			Quaternion result = Quaternion.Identity;
+			var radians = degress * (Math.PI / 180);
+			radians *= 0.5f;
+			axis.Normalize();
+			axis = axis * System.Math.Sin(radians);
+			result.X = axis.X;
+			result.Y = axis.Y;
+			result.Z = axis.Z;
+			result.W = System.Math.Cos(radians);
+
+			return result.GetNormalize();
+		}
+
+
+		//https://answers.unity.com/questions/489350/rotatearound-without-transform.html
+		// function RotateAround(center: Vector3, axis: Vector3, angle: float){
+		//   var pos: Vector3 = transform.position;
+		//   var rot: Quaternion = Quaternion.AngleAxis(angle, axis); // get the desired rotation
+		//   var dir: Vector3 = pos - center; // find current direction relative to center
+		//   dir = rot * dir; // rotate the direction
+		//   transform.position = center + dir; // define new position
+		//   // rotate object to keep looking at the center:
+		//   var myRot: Quaternion = transform.rotation;
+		//   transform.rotation *= Quaternion.Inverse(myRot) * rot * myRot;
+		// }
+
+		public static Transform RotateAround(Transform transform, Vector3 center, Vector3 axis, float angle, bool lookCenter = true)
+		{
+			Vector3 pos = transform.Position;
+			Quaternion rot = AngleAxis(angle, axis); // get the desired rotation
+			Vector3 dir = pos - center; // find current direction relative to center
+			dir = rot * dir; // rotate the direction
+
+			var respos = center + dir; // define new position
+
+			var myRot = transform.Rotation;
+			var resrot = transform.Rotation * Inverse(myRot) * rot * myRot; // rotate object to keep looking at the center
+
+			Transform res = new Transform();
+			if (lookCenter)
+			{
+				res = new Transform(respos, resrot, transform.Scale);
+			}
+			else
+			{
+				res = new Transform(respos, transform.Rotation, transform.Scale);
+			}
+			return res;
+		}
+
+
+
+
+
+
+
+

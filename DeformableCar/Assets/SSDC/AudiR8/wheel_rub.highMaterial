@@ -1,0 +1,10 @@
+highLevelMaterial wheel_rub
+{
+	template = PhysicallyBasedMaterial
+	doubleSided = True
+	baseColor = 0.3568628 0.3568628 0.3568628
+	metallic = 0
+	roughness = 0
+	cavity = 0
+	fresnel = 0
+}

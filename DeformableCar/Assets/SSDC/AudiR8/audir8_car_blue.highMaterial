@@ -1,0 +1,26 @@
+highLevelMaterial audir8_car_blue
+{
+	template = PhysicallyBasedMaterial
+	doubleSided = True
+	reflectionSpecificCubemap = "Types\\Units\\SSDC\\NatureSky\\Normal\\normal.tga"
+	useReflection = True
+	emissionColor = 0.07843138 0.07843138 0.07843138
+	dynamicProperties = True
+	useFresnelModifier = True
+	metallic = 0.023
+	roughness = 0.217
+	cavity = 0
+	fresnel = 10
+	baseColor1Map
+	{
+		texture = ".\\audir8_d_blue.png"
+	}
+	emissionMap
+	{
+		texture = ".\\audir8_d_blue.png"
+	}
+	propertiesMap
+	{
+		texture = ".\\audir8_s.png"
+	}
+}

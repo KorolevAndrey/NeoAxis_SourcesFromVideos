@@ -1,0 +1,17 @@
+highLevelMaterial treeL
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	alphaRejectFunction = GreaterEqual
+	alphaToCoverage = True
+	halfLambert = True
+	emissionColor = 0.2470588 0.2078432 0.08627451
+	diffuse1Map
+	{
+		texture = ".\\treeL512.png"
+	}
+	emissionMap
+	{
+		texture = ".\\treeL512.png"
+	}
+}

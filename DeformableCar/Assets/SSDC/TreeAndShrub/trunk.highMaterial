@@ -1,0 +1,8 @@
+highLevelMaterial trunk
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\trunk.png"
+	}
+}

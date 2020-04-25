@@ -1,0 +1,21 @@
+highLevelMaterial fl
+{
+	template = PhysicallyBasedMaterial
+	reflectionSpecificCubemap = "Types\\Units\\SSDC\\NatureSky\\Normal\\normal.tga"
+	useReflection = True
+	emissionColor = 0.7882354 0.7882354 0.7882354
+	dynamicProperties = True
+	useFresnelModifier = True
+	metallic = 1
+	roughness = 0.3
+	cavity = 0
+	fresnel = 0.1
+	baseColor1Map
+	{
+		texture = ".\\fl.png"
+	}
+	emissionMap
+	{
+		texture = ".\\fl.png"
+	}
+}

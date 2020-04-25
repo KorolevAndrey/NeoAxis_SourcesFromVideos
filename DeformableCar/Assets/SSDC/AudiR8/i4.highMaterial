@@ -1,0 +1,9 @@
+highLevelMaterial i4
+{
+	template = PhysicallyBasedMaterial
+	baseColor = 0.4980392 0.08235294 0
+	metallic = 0
+	roughness = 0
+	cavity = 0
+	fresnel = 0
+}

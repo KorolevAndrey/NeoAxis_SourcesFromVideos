@@ -1,0 +1,22 @@
+highLevelMaterial grass1
+{
+	template = ShaderBaseMaterial
+	doubleSided = True
+	useNormals = False
+	alphaRejectFunction = GreaterEqual
+	alphaToCoverage = True
+	emissionColor = 0.4078432 0.4078432 0.4078432
+	specularColor = 0.2470588 0.2470588 0.2470588
+	diffuse1Map
+	{
+		texture = ".\\grass1.png"
+	}
+	emissionMap
+	{
+		texture = ".\\grass1.png"
+	}
+	specularMap
+	{
+		texture = ".\\grass1.png"
+	}
+}

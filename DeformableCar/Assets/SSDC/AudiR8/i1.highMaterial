@@ -1,0 +1,4 @@
+highLevelMaterial i1
+{
+	template = PhysicallyBasedMaterial
+}

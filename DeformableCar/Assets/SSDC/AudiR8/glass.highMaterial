@@ -1,0 +1,14 @@
+highLevelMaterial glass
+{
+	template = PhysicallyBasedMaterial
+	blending = AlphaBlend
+	baseColor = 0.06666667 0.09803922 0.1098039 0.6901961
+	reflectionSpecificCubemap = "Types\\Units\\SSDC\\NatureSky\\Normal\\normal.tga"
+	useReflection = True
+	dynamicProperties = True
+	useFresnelModifier = True
+	metallic = 2
+	roughness = 0.2
+	cavity = 0
+	fresnel = 0.3
+}

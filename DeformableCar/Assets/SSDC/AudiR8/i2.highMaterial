@@ -1,0 +1,9 @@
+highLevelMaterial i2
+{
+	template = PhysicallyBasedMaterial
+	baseColor = 0.2588235 0.2588235 0.2588235
+	metallic = 0
+	roughness = 0
+	cavity = 0
+	fresnel = 0
+}

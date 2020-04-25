@@ -1,0 +1,78 @@
+.component NeoAxis.Component_Import3D
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"1\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"200, 200\"><KW V=\"1\" A=\"(null)\"><CGD /><WS UN=\"01F326A58A974D953EA992CD265085BA\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"FBE35D51690D403AEF9F6CFB817DDBEC\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"86477FE8130B4E79C0915E18131CFCDA\"><KP UN=\"582269BBB6514238A2B454D7E4A5B4F0\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"86477FE8130B4E79C0915E18131CFCDA\" S=\"False\"><CPD ObjPath=\"$Mesh\" /></KP><KP UN=\"5389DCE33316418936B9D1146AD67779\" S=\"False\"><CPD ObjPath=\"$Materials\\$None\\$None shader graph\" /></KP></WC></WS></KW></DW></DM></KD>"
+	.component NeoAxis.Component
+	{
+		Name = Materials
+		.component NeoAxis.Component_Material
+		{
+			Name = None
+			BaseColor = 0.6 0.6 0.6
+			.component NeoAxis.Component_FlowGraph
+			{
+				Name = None shader graph
+				EditorScrollPosition = 0 0
+				Specialization
+				{
+					GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node None
+					Position = 10 -7
+					ControlledObject
+					{
+						GetByReference = "this:..\\.."
+					}
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_Mesh
+	{
+		Name = Mesh
+		.component NeoAxis.Component_MeshGeometry
+		{
+			Name = physic_Cube
+			VertexStructure
+			{
+				Value
+				{
+					Length = 2
+					0
+					{
+						Offset = 0
+						Type = Float3
+						Semantic = Position
+					}
+					1
+					{
+						Offset = 12
+						Type = Float3
+						Semantic = Normal
+					}
+				}
+			}
+			Vertices
+			{
+				Value
+				{
+					Length = 2112
+					.elements = "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"
+				}
+			}
+			Indices
+			{
+				Value
+				{
+					Length = 516
+					.elements = "0 1 2 0 8 66 3 0 2 0 3 8 0 84 1 84 0 66 3 7 8 24 8 7 67 66 8 24 67 8 3 2 4 5 3 4 3 5 7 5 6 7 25 7 6 25 24 7 26 27 24 67 24 27 25 26 24 25 14 13 14 25 6 26 25 13 9 14 6 5 9 6 9 5 4 9 10 11 9 12 13 10 9 4 12 9 11 14 9 13 26 13 12 26 69 27 69 26 12 69 12 11 31 30 11 10 31 11 30 69 11 31 10 4 31 28 30 2 31 4 31 2 28 28 29 30 30 29 70 69 30 70 69 70 27 71 70 29 68 27 70 71 68 70 46 47 29 28 46 29 47 71 29 71 47 72 71 72 68 68 64 63 72 64 68 68 67 27 67 68 63 47 42 72 73 72 42 65 64 72 73 65 72 47 46 42 41 42 43 46 43 42 41 73 42 73 41 37 74 73 37 73 74 65 38 37 41 86 38 41 86 41 43 43 44 45 86 43 45 43 46 44 86 45 38 36 38 39 45 39 38 38 36 37 82 45 44 45 82 39 46 48 44 83 44 48 83 82 44 46 28 1 48 46 1 84 48 1 84 83 48 83 62 61 66 62 83 82 83 61 84 66 83 61 62 63 63 62 66 67 63 66 63 64 65 87 61 63 87 63 65 65 59 58 74 59 65 87 65 58 87 58 61 56 57 58 58 59 60 58 57 61 55 56 58 55 58 60 60 59 74 74 37 35 75 74 35 75 60 74 55 60 23 15 23 60 75 15 60 55 54 53 56 55 53 54 55 23 18 22 23 54 23 22 15 18 23 15 16 17 18 15 17 15 75 16 75 35 16 17 16 32 32 16 35 18 17 19 85 19 17 85 17 32 20 18 19 18 20 22 50 20 19 85 50 19 50 85 78 85 34 78 85 32 34 76 77 78 34 76 78 77 50 78 32 33 34 34 33 79 76 34 79 76 79 53 52 76 53 76 52 77 52 51 77 50 77 51 52 53 54 52 49 51 49 52 54 56 53 79 80 79 33 80 56 79 81 57 56 80 81 56 40 80 33 80 40 81 40 39 81 82 81 39 61 57 81 82 61 81 36 40 33 40 36 39 36 35 37 36 32 35 32 36 33 49 54 22 49 50 51 49 22 21 50 49 21 20 21 22 50 21 20 2 1 28"
+				}
+			}
+			Material
+			{
+				GetByReference = "root:$Materials\\$None"
+			}
+		}
+	}
+}

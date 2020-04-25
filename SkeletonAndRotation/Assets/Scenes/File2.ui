@@ -1,0 +1,627 @@
+.component NeoAxis.UIControl
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1214, 879\"><KW V=\"1\" A=\"C0FA3A1B62204D6B2A9DF69B5A01F312\"><CGD /><WS UN=\"4A87E34386084E14BC81ED10FBED4D99\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"DFB0A78C25E040B3409E20069AAC1E35\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"C0FA3A1B62204D6B2A9DF69B5A01F312\"><KP UN=\"1DCA2554BB5448E318B4FEFC373B37DB\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"5E9726D14074456F8DBCBB9B4CB12D37\" S=\"False\"><CPD ObjPath=\"$Button 11\\$C# Script\" /></KP><KP UN=\"918951EB1AA34B49ADB292FA816C300C\" S=\"False\"><CPD ObjPath=\"$Button 14\\$C# Script\" /></KP><KP UN=\"4D5DB3735B7C439EC18FDD7C668506F4\" S=\"False\"><CPD ObjPath=\"$Button 15\\$C# Script\" /></KP><KP UN=\"460A257CF73546CC2C98B6484DE6535F\" S=\"False\"><CPD ObjPath=\"$Button 16\\$C# Script\" /></KP><KP UN=\"19DACDF124294329E4BAD96FAC09D65A\" S=\"False\"><CPD ObjPath=\"$Button 17\\$C# Script\" /></KP><KP UN=\"13F3EBCE396A479A00BAA6E18BC86FE1\" S=\"False\"><CPD ObjPath=\"$Button 18\\$C# Script\" /></KP><KP UN=\"295CE24C7937420ECB862D63ED01AE26\" S=\"False\"><CPD ObjPath=\"$Button 19\\$C# Script\" /></KP><KP UN=\"C0FA3A1B62204D6B2A9DF69B5A01F312\" S=\"False\"><CPD ObjPath=\"$Button 20\\$C# Script\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	Size = Parent 1 1
+	EditorScrollPosition = -3.57617340479472 -1.99475503039357
+	EditorZoomIndex = 11
+	.component NeoAxis.UIButton
+	{
+		Name = Button
+		Text = "z/\\"
+		Size = Units 200 40
+		Margin = Units 133.25558307197 812.926803173758 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar spos = sph.TransformV.Position;\r\n\t\tVector3 npos = spos - sph.TransformV.Rotation.GetUp()*0.01;\r\n\t\t\r\n\t\tsph.Transform = new Transform(npos,sph.TransformV.Rotation, sph.Transform.Value.Scale);\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 2
+		Text = "x<"
+		Size = Units 200 40
+		Margin = Units 18.5958320387934 871.124804756831 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button2_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar spos = sph.TransformV.Position;\r\n\t\tVector3 npos = spos - sph.TransformV.Rotation.GetForward()*0.01;\r\n\t\t\r\n\t\tsph.Transform = new Transform(npos,sph.TransformV.Rotation, sph.Transform.Value.Scale);\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button2_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 3
+		Text = "x>"
+		Size = Units 200 40
+		Margin = Units 234.224617563872 871.124804756831 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button3_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar spos = sph.TransformV.Position;\r\n\t\tVector3 npos = spos + sph.TransformV.Rotation.GetForward()*0.01;\r\n\t\t\r\n\t\tsph.Transform = new Transform(npos,sph.TransformV.Rotation, sph.Transform.Value.Scale);\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button3_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 4
+		Text = "z\\/"
+		Size = Units 200 40
+		Margin = Units 131.544243504311 929.322806339905 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button4_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar spos = sph.TransformV.Position;\r\n\t\tVector3 npos = spos + sph.TransformV.Rotation.GetUp()*0.01;\r\n\t\t\r\n\t\tsph.Transform = new Transform(npos,sph.TransformV.Rotation, sph.Transform.Value.Scale);\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button4_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 5
+		Text = "y/\\"
+		Size = Units 200 40
+		Margin = Units 449.147134853734 816.934156377127 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button5_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar spos = sph.TransformV.Position;\r\n\t\tVector3 npos = spos - sph.TransformV.Rotation.GetForward().Cross(sph.TransformV.Rotation.GetUp())*0.01;\r\n\t\t\r\n\t\tsph.Transform = new Transform(npos,sph.TransformV.Rotation, sph.Transform.Value.Scale);\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button5_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 6
+		Text = "y\\/"
+		Size = Units 200 40
+		Margin = Units 450.861077222191 871.803840876201 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button6_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar spos = sph.TransformV.Position;\r\n\t\tVector3 npos = spos + sph.TransformV.Rotation.GetForward().Cross(sph.TransformV.Rotation.GetUp())*0.01;\r\n\t\t\r\n\t\tsph.Transform = new Transform(npos,sph.TransformV.Rotation, sph.Transform.Value.Scale);\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button6_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 7
+		Text = "roll/\\"
+		Size = Units 200 40
+		Margin = Units 663.389930910902 818.648834017723 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button7_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar tr = sph.TransformV;\t\t\r\n\t\tvar ntr = tr.Rotate(new Angles(10, 0, 0).ToQuaternion());\r\n\r\n\t\tsph.Transform = ntr;\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button7_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 8
+		Text = "roll\\/"
+		Size = Units 200 40
+		Margin = Units 663.389930910902 936.961591218851 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button8_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar tr = sph.TransformV;\t\t\r\n\t\tvar ntr = tr.Rotate(new Angles(-10, 0, 0).ToQuaternion());\r\n\r\n\t\tsph.Transform = ntr;\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button8_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 9
+		Text = "pitch/\\"
+		Size = Units 200 40
+		Margin = Units 882.774554073442 816.934156377127 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button9_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar tr = sph.TransformV;\t\t\r\n\t\tvar ntr = tr.Rotate(new Angles(0, 10, 0).ToQuaternion());\r\n\r\n\t\tsph.Transform = ntr;\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button9_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 10
+		Text = "pitch\\/"
+		Size = Units 200 40
+		Margin = Units 886.202438810358 935.246913578255 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button10_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar tr = sph.TransformV;\t\t\r\n\t\tvar ntr = tr.Rotate(new Angles(0, -10, 0).ToQuaternion());\r\n\r\n\t\tsph.Transform = ntr;\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button10_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 11
+		Text = "yawall/\\"
+		Size = Units 77.0423564394722 40
+		Margin = Units 1193.62692721388 813.965792068328 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button11_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var rootbone = Component_Scene.All[0].GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\t\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\t\t\r\n\r\n        var tr = rootbone.TransformV;\r\n\t\t//var nq = tr.Rotate(new Angles(0, 0, 10).ToQuaternion());\r\n        //rootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1,1,0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward()/3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count();i=i+1) {\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform, rootbone.TransformV.Position, rootbone.TransformV.Rotation.GetForward(), 10);\r\n\r\n\t\t\tar[n] = new Dictionary<int, Vector3>();\r\n\t\t    ar[n].Add(0, new Vector3(1,i/otherbones.Count(),i/otherbones.Count()));\r\n  \t\t    ar[n].Add(1, rootbone.TransformV.Position);\r\n\t\t    ar[n].Add(2, otherbones[i].TransformV.Position);\r\n\t\t    Project.SimulationApp.arrows.Add(n, ar[n]);\r\n\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button11_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 12
+		Text = "yaw\\/"
+		Size = Units 79.5516961039727 40
+		Margin = Units 1100.44523486753 933.532235937659 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button12_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\r\n\t\tvar tr = sph.TransformV;\t\t\r\n\t\tvar ntr = tr.Rotate(new Angles(0, 0, 10).ToQuaternion());\r\n\r\n\t\tsph.Transform = ntr;\r\n//\t\tComponent_MeshInSpace[] sphs = new Component_MeshInSpace[2];\r\n//\t\tsphs[0] = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"upper_arm.R\");\r\n//\t\tsphs[1] = sphs[0]?.GetComponent<Component_MeshInSpace>(\"forearm.R\");\r\n\r\n//\t\tvar tr = sphs[0].TransformV;\t\t\r\n//\t\tvar ntr = tr.Rotate(new Angles(0, 0, -10).ToQuaternion());\r\n//        sphs[0].Transform = ntr;\r\n\r\n//        var spos = sphs[0].TransformV.Position;\r\n//        var spos1 = sphs[1].TransformV.Position;\r\n//\t\tvar R = (spos1 - spos).Length();\r\n//\t\tVector3 npos = spos - (sphs[0].TransformV.Rotation.GetForward().Cross(sphs[0].TransformV.Rotation.GetUp()))*R;\r\n//\t\tsphs[1].Transform = new Transform(npos,sphs[1].TransformV.Rotation, sphs[1].Transform.Value.Scale);\t\t\r\n\r\n\r\n\t\t\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button12_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 13
+		Text = "yaw/\\"
+		Size = Units 84.5703754329739 40
+		Margin = Units 1098.12640533422 814.979385728636 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button13_Click(NeoAxis.UIButton sender)\r\n{\r\n\t\tif(Component_Scene.All != null && Component_Scene.All.Length > 0) {\r\n\t\tvar sph = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n\t\t\r\n\t\tvar tr = sph.TransformV;\t\t\r\n\t\tvar ntr = tr.Rotate(new Angles(0, 0, -10).ToQuaternion());\r\n\r\n\t\tsph.Transform = ntr;\r\n\t\t\r\n//\t\tComponent_MeshInSpace[] sphs = new Component_MeshInSpace[2];\r\n//\t\tsphs[0] = Component_Scene.All[0]?.GetComponent<Component_MeshInSpace>(\"upper_arm.R\");\r\n//\t\tsphs[1] = sphs[0]?.GetComponent<Component_MeshInSpace>(\"forearm.R\");\r\n\r\n//\t\tvar tr = sphs[0].TransformV;\t\t\r\n//\t\tvar ntr = tr.Rotate(new Angles(0, 0, -10).ToQuaternion());\r\n//        sphs[0].Transform = ntr;\r\n\r\n//        var spos = sphs[0].TransformV.Position;\r\n//        var spos1 = sphs[1].TransformV.Position;\r\n//\t\tvar R = (spos1 - spos).Length();\r\n//\t\tVector3 npos = spos - (sphs[0].TransformV.Rotation.GetForward().Cross(sphs[0].TransformV.Rotation.GetUp()))*R;\r\n//\t\tsphs[1].Transform = new Transform(npos,sphs[1].TransformV.Rotation, sphs[1].Transform.Value.Scale);\t\t\r\n\r\n\t\t\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button13_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 14
+		Text = "yawall\\/"
+		Size = Units 75.7876866072219 40
+		Margin = Units 1189.71730308849 932.825932539713 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button14_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var rootbone = Component_Scene.All[0].GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\t\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\t\t\r\n\r\n        var tr = rootbone.TransformV;\r\n\t\t//var nq = tr.Rotate(new Angles(0, 0, 10).ToQuaternion());\r\n        //rootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1,1,0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward()/3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count();i=i+1) {\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform, rootbone.TransformV.Position, rootbone.TransformV.Rotation.GetForward(), -10);\r\n\r\n\t\t\tar[n] = new Dictionary<int, Vector3>();\r\n\t\t    ar[n].Add(0, new Vector3(1,i/otherbones.Count(),i/otherbones.Count()));\r\n  \t\t    ar[n].Add(1, rootbone.TransformV.Position);\r\n\t\t    ar[n].Add(2, otherbones[i].TransformV.Position);\r\n\t\t    Project.SimulationApp.arrows.Add(n, ar[n]);\r\n\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button14_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 15
+		Text = "rotbones/\\"
+		Size = Units 93.353064258726 40
+		Margin = Units 1313.92961648127 813.725699060433 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button15_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var all = Component_Scene.All[0].GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\tvar rootbone = Array.Find(all, item => item.Name == \"upper_arm.R\");\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\r\n\r\n\t\tvar tr = rootbone.TransformV;\r\n\t\tvar nq = tr.Rotate(new Angles(0, 0, -10).ToQuaternion());\r\n\t\trootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1, 1, 0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward() / 3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count(); i = i + 1)\r\n\t\t{\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform,\r\n\t\t\trootbone.TransformV.Position,\r\n\t\t\trootbone.TransformV.Rotation.GetUp(),\r\n\t\t\t10);\r\n\r\n//\t\t\tar[1] = new Dictionary<int, Vector3>();\r\n//\t\t\tar[1].Add(0, new Vector3(1, i / otherbones.Count(), i / otherbones.Count()));\r\n//\t\t\tar[1].Add(1, rootbone.TransformV.Position);\r\n//\t\t\tar[1].Add(2, otherbones[i].TransformV.Position);\r\n//\t\t\tProject.SimulationApp.arrows.Add(n, ar[1]);\r\n//\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button15_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 16
+		Text = "rotbones\\/"
+		Size = Units 95.8624039232267 40
+		Margin = Units 1313.92961648127 930.318559203307 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button16_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var all = Component_Scene.All[0].GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\tvar rootbone = Array.Find(all, item => item.Name == \"upper_arm.R\");\r\n\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\r\n\r\n\t\tvar tr = rootbone.TransformV;\r\n\t\tvar nq = tr.Rotate(new Angles(0, 0, 10).ToQuaternion());\r\n\t\trootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1, 1, 0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward() / 3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count(); i = i + 1)\r\n\t\t{\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform,\r\n\t\t\trootbone.TransformV.Position,\r\n\t\t\trootbone.TransformV.Rotation.GetUp(),\r\n\t\t\t-10);\r\n\r\n//\t\t\tar[1] = new Dictionary<int, Vector3>();\r\n//\t\t\tar[1].Add(0, new Vector3(1, i / otherbones.Count(), i / otherbones.Count()));\r\n//\t\t\tar[1].Add(1, rootbone.TransformV.Position);\r\n//\t\t\tar[1].Add(2, otherbones[i].TransformV.Position);\r\n//\t\t\tProject.SimulationApp.arrows.Add(n, ar[1]);\r\n//\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button16_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 17
+		Text = "/\\"
+		Size = Units 99.6264134199773 40
+		Margin = Units 1366.62574943578 762.324545664112 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button17_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var all = Component_Scene.All[0].GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\tvar rootbone = Array.Find(all, item => item.Name == \"upper_arm.R\");\r\n\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\r\n\r\n\t\tvar tr = rootbone.TransformV;\r\n\t\tvar nq = tr.Rotate(new Angles(-10, 0, 0).ToQuaternion());\r\n\t\trootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1, 1, 0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward() / 3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count(); i = i + 1)\r\n\t\t{\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform,\r\n\t\t\trootbone.TransformV.Position,\r\n\t\t\trootbone.TransformV.Rotation.GetForward(),\r\n\t\t\t10);\r\n\r\n//\t\t\tar[1] = new Dictionary<int, Vector3>();\r\n//\t\t\tar[1].Add(0, new Vector3(1, i / otherbones.Count(), i / otherbones.Count()));\r\n//\t\t\tar[1].Add(1, rootbone.TransformV.Position);\r\n//\t\t\tar[1].Add(2, otherbones[i].TransformV.Position);\r\n//\t\t\tProject.SimulationApp.arrows.Add(n, ar[1]);\r\n//\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button17_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 18
+		Text = "\\/"
+		Size = Units 93.353064258726 40
+		Margin = Units 1367.88041926804 876.41003247058 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button18_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var all = Component_Scene.All[0].GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\tvar rootbone = Array.Find(all, item => item.Name == \"upper_arm.R\");\r\n\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\r\n\r\n\t\tvar tr = rootbone.TransformV;\r\n\t\tvar nq = tr.Rotate(new Angles(10, 0, 0).ToQuaternion());\r\n\t\trootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1, 1, 0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward() / 3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count(); i = i + 1)\r\n\t\t{\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform,\r\n\t\t\trootbone.TransformV.Position,\r\n\t\t\trootbone.TransformV.Rotation.GetForward(),\r\n\t\t\t-10);\r\n\r\n//\t\t\tar[1] = new Dictionary<int, Vector3>();\r\n//\t\t\tar[1].Add(0, new Vector3(1, i / otherbones.Count(), i / otherbones.Count()));\r\n//\t\t\tar[1].Add(1, rootbone.TransformV.Position);\r\n//\t\t\tar[1].Add(2, otherbones[i].TransformV.Position);\r\n//\t\t\tProject.SimulationApp.arrows.Add(n, ar[1]);\r\n//\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button18_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 19
+		Text = "<"
+		Size = Units 105.899762581229 40
+		Margin = Units 1439.3965997063 814.979385728636 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button19_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n        var all = Component_Scene.All[0].GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\tvar rootbone = Array.Find(all, item => item.Name == \"upper_arm.R\");\r\n\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\r\n\r\n\t\tvar tr = rootbone.TransformV;\r\n\t\tvar nq = tr.Rotate(new Angles(0, 10, 0).ToQuaternion());\r\n\t\trootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1, 1, 0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward() / 3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count(); i = i + 1)\r\n\t\t{\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform,\r\n\t\t\trootbone.TransformV.Position,\r\n\t\t\trootbone.TransformV.Rotation.GetForward().Cross(rootbone.TransformV.Rotation.GetUp()),\r\n\t\t\t10);\r\n\r\n//\t\t\tar[1] = new Dictionary<int, Vector3>();\r\n//\t\t\tar[1].Add(0, new Vector3(1, i / otherbones.Count(), i / otherbones.Count()));\r\n//\t\t\tar[1].Add(1, rootbone.TransformV.Position);\r\n//\t\t\tar[1].Add(2, otherbones[i].TransformV.Position);\r\n//\t\t\tProject.SimulationApp.arrows.Add(n, ar[1]);\r\n//\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button19_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 20
+		Text = ">"
+		Size = Units 103.390422916728 40
+		Margin = Units 1441.9059393708 926.557499198698 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void Button20_Click(NeoAxis.UIButton sender)\r\n{\r\n\tif (Component_Scene.All != null && Component_Scene.All.Length > 0)\r\n\t{\r\n\r\n        var all = Component_Scene.All[0].GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\tvar rootbone = Array.Find(all, item => item.Name == \"upper_arm.R\");\r\n\r\n\t\tvar otherbones = rootbone.GetComponents<Component_MeshInSpace>(false, true, false);\r\n\t\t//ScreenMessages.Add(\"otherbones = \" + otherbones?.Count().ToString());\r\n\r\n\t\tProject.SimulationApp.arrows.Clear();\r\n\r\n\t\tvar tr = rootbone.TransformV;\r\n\t\tvar nq = tr.Rotate(new Angles(0, -10, 0).ToQuaternion());\r\n\t\trootbone.Transform = nq;\t\t\r\n\r\n\t\tDictionary<int, Vector3>[] ar = new Dictionary<int, Vector3>[100];\r\n\t\tar[0] = new Dictionary<int, Vector3>();\r\n\t\tar[0].Add(0, new Vector3(1, 1, 0));\r\n\t\tar[0].Add(1, rootbone.TransformV.Position);\r\n\t\tar[0].Add(2, rootbone.TransformV.Position + rootbone.TransformV.Rotation.GetForward() / 3);\r\n\t\tProject.SimulationApp.arrows.Add(0, ar[0]);\r\n\r\n\t\tvar n = 1;\r\n\r\n\t\tfor (int i = 0; i < otherbones?.Count(); i = i + 1)\r\n\t\t{\r\n\t\t\totherbones[i].Transform = Project.SimulationApp.RotateAround(otherbones[i].Transform,\r\n\t\t\trootbone.TransformV.Position,\r\n\t\t\trootbone.TransformV.Rotation.GetForward().Cross(rootbone.TransformV.Rotation.GetUp()),\r\n\t\t\t-10);\r\n\r\n//\t\t\tar[1] = new Dictionary<int, Vector3>();\r\n//\t\t\tar[1].Add(0, new Vector3(1, i / otherbones.Count(), i / otherbones.Count()));\r\n//\t\t\tar[1].Add(1, rootbone.TransformV.Position);\r\n//\t\t\tar[1].Add(2, otherbones[i].TransformV.Position);\r\n//\t\t\tProject.SimulationApp.arrows.Add(n, ar[1]);\r\n//\t\t\tn = n + 1;\r\n\t\t}\r\n\r\n\t}\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler Click
+				Event
+				{
+					GetByReference = "this:..\\..\\event:Click"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Button20_Click(NeoAxis.UIButton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+}

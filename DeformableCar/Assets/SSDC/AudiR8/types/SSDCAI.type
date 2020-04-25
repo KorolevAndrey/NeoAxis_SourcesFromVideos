@@ -1,0 +1,6 @@
+type SSDCAI
+{
+	class = SSDCAI
+	creatableInMapEditor = False
+	networkType = ServerOnly
+}

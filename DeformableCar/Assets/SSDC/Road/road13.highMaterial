@@ -1,0 +1,8 @@
+highLevelMaterial road13
+{
+	template = ShaderBaseMaterial
+	diffuse1Map
+	{
+		texture = ".\\road13.png"
+	}
+}

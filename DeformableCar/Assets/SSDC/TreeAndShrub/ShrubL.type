@@ -1,0 +1,15 @@
+type ShrubL
+{
+	class = DecorativeObject
+	distanceBetweenObjects = 10
+	visibilityDistance = 2000
+	castShadows = True
+	scaleRange = 0.5 1.5
+	items
+	{
+		item
+		{
+			meshName = ".\\shrubL.mesh"
+		}
+	}
+}

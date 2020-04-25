@@ -1,0 +1,45 @@
+.component NeoAxis.Component_Material
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1073, 879\"><KW V=\"1\" A=\"3F3760E1056946B5B7A510DCB48EA82B\"><CGD /><WS UN=\"FC824045645B4B5300A1E873312E2850\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"EEFEF9104D3344E8DF94671F5F51F07F\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"3F3760E1056946B5B7A510DCB48EA82B\"><KP UN=\"3F3760E1056946B5B7A510DCB48EA82B\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"EB9D7C91752844D269AE7BEEEA90CD7A\" S=\"False\"><CPD ObjPath=\"$Shader graph\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	BaseColor
+	{
+		GetByReference = "this:$Shader graph\\$Node Texture Sample 1\\$Texture Sample\\RGBA"
+	}
+	.component NeoAxis.Component_FlowGraph
+	{
+		Name = Shader graph
+		EditorScrollPosition = 0 0
+		Specialization
+		{
+			GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = "Node "
+			Position = 10 -7
+			ControlledObject
+			{
+				GetByReference = "this:..\\.."
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 1
+			Position = -9 -9
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "SSDC\\AudiR8\\glass_crash.png"
+				}
+			}
+		}
+	}
+}

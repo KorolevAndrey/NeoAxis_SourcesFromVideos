@@ -1,0 +1,14 @@
+highLevelMaterial wheel_met
+{
+	template = PhysicallyBasedMaterial
+	doubleSided = True
+	baseColor = 0.2784314 0.2784314 0.2784314
+	reflectionSpecificCubemap = "Types\\Units\\SSDC\\NatureSky\\Normal\\normal.tga"
+	useReflection = True
+	dynamicProperties = True
+	useFresnelModifier = True
+	metallic = 0.5
+	roughness = 0.3
+	cavity = 0
+	fresnel = 1
+}

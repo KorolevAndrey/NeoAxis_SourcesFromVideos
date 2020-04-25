@@ -1,0 +1,463 @@
+type AudiR8_AI_1
+{
+	class = SSDC
+	enginePeakTorque = 600
+	engineMaxRPM = 10000
+	engineDampingRateFullThrottle = 0.01
+	engineDampingRateZeroThrottleClutchEngaged = 0.01
+	engineDampingRateZeroThrottleClutchDisengaged = 0.01
+	gearsSwitchTime = 0
+	allowPlayerControl = True
+	fpsCameraOffset = 0.2 0 0.3
+	healthMax = 500
+	soundCollision = "Types\\Units\\SSDC\\AudiR8\\sound\\collision1.ogg"
+	soundMinDistance = 20
+	soundMaxDistance = 200
+	physicsModel = "Types\\Units\\SSDC\\AudiR8\\audir8.physics"
+	networkType = Synchronized
+	conf
+	{
+		heightResetCar = 1.5
+		deformation = True
+		parallelComputing = True
+		deformationRadius = 0.4
+		maxStrengthDeformation = 0.1
+		soundBrake = "Types\\Units\\SSDC\\AudiR8\\sound\\brake.ogg"
+		soundGearUp = "Types\\Units\\SSDC\\AudiR8\\sound\\gearup.ogg"
+		soundGearDown = "Types\\Units\\SSDC\\AudiR8\\sound\\geardown.ogg"
+		soundgears
+		{
+			item
+			{
+				number = 0
+				speedRange = -3 3
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\idle.ogg"
+			}
+			item
+			{
+				number = 1
+				speedRange = 3 24
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\run.ogg"
+				soundMotorPitchRange = 0.4 1
+			}
+			item
+			{
+				number = 2
+				speedRange = 24 48
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\run.ogg"
+				soundMotorPitchRange = 0.6 1.2
+			}
+			item
+			{
+				number = 3
+				speedRange = 48 72
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\run.ogg"
+				soundMotorPitchRange = 0.8 1.4
+			}
+			item
+			{
+				number = 4
+				speedRange = 72 96
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\run.ogg"
+				soundMotorPitchRange = 1 1.6
+			}
+			item
+			{
+				number = 5
+				speedRange = 96 120
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\run.ogg"
+				soundMotorPitchRange = 1.2 1.8
+			}
+			item
+			{
+				number = 6
+				speedRange = 120 150
+				soundMotor = "Types\\Units\\SSDC\\AudiR8\\sound\\run.ogg"
+				soundMotorPitchRange = 1.4 2
+			}
+		}
+		randomMaterials
+		{
+			item
+			{
+				path = audir8_car_black
+			}
+			item
+			{
+				path = audir8_car_blue
+			}
+			item
+			{
+				path = audir8_car_green
+			}
+		}
+	}
+	engineTorqueCurve
+	{
+		item
+		{
+			normalizedTorque = 0
+			normalizedRev = 0.8
+		}
+		item
+		{
+			normalizedTorque = 0.33
+			normalizedRev = 1
+		}
+		item
+		{
+			normalizedTorque = 1
+			normalizedRev = 0.8
+		}
+	}
+	gears
+	{
+		item
+		{
+			number = -1
+			ratio = -16
+		}
+		item
+		{
+			number = 0
+			ratio = 0
+		}
+		item
+		{
+			number = 1
+			ratio = 16
+		}
+		item
+		{
+			number = 2
+			ratio = 8
+		}
+		item
+		{
+			number = 3
+			ratio = 6
+		}
+		item
+		{
+			number = 4
+			ratio = 4.4
+		}
+		item
+		{
+			number = 5
+			ratio = 4
+		}
+	}
+	wheelFrontLeft
+	{
+		mass = 20
+		wheelDampingRate = 0.01
+		wheelMaxBrakeTorque = 1500
+		wheelMaxHandBrakeTorque = 0
+		wheelMaxSteer = 60
+		wheelToeAngle = 0
+		suspensionSpringStrength = 35000
+		suspensionSpringDamperRate = 4500
+		suspensionMaxCompression = 0.15
+		suspensionMaxDroop = 0.1
+		suspensionSprungMassCoefficient = 0.25
+		suspensionForceApplicationPointOffset = 0 0 0
+		tireForceApplicationPointOffset = 0 0 0
+	}
+	wheelFrontRight
+	{
+		mass = 20
+		wheelDampingRate = 0.01
+		wheelMaxBrakeTorque = 1500
+		wheelMaxHandBrakeTorque = 0
+		wheelMaxSteer = 60
+		wheelToeAngle = 0
+		suspensionSpringStrength = 35000
+		suspensionSpringDamperRate = 4500
+		suspensionMaxCompression = 0.15
+		suspensionMaxDroop = 0.1
+		suspensionSprungMassCoefficient = 0.25
+		suspensionForceApplicationPointOffset = 0 0 0
+		tireForceApplicationPointOffset = 0 0 0
+	}
+	wheelRearLeft
+	{
+		mass = 20
+		wheelDampingRate = 0.01
+		wheelMaxBrakeTorque = 1500
+		wheelMaxHandBrakeTorque = 4000
+		wheelMaxSteer = 0
+		wheelToeAngle = 0
+		suspensionSpringStrength = 35000
+		suspensionSpringDamperRate = 4500
+		suspensionMaxCompression = 0.3
+		suspensionMaxDroop = 0.1
+		suspensionSprungMassCoefficient = 0.25
+		suspensionForceApplicationPointOffset = 0 0 0
+		tireForceApplicationPointOffset = 0 0 0
+	}
+	wheelRearRight
+	{
+		mass = 20
+		wheelDampingRate = 0.01
+		wheelMaxBrakeTorque = 1500
+		wheelMaxHandBrakeTorque = 4000
+		wheelMaxSteer = 0
+		wheelToeAngle = 0
+		suspensionSpringStrength = 35000
+		suspensionSpringDamperRate = 4500
+		suspensionMaxCompression = 0.3
+		suspensionMaxDroop = 0.1
+		suspensionSprungMassCoefficient = 0.25
+		suspensionForceApplicationPointOffset = 0 0 0
+		tireForceApplicationPointOffset = 0 0 0
+	}
+	tireTypes
+	{
+		item
+		{
+			name = Wets
+			wheelFrontLeft
+			{
+				tireLatStiffX = 2
+				tireLatStiffY = 10
+				tireLongitudinalStiffnessPerUnitGravity = 1000
+				tireCamberStiffness = 57
+				frictionVsSlipGraphZeroLongitudinalSlip = 2
+				frictionVsSlipGraphLongitudinalSlipWithMaximumFriction = 0.1
+				frictionVsSlipGraphMaximumFriction = 2
+				frictionVsSlipGraphEndPointOfGraph = 2
+				frictionVsSlipGraphValueOfFrictionForSlipsGreaterThanEndPointOfGraph = 2
+			}
+			wheelFrontRight
+			{
+				tireLatStiffX = 2
+				tireLatStiffY = 10
+				tireLongitudinalStiffnessPerUnitGravity = 1000
+				tireCamberStiffness = 57
+				frictionVsSlipGraphZeroLongitudinalSlip = 2
+				frictionVsSlipGraphLongitudinalSlipWithMaximumFriction = 0.1
+				frictionVsSlipGraphMaximumFriction = 2
+				frictionVsSlipGraphEndPointOfGraph = 2
+				frictionVsSlipGraphValueOfFrictionForSlipsGreaterThanEndPointOfGraph = 2
+			}
+			wheelRearLeft
+			{
+				tireLatStiffX = 2
+				tireLatStiffY = 10
+				tireLongitudinalStiffnessPerUnitGravity = 1000
+				tireCamberStiffness = 57
+				frictionVsSlipGraphZeroLongitudinalSlip = 2
+				frictionVsSlipGraphLongitudinalSlipWithMaximumFriction = 0.1
+				frictionVsSlipGraphMaximumFriction = 2
+				frictionVsSlipGraphEndPointOfGraph = 2
+				frictionVsSlipGraphValueOfFrictionForSlipsGreaterThanEndPointOfGraph = 2
+			}
+			wheelRearRight
+			{
+				tireLatStiffX = 2
+				tireLatStiffY = 10
+				tireLongitudinalStiffnessPerUnitGravity = 1000
+				tireCamberStiffness = 57
+				frictionVsSlipGraphZeroLongitudinalSlip = 2
+				frictionVsSlipGraphLongitudinalSlipWithMaximumFriction = 0.1
+				frictionVsSlipGraphMaximumFriction = 2
+				frictionVsSlipGraphEndPointOfGraph = 2
+				frictionVsSlipGraphValueOfFrictionForSlipsGreaterThanEndPointOfGraph = 2
+			}
+			frictionMultipliers
+			{
+				item
+				{
+					surfaceMaterialName = Snow
+					value = 0.3
+				}
+				item
+				{
+					surfaceMaterialName = Tarmac
+					value = 1
+				}
+				item
+				{
+					surfaceMaterialName = Dirt
+					value = 0.7
+				}
+				item
+				{
+					surfaceMaterialName = Ice
+					value = 0.1
+				}
+			}
+		}
+	}
+	steerVsForwardSpeedTable
+	{
+		item
+		{
+			forwardSpeed = 0
+			steer = 0.75
+		}
+		item
+		{
+			forwardSpeed = 15
+			steer = 0.45
+		}
+		item
+		{
+			forwardSpeed = 45
+			steer = 0.15
+		}
+		item
+		{
+			forwardSpeed = 135
+			steer = 0.05
+		}
+	}
+	attachedObjects
+	{
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\car.mesh"
+			alias = dmd
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\engine.mesh"
+			castDynamicShadows = False
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\interior.mesh"
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\glass_backward.mesh"
+			castDynamicShadows = False
+			alias = gbackward
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\glass_forward.mesh"
+			castDynamicShadows = False
+			alias = gforward
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\glass_left.mesh"
+			castDynamicShadows = False
+			alias = gleft
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\glass_right.mesh"
+			castDynamicShadows = False
+			alias = gright
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\wheelR.mesh"
+			alias = wheelRearRight
+			position = -1.361492 -0.7525077 -0.3678569
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\wheelL.mesh"
+			alias = wheelRearLeft
+			position = -1.361492 0.7525077 -0.3678569
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\wheelL.mesh"
+			alias = wheelFrontLeft
+			position = 1.160299 0.7525077 -0.3678569
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\wheelR.mesh"
+			alias = wheelFrontRight
+			position = 1.160299 -0.7525077 -0.3678569
+		}
+		ribbonTrail
+		{
+			trailLength = 10
+			maxChainElements = 40
+			materialName = brake
+			lifeTimeAfterDestroy = 0.2
+			alias = brake
+			position = -1.316546 0.6769745 -0.6148772
+			chains
+			{
+				chain
+				{
+					initialColor = 1 1 1
+					initialWidth = 0.2
+					changeWidth = 0.8
+				}
+			}
+		}
+		ribbonTrail
+		{
+			trailLength = 10
+			maxChainElements = 40
+			materialName = brake
+			lifeTimeAfterDestroy = 0.2
+			alias = brake
+			position = -1.316546 -0.6769745 -0.6148772
+			chains
+			{
+				chain
+				{
+					initialColor = 1 1 1
+					initialWidth = 0.2
+					changeWidth = 0.8
+				}
+			}
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\fll.mesh"
+			castDynamicShadows = False
+			alias = fll
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\flr.mesh"
+			castDynamicShadows = False
+			alias = flr
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\bll.mesh"
+			castDynamicShadows = False
+			alias = bll
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+		mesh
+		{
+			meshName = "Types\\Units\\SSDC\\AudiR8\\blr.mesh"
+			castDynamicShadows = False
+			alias = blr
+			position = 0 0 -0.6467278
+			scale = 0.95 0.95 0.95
+		}
+	}
+}
