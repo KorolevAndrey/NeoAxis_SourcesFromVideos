@@ -1,0 +1,1094 @@
+.component NeoAxis.Component_Scene
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1028, 830\"><KW V=\"1\" A=\"E80904F063694C8E0FA5B23EB30D29C4\"><CGD /><WS UN=\"4A87E34386084E14BC81ED10FBED4D99\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"C137825E525A45B7DB93CB9BD1DE869B\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"E80904F063694C8E0FA5B23EB30D29C4\"><KP UN=\"E80904F063694C8E0FA5B23EB30D29C4\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"8BD1F432F7B94D141EAC631A29DC8008\" S=\"False\"><CPD ObjPath=\"$Capsule\\$Input Processing\\$C# Script\" /></KP><KP UN=\"A1E73F0D775C496213914412116410E5\" S=\"False\"><CPD ObjPath=\"$Box 2\\$Collision Body\\$C# Script\" /></KP><KP UN=\"5556094DDCCD410FCA86985D5FCFCBB4\" S=\"False\"><CPD ObjPath=\"$Sensor\\$C# Script\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	Gravity = 0 0 0
+	DisplayTextInfo = True
+	DisplayCameras = True
+	RenderingPipeline
+	{
+		GetByReference = "root:$Rendering Pipeline"
+	}
+	CameraEditor
+	{
+		GetByReference = "this:$Camera Editor"
+	}
+	CameraEditor2D
+	{
+		GetByReference = "this:$Camera Editor 2D"
+	}
+	CameraDefault
+	{
+		GetByReference = "this:$Camera 2"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor
+		Visible = False
+		Transform = "-12.6343266180415 -5.64426364357675 61.6452240174748; -0.223497643750673 0.372356645517621 0.463573560260709 0.772333403397764; 7.12999986298382 7.12999986298382 7.12999986298382"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor 2D
+		Visible = False
+		Transform = "2.64918580053222 3.02745193504869 10; -0.502493739596367 0.497493760429674 0.497493760429674 0.502493739596367; 1 1 1"
+		Projection = Orthographic
+		Height = 16.8586419336498
+		FixedUp = 0 1 0
+		FarClipPlane = 100
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Ambient Light
+		Transform = "18.5822734231225 -5.39737456891382 163.996324911528; 0.177025544047126 0 0 0.98420625722194; 1 1 1"
+		Type = Ambient
+		Brightness = 54096.727596768
+	}
+	.component NeoAxis.Component_RenderingPipeline_Default
+	{
+		Name = Rendering Pipeline
+		.component NeoAxis.Component
+		{
+			Name = Background Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Scene Effects
+			.component NeoAxis.Component_RenderingEffect_AmbientOcclusion
+			{
+				Name = Ambient Occlusion
+			}
+			.component NeoAxis.Component_RenderingEffect_MotionBlur
+			{
+				Name = Motion Blur
+			}
+			.component NeoAxis.Component_RenderingEffect_Bloom
+			{
+				Name = Bloom
+				BrightThreshold = 0.135
+				Scale = 2.853
+				BlurFactor = 7.079535
+			}
+			.component NeoAxis.Component_RenderingEffect_LensEffects
+			{
+				Name = Lens Effects
+			}
+			.component NeoAxis.Component_RenderingEffect_ToneMapping
+			{
+				Name = Tone Mapping
+			}
+			.component NeoAxis.Component_RenderingEffect_ToLDR
+			{
+				Name = To LDR
+			}
+			.component NeoAxis.Component_RenderingEffect_Antialiasing
+			{
+				Name = Antialiasing
+			}
+			.component NeoAxis.Component_RenderingEffect_Sharpen
+			{
+				Name = Sharpen
+				Shader = "Base\\Shaders\\Effects\\Sharpen_fs.sc"
+			}
+			.component NeoAxis.Component_Fog
+			{
+				Name = Fog
+				Color = 0 0 0
+				StartDistance = 79.524
+				Density = 0.0142992078733312
+				Height = 38.65
+				HeightScale = 66.54979
+				AffectBackground = 0.503
+			}
+		}
+		.component NeoAxis.Component
+		{
+			Name = Final Image Effects
+		}
+	}
+	.component NeoAxis.Component_GameMode
+	{
+		Name = Game Mode
+		ThirdPersonCameraDistance = 12.718706329
+		ObjectControlledByPlayer
+		{
+			GetByReference = "root:$Capsule"
+		}
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Light 1
+		Transform = "288.377169386521 8.05755548941953 -76.3141214079028; -0.48553441582008 -0.67324283509012 0.472744885192886 -0.295825437679109; 1 1 1"
+		Type = Directional
+		Brightness = 192151.797699599
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Light 2
+		Transform = "-4.06922581247412 12.7564327788648 172.838680939056; -0.82747117010128 0.0899895356251557 0.486032671507703 0.266393671764687; 1 1 1"
+		Type = Spotlight
+		Brightness = 19287.647677024
+		Color = 1 0.7982745 0.5498431
+		AttenuationNear = 154.449
+		AttenuationFar = 259.081
+		AttenuationPower = 1.31044
+		SpotlightInnerAngle = 78.405
+		SpotlightOuterAngle = 108.221
+	}
+	.component NeoAxis.Component_GroupOfObjects
+	{
+		Name = Group Of Objects
+		BaseObjects
+		{
+			Count = 1
+			0 "NeoAxis.Reference<NeoAxis.Component>"
+			{
+				GetByReference = "root:$Ground"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 4
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Import\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "49.1890571481915 4.13509084420834 -6.6719816760426; 0 0 -0.999945098356897 0.0104785624976098; 0.0910738283932335 0.408868495175793 0.152675408151583"
+			MotionType = Dynamic
+			Mass = 10
+			EnableGravity = False
+			MaterialFriction = 1
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public void CollisionBody_SimulationStep(NeoAxis.Component obj)\r\n{\r\n\tvar p = Component_Scene.All[0];\r\n\tVector3 dir;\r\n\tif(p != null) {\r\n\t\tvar cap = p.GetComponent<Component_MeshInSpace>(\"Box 4\");\r\n\t\tvar plnt = p.GetComponent<Component_MeshInSpace>(\"Sphere\");\r\n\t\tif(cap != null && plnt != null) {\r\n\t\t\tvar cb = cap.GetComponent<Component_RigidBody>(\"Collision Body\");\r\n\t\t\tif(cb != null) { \r\n\t\t\t\t//cb.TransformV.Position.Clamp\r\n\t\t\t\t//var dir = cb.TransformV.Rotation.GetUp();\r\n\t\t\t    //cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n\t\t\t    dir = new Vector3(cb.TransformV.Position.X, cb.TransformV.Position.Y, cb.TransformV.Position.Z).GetNormalize();\r\n\t\t\t    cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n\t\t\t\t//ScreenMessages.Add(\"-100\");\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n"
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler SimulationStep
+					Event
+					{
+						GetByReference = "this:..\\..\\event:SimulationStep"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:CollisionBody_SimulationStep(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_Light
+		{
+			Name = Light 3
+			Type = Point
+			Brightness = 680855.473873376
+			Color = 0 1 0.1998039
+			AttenuationNear = 1.369
+			AttenuationFar = 5.476
+			AttenuationPower = 0.94249
+			Transform
+			{
+				GetByReference = "this:..\\TransformV"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 2
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Import\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-2.27477940763927 -2.92075584645732 49.8072364018244; 0 0 -0.782013303463325 0.623261737319385; 0.0910738283932335 0.408868495175793 0.152675408151583"
+			MotionType = Dynamic
+			Mass = 10
+			EnableGravity = False
+			MaterialFriction = 1
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public void CollisionBody_SimulationStep(NeoAxis.Component obj)\r\n{\r\n\tvar p = Component_Scene.All[0];\r\n\tVector3 dir;\r\n\tif(p != null) {\r\n\t\tvar cap = p.GetComponent<Component_MeshInSpace>(\"Box 4\");\r\n\t\tvar plnt = p.GetComponent<Component_MeshInSpace>(\"Sphere\");\r\n\t\tif(cap != null && plnt != null) {\r\n\t\t\tvar cb = cap.GetComponent<Component_RigidBody>(\"Collision Body\");\r\n\t\t\tif(cb != null) {\r\n\t\t\t\t\r\n\t\t\t    dir = new Vector3(cb.TransformV.Position.X, cb.TransformV.Position.Y, cb.TransformV.Position.Z).GetNormalize();\r\n\t\t\t    cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n\t\t\t    \r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n"
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler SimulationStep
+					Event
+					{
+						GetByReference = "this:..\\..\\event:SimulationStep"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:CollisionBody_SimulationStep(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_Light
+		{
+			Name = Light 3
+			Type = Point
+			Brightness = 680855.473873376
+			Color = 0 1 0.1998039
+			AttenuationNear = 1.369
+			AttenuationFar = 5.476
+			AttenuationPower = 0.94249
+			Transform
+			{
+				GetByReference = "this:..\\TransformV"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Sphere
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Samples\\Starter Content\\Materials\\Concrete 3x3 meters\\Concrete 3x3 meters.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Sphere
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "0 0 0; 0 -0.326639261237023 0 0.945149085075223; 99.6155962549389 99.6155962549389 99.6155962549389"
+			Mass = 1000000000
+			EnableGravity = False
+			MaterialFriction = 0.1
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Sphere
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Capsule
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Base\\Materials\\Dark Green.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Capsule
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-9.84079682208012 3.21976192839716 50.2884303845891; 0.0343678362383782 0.0156616871978461 0.138299599685273 -0.989670037999182; 1 1 1"
+			MotionType = Dynamic
+			Mass = 10
+			AngularDamping = 0.3
+			MaterialFriction = 0.1
+			CenterOfMassManual = True
+			CenterOfMassPosition = 0 0 -2
+			InertiaTensorFactor = 1 1 0.1
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+				Dimensions = 1 1 2
+			}
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public void CollisionBody_SimulationStep(NeoAxis.Component obj)\r\n{\r\n\tvar p = Component_Scene.All[0];\r\n\tVector3 dir;\r\n\tif(p != null) {\r\n\t\tvar cap = p.GetComponent<Component_MeshInSpace>(\"Capsule\");\r\n\t\tvar plnt = p.GetComponent<Component_MeshInSpace>(\"Sphere\");\r\n\t\tif(cap != null && plnt != null) {\r\n\t\t\tvar cb = cap.GetComponent<Component_RigidBody>(\"Collision Body\");\r\n\t\t\tif(cb != null) { \r\n\t\t\t\t//cb.TransformV.Position.Clamp\r\n\t\t\t\t//var dir = cb.TransformV.Rotation.GetUp();\r\n\t\t\t    //cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n\t\t\t    dir = new Vector3(cb.TransformV.Position.X, cb.TransformV.Position.Y, cb.TransformV.Position.Z).GetNormalize();\r\n\t\t\t    cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n\t\t\t\t//ScreenMessages.Add(\"-100\");\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n"
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler SimulationStep
+					Event
+					{
+						GetByReference = "this:..\\..\\event:SimulationStep"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:CollisionBody_SimulationStep(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_InputProcessing
+		{
+			Name = Input Processing
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public double angl = 0;\r\n\r\npublic void InputProcessing_SimulationStep(NeoAxis.Component obj)\r\n{\r\n\t\r\n\tvar sender = (NeoAxis.Component_InputProcessing)obj;\r\n\tvar dir = new Vector3(0,0,0);\r\n\t\r\n\tvar p = Component_Scene.All[0];\r\n\tif(p != null) {\r\n\t\tvar cap = p.GetComponent<Component_MeshInSpace>(\"Capsule\");\r\n\t\tvar plnt = p.GetComponent<Component_MeshInSpace>(\"Sphere\");\r\n\t\tif (cap != null && plnt != null)\r\n\t\t{\r\n\r\n            var cb = cap.GetComponent<Component_RigidBody>(\"Collision Body\");\r\n            var trl = cap.GetComponent<Component_TransformOffset>(\"Transform Offset left\");\r\n            var trr = cap.GetComponent<Component_TransformOffset>(\"Transform Offset right\");\r\n\t\t\tif(cb != null && trl != null && trr != null) {\r\n\t\t\t\t\r\n\t\t\t\t//fly up\r\n\t\t\t\tif (sender.IsKeyPressed(EKeys.Space))\r\n\t\t\t\t{\r\n\t\t\t\t\tdir = new Vector3(cb.TransformV.Position.X, cb.TransformV.Position.Y, cb.TransformV.Position.Z).GetNormalize();\r\n\t\t\t\t\tcb.ApplyForce(dir * 120.0, plnt.TransformV.Position);\r\n\t\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\t//fly front\r\n\t\t\t\tif (sender.IsKeyPressed(EKeys.W) || sender.IsKeyPressed(EKeys.Up) || sender.IsKeyPressed(EKeys.NumPad8))\r\n\t\t\t\t{\t\t\t\t\t\r\n\t\t\t        dir = cb.TransformV.Rotation.GetForward().GetNormalize();\r\n\t\t\t        cb.ApplyForce(dir * 55.0, plnt.TransformV.Position);\r\n\r\n\t\t\t\t\tScreenMessages.Add(\"W\");\r\n\t\t\t\t}\r\n\t\t        //fly back\r\n         \t\tif (sender.IsKeyPressed(EKeys.S) || sender.IsKeyPressed(EKeys.Down) || sender.IsKeyPressed(EKeys.NumPad2))\r\n        \t\t{\r\n\t\t\t        dir = cb.TransformV.Rotation.GetForward().GetNormalize();\r\n\t\t\t        cb.ApplyForce(dir * -55.0, plnt.TransformV.Position);\r\n\r\n\t\t\t        ScreenMessages.Add(\"S\");\r\n        \t\t}\r\n\r\n\t\t        //turn left\r\n\t\t        if (sender.IsKeyPressed(EKeys.A) || sender.IsKeyPressed(EKeys.Left) || sender.IsKeyPressed(EKeys.NumPad4)) {\r\n\r\n\t\t\t\t\tvar tr = cb.TransformV;\r\n\t\t\t\t\tcb.TransformV = tr.UpdateRotation(trr.Result.Rotation);\t\t        \t\r\n\t\t        \t\r\n\t\t\t    \tScreenMessages.Add(\"A\");\r\n                }\r\n\t\t\t\t\r\n\r\n\t\t        //turn right\r\n\t\t        if (sender.IsKeyPressed(EKeys.D) || sender.IsKeyPressed(EKeys.Right) || sender.IsKeyPressed(EKeys.NumPad6)) {\r\n\r\n                    \r\n\t\t\t\t\tvar tr = cb.TransformV;\r\n\t\t\t\t\tcb.TransformV = tr.UpdateRotation(trl.Result.Rotation);\t\t        \t\r\n\t\t        \t\r\n\t\t\t\t\tScreenMessages.Add(\"D\");        \r\n\t\t        }\r\n\r\n\t\t\t}\r\n\t\t\t\r\n\r\n\t\t}\r\n\t}\r\n   \r\n}\r\n"
+				angl = 0
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler SimulationStep
+					Event
+					{
+						GetByReference = "this:..\\..\\event:SimulationStep"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:InputProcessing_SimulationStep(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Transform Offset
+			PositionOffset = 0.6 0 0.4
+			RotationOffset = 0 0.707106781186547 0 0.707106781186548
+			Source
+			{
+				GetByReference = "root:$Capsule\\TransformV"
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Transform Offset 2
+			PositionOffset = 0 -10 10
+			RotationOffset = -0.210118304332141 0.280749799611511 0.56113998968098 0.749767804179075
+			Source
+			{
+				GetByReference = "root:$Capsule\\TransformV"
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Transform Offset left
+			RotationOffset = 0 0 -0.043619387365336 0.999048221581858
+			Source
+			{
+				GetByReference = "root:$Capsule\\TransformV"
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Transform Offset right
+			RotationOffset = 0 0 0.043619387365336 0.999048221581858
+			Source
+			{
+				GetByReference = "root:$Capsule\\TransformV"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cone
+		Transform
+		{
+			GetByReference = "root:$Capsule\\$Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Base\\Materials\\Dark Blue.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cone
+			{
+				Name = Mesh Geometry
+			}
+		}
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera
+		Transform
+		{
+			GetByReference = "root:$Capsule\\$Transform Offset 2\\Result"
+		}
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera 2
+		Transform
+		{
+			GetByReference = "root:$Mesh in Space 25\\$Transform Offset\\Result"
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Enabled = False
+		Name = Mesh In Space
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "root:$Mesh In Space\\$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Base\\Materials\\Dark Gray.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry
+			{
+				Name = Mesh Geometry
+				VertexStructure
+				{
+					Value
+					{
+						Length = 5
+						0
+						{
+							Offset = 0
+							Type = Float3
+							Semantic = Position
+						}
+						1
+						{
+							Offset = 12
+							Type = Float3
+							Semantic = Normal
+						}
+						2
+						{
+							Offset = 24
+							Type = Float4
+							Semantic = Tangent
+						}
+						3
+						{
+							Offset = 40
+							Type = Float4
+							Semantic = Color0
+						}
+						4
+						{
+							Offset = 56
+							Type = Float2
+							Semantic = TextureCoordinate0
+						}
+					}
+				}
+				Vertices
+				{
+					Value
+					{
+						Length = 1536
+						.elements = "AAAAvwAAAD8AAAC/AAAAAAAAgD8AAAAAAACAvwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAAL8AAAA/AAAAPwAAAAAAAIA/AAAAAAAAgL8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAAA/AAAAPwAAAD8AAAAAAACAPwAAAAAAAIC/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAPwAAAD8AAAC/AAAAAAAAgD8AAAAAAACAvwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAL8AAAC/AAAAvwAAAAAAAIC/AAAAAAAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AAAAAAAAgD8AAAA/AAAAvwAAAL8AAAAAAACAvwAAAAAAAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAPwAAAL8AAAA/AAAAAAAAgL8AAAAAAACAPwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAL8AAAC/AAAAPwAAAAAAAIC/AAAAAAAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAC/AAAAPwAAAL8AAAAAAAAAAAAAgL8AAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAPwAAAD8AAAC/AAAAAAAAAAAAAIC/AACAPwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAAD8AAAC/AAAAvwAAAAAAAAAAAACAvwAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAAC/AAAAvwAAAL8AAAAAAAAAAAAAgL8AAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAPwAAAD8AAAC/AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAAD8AAAA/AAAAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAAA/AAAAvwAAAD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAPwAAAL8AAAC/AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAD8AAAA/AAAAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAAAAC/AAAAPwAAAD8AAAAAAAAAAAAAgD8AAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAvwAAAL8AAAA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAD8AAAC/AAAAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAAC/AAAAPwAAAD8AAIC/AAAAAAAAAAAAAAAAAACAvwAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAAAAAvwAAAD8AAAC/AACAvwAAAAAAAAAAAAAAAAAAgL8AAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAL8AAAC/AAAAvwAAgL8AAAAAAAAAAAAAAAAAAIC/AAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAAC/AAAAvwAAAD8AAIC/AAAAAAAAAAAAAAAAAACAvwAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAAAA"
+					}
+				}
+				Indices
+				{
+					Value
+					{
+						Length = 36
+						.elements = 0 1 2 2 3 0 4 5 6 6 7 4 8 9 10 10 11 8 12 13 14 14 15 12 16 17 18 18 19 16 20 21 22 22 23 20
+					}
+				}
+			}
+			.component NeoAxis.Component_MeshGeometry
+			{
+				Name = Mesh Geometry 2
+				VertexStructure
+				{
+					Value
+					{
+						Length = 5
+						0
+						{
+							Offset = 0
+							Type = Float3
+							Semantic = Position
+						}
+						1
+						{
+							Offset = 12
+							Type = Float3
+							Semantic = Normal
+						}
+						2
+						{
+							Offset = 24
+							Type = Float4
+							Semantic = Tangent
+						}
+						3
+						{
+							Offset = 40
+							Type = Float4
+							Semantic = Color0
+						}
+						4
+						{
+							Offset = 56
+							Type = Float2
+							Semantic = TextureCoordinate0
+						}
+					}
+				}
+				Vertices
+				{
+					Value
+					{
+						Length = 1536
+						.elements = "GxnuQAAAAD8AAAC/AAAAAAAAgD8AAAAAAACAvwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPxsZ7kAAAAA/AAAAPwAAAAAAAIA/AAAAAAAAgL8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAACNDAdBAAAAPwAAAD8AAAAAAACAPwAAAAAAAIC/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAjQwHQQAAAD8AAAC/AAAAAAAAgD8AAAAAAACAvwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPxsZ7kAAAAC/AAAAvwAAAAAAAIC/AAAAAAAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AAAAAAAAgD+NDAdBAAAAvwAAAL8AAAAAAACAvwAAAAAAAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/jQwHQQAAAL8AAAA/AAAAAAAAgL8AAAAAAACAPwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAABsZ7kAAAAC/AAAAPwAAAAAAAIC/AAAAAAAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAbGe5AAAAAPwAAAL8AAAAAAAAAAAAAgL8AAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAIA/jQwHQQAAAD8AAAC/AAAAAAAAAAAAAIC/AACAPwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAP40MB0EAAAC/AAAAvwAAAAAAAAAAAACAvwAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAbGe5AAAAAvwAAAL8AAAAAAAAAAAAAgL8AAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAjQwHQQAAAD8AAAC/AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAIA/AACAP40MB0EAAAA/AAAAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAACNDAdBAAAAvwAAAD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAjQwHQQAAAL8AAAC/AACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAP40MB0EAAAA/AAAAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAAAAbGe5AAAAAPwAAAD8AAAAAAAAAAAAAgD8AAIA/AAAAAAAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAGxnuQAAAAL8AAAA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAP40MB0EAAAC/AAAAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8bGe5AAAAAPwAAAD8AAIC/AAAAAAAAAAAAAAAAAACAvwAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAAAAAAAAAGxnuQAAAAD8AAAC/AACAvwAAAAAAAAAAAAAAAAAAgL8AAAAAAACAvwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPxsZ7kAAAAC/AAAAvwAAgL8AAAAAAAAAAAAAAAAAAIC/AAAAAAAAgL8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8bGe5AAAAAvwAAAD8AAIC/AAAAAAAAAAAAAAAAAACAvwAAAAAAAIC/AACAPwAAgD8AAIA/AACAPwAAgD8AAAAA"
+					}
+				}
+				Indices
+				{
+					Value
+					{
+						Length = 36
+						.elements = 0 1 2 2 3 0 4 5 6 6 7 4 8 9 10 10 11 8 12 13 14 14 15 12 16 17 18 18 19 16 20 21 22 22 23 20
+					}
+				}
+			}
+			.component NeoAxis.Component_MeshGeometry
+			{
+				Name = Mesh Geometry 3
+				VertexStructure
+				{
+					Value
+					{
+						Length = 5
+						0
+						{
+							Offset = 0
+							Type = Float3
+							Semantic = Position
+						}
+						1
+						{
+							Offset = 12
+							Type = Float3
+							Semantic = Normal
+						}
+						2
+						{
+							Offset = 24
+							Type = Float4
+							Semantic = Tangent
+						}
+						3
+						{
+							Offset = 40
+							Type = Float4
+							Semantic = Color0
+						}
+						4
+						{
+							Offset = 56
+							Type = Float2
+							Semantic = TextureCoordinate0
+						}
+					}
+				}
+				Vertices
+				{
+					Value
+					{
+						Length = 1536
+						.elements = "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"
+					}
+				}
+				Indices
+				{
+					Value
+					{
+						Length = 36
+						.elements = 0 1 2 2 3 0 4 5 6 6 7 4 8 9 10 10 11 8 12 13 14 14 15 12 16 17 18 18 19 16 20 21 22 22 23 20
+					}
+				}
+			}
+			.component NeoAxis.Component_MeshGeometry
+			{
+				Name = Mesh Geometry 4
+				VertexStructure
+				{
+					Value
+					{
+						Length = 5
+						0
+						{
+							Offset = 0
+							Type = Float3
+							Semantic = Position
+						}
+						1
+						{
+							Offset = 12
+							Type = Float3
+							Semantic = Normal
+						}
+						2
+						{
+							Offset = 24
+							Type = Float4
+							Semantic = Tangent
+						}
+						3
+						{
+							Offset = 40
+							Type = Float4
+							Semantic = Color0
+						}
+						4
+						{
+							Offset = 56
+							Type = Float2
+							Semantic = TextureCoordinate0
+						}
+					}
+				}
+				Vertices
+				{
+					Value
+					{
+						Length = 1536
+						.elements = "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"
+					}
+				}
+				Indices
+				{
+					Value
+					{
+						Length = 36
+						.elements = 0 1 2 2 3 0 4 5 6 6 7 4 8 9 10 10 11 8 12 13 14 14 15 12 16 17 18 18 19 16 20 21 22 22 23 20
+					}
+				}
+			}
+			.component NeoAxis.Component_MeshGeometry
+			{
+				Name = Mesh Geometry 5
+				VertexStructure
+				{
+					Value
+					{
+						Length = 5
+						0
+						{
+							Offset = 0
+							Type = Float3
+							Semantic = Position
+						}
+						1
+						{
+							Offset = 12
+							Type = Float3
+							Semantic = Normal
+						}
+						2
+						{
+							Offset = 24
+							Type = Float4
+							Semantic = Tangent
+						}
+						3
+						{
+							Offset = 40
+							Type = Float4
+							Semantic = Color0
+						}
+						4
+						{
+							Offset = 56
+							Type = Float2
+							Semantic = TextureCoordinate0
+						}
+					}
+				}
+				Vertices
+				{
+					Value
+					{
+						Length = 14592
+						.elements = "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"
+					}
+				}
+				Indices
+				{
+					Value
+					{
+						Length = 228
+						.elements = 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227
+					}
+				}
+			}
+			.component NeoAxis.Component_MeshGeometry
+			{
+				Name = Mesh Geometry 6
+				VertexStructure
+				{
+					Value
+					{
+						Length = 5
+						0
+						{
+							Offset = 0
+							Type = Float3
+							Semantic = Position
+						}
+						1
+						{
+							Offset = 12
+							Type = Float3
+							Semantic = Normal
+						}
+						2
+						{
+							Offset = 24
+							Type = Float4
+							Semantic = Tangent
+						}
+						3
+						{
+							Offset = 40
+							Type = Float4
+							Semantic = Color0
+						}
+						4
+						{
+							Offset = 56
+							Type = Float2
+							Semantic = TextureCoordinate0
+						}
+					}
+				}
+				Vertices
+				{
+					Value
+					{
+						Length = 1536
+						.elements = "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"
+					}
+				}
+				Indices
+				{
+					Value
+					{
+						Length = 36
+						.elements = 0 1 2 2 3 0 4 5 6 6 7 4 8 9 10 10 11 8 12 13 14 14 15 12 16 17 18 18 19 16 20 21 22 22 23 20
+					}
+				}
+			}
+			Structure
+			{
+				Edges = 0 1 0 4 4 7 1 7 2 3 2 6 5 6 3 5 4 5 6 7 1 2 0 3 8 9 8 12 12 15 9 15 10 11 10 14 13 14 11 13 12 13 14 15 9 10 8 11 16 17 16 20 20 23 17 23 18 19 18 22 21 22 19 21 20 21 22 23 17 18 16 19 24 25 24 28 28 31 25 31 26 27 26 30 29 30 27 29 28 29 30 31 25 26 24 27 32 33 33 34 34 35 32 35 36 37 37 38 38 39 36 39 33 39 32 36 35 37 34 38 40 41 42 43 48 49 50 51 41 42 52 53 43 53 40 58 49 58 48 50 51 59 52 59 44 45 46 47 45 54 55 56 47 57 54 60 56 61 46 61 55 62 44 63 60 64 57 64 62 63 47 65 46 65 40 46 57 66 43 57 47 66 51 67 45 51 67 68 56 69 49 56 55 69 63 73 50 68 44 73 62 74 55 74 61 70 56 70 54 71 45 71 57 72 64 72 75 76 75 79 79 82 76 82 77 78 77 81 80 81 78 80 79 80 81 82 76 77 75 78
+				Faces = "40 6 1 0 20 0 0 21 4 0 22 4 0 22 7 0 23 1 0 20 0 6 3 0 12 2 0 13 6 0 14 6 0 14 5 0 15 3 0 12 0 6 4 0 4 5 0 5 6 0 6 6 0 6 7 0 7 4 0 4 0 6 0 0 0 1 0 1 2 0 2 2 0 2 3 0 3 0 0 0 0 6 0 0 8 3 0 9 5 0 10 5 0 10 4 0 11 0 0 8 0 6 2 0 16 1 0 17 7 0 18 7 0 18 6 0 19 2 0 16 0 6 9 1 20 8 1 21 12 1 22 12 1 22 15 1 23 9 1 20 0 6 11 1 12 10 1 13 14 1 14 14 1 14 13 1 15 11 1 12 0 6 12 1 4 13 1 5 14 1 6 14 1 6 15 1 7 12 1 4 0 6 8 1 0 9 1 1 10 1 2 10 1 2 11 1 3 8 1 0 0 6 8 1 8 11 1 9 13 1 10 13 1 10 12 1 11 8 1 8 0 6 10 1 16 9 1 17 15 1 18 15 1 18 14 1 19 10 1 16 0 6 17 2 20 16 2 21 20 2 22 20 2 22 23 2 23 17 2 20 0 6 19 2 12 18 2 13 22 2 14 22 2 14 21 2 15 19 2 12 0 6 20 2 4 21 2 5 22 2 6 22 2 6 23 2 7 20 2 4 0 6 16 2 0 17 2 1 18 2 2 18 2 2 19 2 3 16 2 0 0 6 16 2 8 19 2 9 21 2 10 21 2 10 20 2 11 16 2 8 0 6 18 2 16 17 2 17 23 2 18 23 2 18 22 2 19 18 2 16 0 6 25 3 20 24 3 21 28 3 22 28 3 22 31 3 23 25 3 20 0 6 27 3 12 26 3 13 30 3 14 30 3 14 29 3 15 27 3 12 0 6 28 3 4 29 3 5 30 3 6 30 3 6 31 3 7 28 3 4 0 6 24 3 0 25 3 1 26 3 2 26 3 2 27 3 3 24 3 0 0 6 24 3 8 27 3 9 29 3 10 29 3 10 28 3 11 24 3 8 0 6 26 3 16 25 3 17 31 3 18 31 3 18 30 3 19 26 3 16 0 6 32 4 0 33 4 1 34 4 2 34 4 3 35 4 4 32 4 5 0 6 36 4 6 37 4 7 38 4 8 38 4 9 39 4 10 36 4 11 0 6 36 4 12 39 4 13 33 4 14 33 4 15 32 4 16 36 4 17 0 6 38 4 18 37 4 19 35 4 20 35 4 21 34 4 22 38 4 23 0 48 36 4 24 32 4 25 40 4 26 32 4 27 41 4 28 40 4 29 42 4 30 32 4 31 43 4 32 32 4 33 35 4 34 43 4 35 35 4 36 37 4 37 43 4 38 48 4 57 36 4 58 49 4 59 36 4 60 50 4 61 51 4 62 36 4 63 51 4 64 37 4 65 32 4 66 42 4 67 41 4 68 37 4 69 52 4 70 53 4 71 43 4 72 37 4 73 53 4 74 40 4 84 58 4 85 36 4 86 58 4 87 49 4 88 36 4 89 36 4 90 48 4 91 50 4 92 59 4 93 37 4 94 51 4 95 52 4 96 37 4 97 59 4 98 0 51 44 4 39 39 4 40 45 4 41 39 4 42 38 4 43 45 4 44 38 4 45 34 4 46 45 4 47 33 4 48 39 4 49 46 4 50 33 4 51 46 4 52 47 4 53 33 4 54 47 4 55 34 4 56 45 4 75 34 4 76 54 4 77 39 4 78 55 4 79 56 4 80 34 4 81 47 4 82 57 4 83 34 4 99 60 4 100 54 4 101 56 4 102 61 4 103 39 4 104 61 4 105 46 4 106 39 4 107 55 4 108 39 4 109 62 4 110 39 4 111 44 4 112 63 4 113 60 4 114 34 4 115 64 4 116 64 4 117 34 4 118 57 4 119 62 4 120 39 4 121 63 4 122 0 21 65 4 123 40 4 124 47 4 125 47 4 126 40 4 127 41 4 128 40 4 129 65 4 130 46 4 131 66 4 132 42 4 133 57 4 134 57 4 135 42 4 136 43 4 137 47 4 189 41 4 190 66 4 191 66 4 192 41 4 193 42 4 194 0 39 67 4 138 44 4 139 51 4 140 51 4 141 44 4 142 45 4 143 44 4 144 67 4 145 68 4 146 69 4 147 48 4 148 56 4 149 56 4 150 48 4 151 49 4 152 48 4 153 69 4 154 55 4 155 73 4 195 68 4 196 63 4 197 63 4 198 68 4 199 50 4 200 68 4 201 73 4 202 44 4 203 48 4 204 74 4 205 62 4 206 50 4 207 48 4 208 62 4 209 74 4 210 48 4 211 55 4 212 63 4 222 50 4 223 62 4 224 0 15 70 4 156 49 4 157 61 4 158 61 4 159 49 4 160 58 4 161 49 4 162 70 4 163 56 4 164 61 4 165 58 4 166 46 4 167 46 4 168 58 4 169 40 4 170 0 30 54 4 171 53 4 172 71 4 173 71 4 174 53 4 175 52 4 176 71 4 177 52 4 178 45 4 179 53 4 180 54 4 181 60 4 182 43 4 183 53 4 184 60 4 185 43 4 186 72 4 187 57 4 188 51 4 213 45 4 214 59 4 215 45 4 216 52 4 217 59 4 218 43 4 219 60 4 220 64 4 221 72 4 225 43 4 226 64 4 227 0 6 76 5 20 75 5 21 79 5 22 79 5 22 82 5 23 76 5 20 0 6 78 5 12 77 5 13 81 5 14 81 5 14 80 5 15 78 5 12 0 6 79 5 4 80 5 5 81 5 6 81 5 6 82 5 7 79 5 4 0 6 75 5 0 76 5 1 77 5 2 77 5 2 78 5 3 75 5 0 0 6 75 5 8 78 5 9 80 5 10 80 5 10 79 5 11 75 5 8 0 6 77 5 16 76 5 17 82 5 18 82 5 18 81 5 19 77 5 16 0"
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-2.43007171822709 0.565804435462948 165.778952085393; 0 0 0.707106781186547 0.707106781186548; 1 8.34785449462106 6.85537763134165"
+			MotionType = Dynamic
+			Mass = 100
+			CenterOfMassManual = True
+			CenterOfMassPosition = 4 0 -4
+			.component NeoAxis.Component_CollisionShape_Mesh
+			{
+				Mesh
+				{
+					GetByReference = "this:..\\..\\Mesh"
+				}
+				Vertices
+				{
+				}
+				Indices
+				{
+				}
+			}
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public void CollisionBody_SimulationStep(NeoAxis.Component obj)\r\n{\r\n//\tvar p = Component_Scene.All[0];\r\n//\tVector3 dir;\r\n//\tif(p != null) {\r\n//\t\tvar cap = p.GetComponent<Component_MeshInSpace>(\"Mesh In Space\");\r\n//\t\tvar plnt = p.GetComponent<Component_MeshInSpace>(\"Sphere\");\r\n//\t\tif(cap != null && plnt != null) {\r\n//\t\t\tvar cb = cap.GetComponent<Component_RigidBody>(\"Collision Body\");\r\n//\t\t\tif(cb != null) { \r\n//\t\t\t\tcb.TransformV.Position.Clamp\r\n//\t\t\t\tvar dir = cb.TransformV.Rotation.GetUp();\r\n//\t\t\t    cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n//\t\t\t    dir = new Vector3(cb.TransformV.Position.X, cb.TransformV.Position.Y, cb.TransformV.Position.Z).GetNormalize();\r\n//\t\t\t    cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n//\t\t\t\tScreenMessages.Add(\"-100\");\r\n//\t\t\t}\r\n//\t\t}\r\n//\t}\r\n}\r\n"
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler SimulationStep
+					Event
+					{
+						GetByReference = "this:..\\..\\event:SimulationStep"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:CollisionBody_SimulationStep(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Mesh in Space 25
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "Samples\\Sci-fi Demo\\Models\\Sci-fi RescueShip-2M\\SF_RescueShip-2M.obj|$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "5.4869293709977 4.84758463818535 166.772838227552; 0 0 -0.704926832102855 0.70928003029934; 7.12999986298382 7.12999986298382 7.12999986298382"
+			MotionType = Dynamic
+			Mass = 1000
+			EnableGravity = False
+			AngularDamping = 100
+			CenterOfMassManual = True
+			CenterOfMassPosition = 0 0 -4
+			LinearSleepingThreshold = 0.169
+			AngularSleepingThreshold = 0.169
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+				TransformRelativeToParent = "0 -0.00000017881393433 0.00000002980232239; 0 0 0 1; 1 1 1"
+				Dimensions = 1.31653130054474 0.941684246063232 0.496464550495148
+			}
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public void CollisionBody_SimulationStep(NeoAxis.Component obj)\r\n{\r\n\tvar p = Component_Scene.All[0];\r\n\tVector3 dir;\r\n\tif(p != null) {\r\n\t\tvar cap = p.GetComponent<Component_MeshInSpace>(\"Mesh in Space 25\");\r\n\t\tvar plnt = p.GetComponent<Component_MeshInSpace>(\"Sphere\");\r\n\t\tif(cap != null && plnt != null) {\r\n\t\t\tvar cb = cap.GetComponent<Component_RigidBody>(\"Collision Body\");\r\n\t\t\tif(cb != null) { \r\n\t\t\t\t//cb.TransformV.Position.Clamp\r\n\t\t\t\t//var dir = cb.TransformV.Rotation.GetUp();\r\n\t\t\t    //cb.ApplyForce(dir * -100, plnt.TransformV.Position);\r\n\t\t\t    dir = new Vector3(cb.TransformV.Position.X, cb.TransformV.Position.Y, cb.TransformV.Position.Z).GetNormalize();\r\n\t\t\t    cb.ApplyForce(dir * -500, plnt.TransformV.Position);\r\n\t\t\t\t//ScreenMessages.Add(\"-100\");\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n"
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler SimulationStep
+					Event
+					{
+						GetByReference = "this:..\\..\\event:SimulationStep"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:CollisionBody_SimulationStep(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Transform Offset
+			PositionOffset = 2 0 2
+			RotationOffset = -0.511962884298405 0.136917138773883 0.846463418220548 0.051452733894482
+			Source
+			{
+				GetByReference = "root:$Mesh in Space 25\\TransformV"
+			}
+		}
+	}
+	.component NeoAxis.Component_Sensor
+	{
+		Name = Sensor
+		Transform = "5.4909316473582 4.80339631104036 51.2397915051981; 0 0 0 1; 2.79999995976686 2.79999995976686 2.79999995976686"
+		FilterByType
+		{
+			GetByReference = NeoAxis.Component_MeshInSpace
+		}
+		Objects
+		{
+			Count = 1
+			0 "NeoAxis.Reference<NeoAxis.Component_ObjectInSpace>"
+			{
+				GetByReference = "root:$Sphere"
+			}
+		}
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public bool shipwas = false;\r\n\r\npublic void Sensor_ObjectEnter(NeoAxis.Component_Sensor sender, NeoAxis.Component_ObjectInSpace obj)\r\n{\r\n\tif(!shipwas && obj.Name == \"Mesh in Space 25\") {\r\n\t\tshipwas = true;\r\n\t\tvar p = Component_Scene.All[0];\r\n\t\tvar cam = p.GetComponent<Component_Camera>(\"Camera\");\r\n\t\tp.CameraDefault = cam;\r\n\t}\r\n}\r\n"
+			shipwas = False
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler ObjectEnter
+				Event
+				{
+					GetByReference = "this:..\\..\\event:ObjectEnter"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:Sensor_ObjectEnter(NeoAxis.Component_Sensor,NeoAxis.Component_ObjectInSpace)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_Skybox
+	{
+		Name = Skybox
+		Multiplier = "0.6885098 1 1; 2.55"
+		Cubemap
+		{
+			GetByReference = "Samples\\Sci-fi Demo\\Textures\\SkyboxNebulaSingle.image"
+		}
+		Rotation
+		{
+			GetByReference = "this:$C# Script\\Method"
+		}
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "double Method()\r\n{\r\n\treturn -EngineApp.EngineTime / 5;\r\n}\r\n"
+			Exit
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = alien_11
+		Transform = "50.4485474872524 -2.81258411324499 5.53249166082744; -0.234270576677324 -0.325954816897832 0.534537387055442 0.743734183754059; 1 1 1"
+		Mesh
+		{
+			GetByReference = "Import\\18-alien_11\\alien_11.obj|$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Base\\Materials\\Dark Green.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+	}
+}
