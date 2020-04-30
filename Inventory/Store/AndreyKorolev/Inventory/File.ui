@@ -1,0 +1,90 @@
+.component Project.File
+{
+	Size = Parent 1 1
+	HorizontalAlignment = Center
+	VerticalAlignment = Center
+	EditorScrollPosition = 6.01190444486091 1.31830996048082
+	EditorZoomIndex = 7
+	.component NeoAxis.UIWindow
+	{
+		Name = Window 1
+		Size = Units 697.627103246885 194.235874099355
+		Margin = Units 493.921370777425 802.742114521838 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.UIImage
+		{
+			Name = 0
+			Size = Units 121.950156966849 119.378081152825
+			Margin = Units 24.0440927048103 49.5523194208302 0 0
+			BackgroundColor = 1 1 1 0
+			EditorScrollPosition = 0 0
+			SourceImage
+			{
+				GetByReference = "Import\\Empty.png"
+			}
+		}
+	}
+	.component NeoAxis.UIWindow
+	{
+		Name = Window 2
+		Size = Units 697.627103246885 589.044800447266
+		Margin = Units 1064.13796925302 111.714138817059 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.UIImage
+		{
+			Name = 0
+			Size = Units 121.950156966849 119.378081152825
+			Margin = Units 24.0468833566402 49.5365193881029 0 0
+			BackgroundColor = 1 1 1 0
+			EditorScrollPosition = 0 0
+			SourceImage
+			{
+				GetByReference = "Import\\Empty.png"
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button
+		Text = "\x0422\x0435\x0441\x0442"
+		Size = Units 200 40
+		Margin = Units 9.91282945929823 4.92310377343919 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.Component_EventHandler
+		{
+			Name = Event Handler Click
+			Event
+			{
+				GetByReference = "this:..\\event:Click"
+			}
+			HandlerMethod
+			{
+				GetByReference = "this:..\\..\\method:Button_Click(NeoAxis.UIButton)"
+			}
+			HandlerFlow
+			{
+			}
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button 2
+		Text = test 2
+		Size = Units 200 40
+		Margin = Units 1574.48027825808 951.284671941003 0 0
+		EditorScrollPosition = 0 0
+	}
+	.component NeoAxis.UIImage
+	{
+		Name = DragImage
+		Size = Units 121.950156966849 119.378081152825
+		Margin = Parent -0.0766455052983913 0.0283659833670831 0 0
+		TopMost = True
+		BackgroundColor = 1 1 1 0
+		EditorScrollPosition = 0 0
+		SourceImage
+		{
+			GetByReference = "Import\\Empty.png"
+		}
+	}
+}

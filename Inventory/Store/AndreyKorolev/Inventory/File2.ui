@@ -1,0 +1,56 @@
+.component Project.File2
+{
+	Size = Parent 1 1
+	EditorScrollPosition = 0 0
+	.component NeoAxis.UIWindow
+	{
+		Name = Window 1
+		Size = Units 697.627103246885 194.235874099355
+		Margin = Units 493.921370777425 802.742114521838 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.UIImage
+		{
+			Name = 0
+			Size = Units 121.950156966849 119.378081152825
+			Margin = Units 24.0440927048103 49.5523194208302 0 0
+			BackgroundColor = 1 1 1 0
+			EditorScrollPosition = 0 0
+			SourceImage
+			{
+				GetByReference = "Import\\Empty.png"
+			}
+		}
+	}
+	.component NeoAxis.UIWindow
+	{
+		Name = Window 2
+		Size = Units 697.627103246885 589.044800447266
+		Margin = Units 1064.13796925302 111.714138817059 0 0
+		EditorScrollPosition = 0 0
+		.component NeoAxis.UIImage
+		{
+			Name = 0
+			Size = Units 121.950156966849 119.378081152825
+			Margin = Units 24.0468833566402 49.5365193881029 0 0
+			BackgroundColor = 1 1 1 0
+			EditorScrollPosition = 0 0
+			SourceImage
+			{
+				GetByReference = "Import\\Empty.png"
+			}
+		}
+	}
+	.component NeoAxis.UIImage
+	{
+		Name = DragImage
+		Size = Units 121.950156966849 119.378081152825
+		Margin = Parent -0.0775028441414085 0.0176968777651372 0 0
+		TopMost = True
+		BackgroundColor = 1 1 1 0
+		EditorScrollPosition = 0 0
+		SourceImage
+		{
+			GetByReference = "Import\\Empty.png"
+		}
+	}
+}

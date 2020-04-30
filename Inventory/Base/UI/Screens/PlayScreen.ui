@@ -1,0 +1,23 @@
+.component Project.PlayScreen
+{
+	Size = Parent 1 1
+	EditorScrollPosition = 0 0
+	.component NeoAxis.UIImage
+	{
+		Name = Image
+		Size = Units 102.99221312368 96.6249525976487
+		Margin = Units 4.99856608691636 897.269624573379 0 0
+		EditorScrollPosition = 0 0
+		SourceImage
+		{
+			GetByReference = "Import\\ubviyfufig.jpg"
+		}
+	}
+	.component NeoAxis.UIButton
+	{
+		Name = Button
+		Size = Units 200 40
+		Margin = Units 1572.34341954823 955.919605612439 0 0
+		EditorScrollPosition = 0 0
+	}
+}
