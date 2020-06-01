@@ -1,0 +1,523 @@
+.component NeoAxis.Component_ParticleSystem
+{
+	SimulationSpace = Local
+	MaxParticles = 10000
+	.component NeoAxis.Component_ParticleEmitter
+	{
+		Name = Emitter
+		Direction = FromCenterOfEmitter
+		CastShadows = False
+		ReceiveDecals = False
+		StartTime
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Duration
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		SpawnRate
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		SpawnCount
+		{
+			Value
+			{
+				Constant = 5
+				Range = 1 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		DispersionAngle
+		{
+			Value
+			{
+				Constant = 90
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Speed
+		{
+			Value
+			{
+				Constant = 0.1
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Rotation
+		{
+			Value
+			{
+				Type = Range
+				Constant = 0 0 0
+				Range = 0 0 0 180 180 180
+				CurveX
+				{
+					Count = 0
+				}
+				CurveY
+				{
+					Count = 0
+				}
+				CurveZ
+				{
+					Count = 0
+				}
+			}
+		}
+		AngularVelocity
+		{
+			Value
+			{
+				Constant = 0 0 0
+				Range = 0 0 0 200 200 200
+				CurveX
+				{
+					Count = 0
+				}
+				CurveY
+				{
+					Count = 0
+				}
+				CurveZ
+				{
+					Count = 0
+				}
+			}
+		}
+		Lifetime
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0.5 3
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Size
+		{
+			Value
+			{
+				Type = Range
+				Constant = 1
+				Range = 0.1 0.8
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		GravityMultiplier
+		{
+			Value
+			{
+				Type = Range
+				Constant = 1
+				Range = 0 0
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Swords\\File2.material"
+		}
+		Color
+		{
+			Value
+			{
+				Constant = 1 1 1
+				Range = 1 1 1 1 1 1 1 1
+			}
+		}
+		.component NeoAxis.Component_ParticleEmitterShape_Box
+		{
+			Name = Box Shape
+			Dimensions = 0.25 0.5 2
+		}
+		.component NeoAxis.Component_ParticleSizeMultiplierByTime
+		{
+			Enabled = False
+			Name = Size Multiplier By Time
+			Type = Curve
+			Curve
+			{
+				Count = 4
+				0
+				{
+					Value
+					{
+						Point = 0
+						Value = 0
+					}
+				}
+				1
+				{
+					Value
+					{
+						Point = 0.5
+						Value = 1
+					}
+				}
+				2
+				{
+					Value
+					{
+						Point = 2.5
+						Value = 1
+					}
+				}
+				3
+				{
+					Value
+					{
+						Point = 3
+						Value = 0
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_ParticleColorMultiplierByTime
+		{
+			Name = Color Multiplier By Time
+			Channels = Alpha
+			Type = Curve
+			Curve
+			{
+				Count = 4
+				0
+				{
+					Value
+					{
+						Point = 0
+						Value = 0
+					}
+				}
+				1
+				{
+					Value
+					{
+						Point = 0.5
+						Value = 1
+					}
+				}
+				2
+				{
+					Value
+					{
+						Point = 2.5
+						Value = 1
+					}
+				}
+				3
+				{
+					Value
+					{
+						Point = 3
+						Value = 0
+					}
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_ParticleEmitter
+	{
+		Name = Emitter 2
+		Direction = FromCenterOfEmitter
+		CastShadows = False
+		ReceiveDecals = False
+		StartTime
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Duration
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		SpawnRate
+		{
+			Value
+			{
+				Constant = 1
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		SpawnCount
+		{
+			Value
+			{
+				Constant = 5
+				Range = 1 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		DispersionAngle
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Speed
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Rotation
+		{
+			Value
+			{
+				Type = Range
+				Constant = 0 0 0
+				Range = 0 0 0 180 180 180
+				CurveX
+				{
+					Count = 0
+				}
+				CurveY
+				{
+					Count = 0
+				}
+				CurveZ
+				{
+					Count = 0
+				}
+			}
+		}
+		AngularVelocity
+		{
+			Value
+			{
+				Type = Range
+				Constant = 0 0 0
+				Range = 0 0 0 0 100000 0
+				CurveX
+				{
+					Count = 0
+				}
+				CurveY
+				{
+					Count = 0
+				}
+				CurveZ
+				{
+					Count = 0
+				}
+			}
+		}
+		Lifetime
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0.5 3
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Size
+		{
+			Value
+			{
+				Type = Range
+				Constant = 1
+				Range = 0.05 0.2
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		GravityMultiplier
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Swords\\File22.material"
+		}
+		Color
+		{
+			Value
+			{
+				Constant = 1 1 1
+				Range = 1 1 1 1 1 1 1 1
+			}
+		}
+		.component NeoAxis.Component_ParticleEmitterShape_Box
+		{
+			Name = Box Shape
+			Dimensions = 0.15 0.35 2
+		}
+		.component NeoAxis.Component_ParticleSizeMultiplierByTime
+		{
+			Enabled = False
+			Name = Size Multiplier By Time
+			Type = Curve
+			Curve
+			{
+				Count = 4
+				0
+				{
+					Value
+					{
+						Point = 0
+						Value = 0
+					}
+				}
+				1
+				{
+					Value
+					{
+						Point = 0.5
+						Value = 1
+					}
+				}
+				2
+				{
+					Value
+					{
+						Point = 2.5
+						Value = 1
+					}
+				}
+				3
+				{
+					Value
+					{
+						Point = 3
+						Value = 0
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_ParticleColorMultiplierByTime
+		{
+			Name = Color Multiplier By Time
+			Channels = Alpha
+			Type = Curve
+			Curve
+			{
+				Count = 4
+				0
+				{
+					Value
+					{
+						Point = 0
+						Value = 0
+					}
+				}
+				1
+				{
+					Value
+					{
+						Point = 0.5
+						Value = 1
+					}
+				}
+				2
+				{
+					Value
+					{
+						Point = 2.5
+						Value = 1
+					}
+				}
+				3
+				{
+					Value
+					{
+						Point = 3
+						Value = 0
+					}
+				}
+			}
+		}
+	}
+}

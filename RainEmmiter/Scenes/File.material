@@ -1,0 +1,51 @@
+.component NeoAxis.Component_Material
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1093, 776\"><KW V=\"1\" A=\"54C93B4ABA4142DFABB0CCAAF805D6D7\"><CGD /><WS UN=\"76FE54670A27450C54B1634CF75180EB\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"A58786E783E840A8D1A72F8F33E27E0C\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"54C93B4ABA4142DFABB0CCAAF805D6D7\"><KP UN=\"54C93B4ABA4142DFABB0CCAAF805D6D7\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"BAEBE183379E4E711990F2B249736AD3\" S=\"False\"><CPD ObjPath=\"$Shader graph\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	BlendMode = Transparent
+	ShadingModel = Simple
+	Roughness = 0
+	Reflectance = 0
+	ReceiveShadows = False
+	ReceiveDecals = False
+	Opacity
+	{
+		GetByReference = "this:$Shader graph\\$Node Texture Sample 1\\$Texture Sample\\R"
+	}
+	.component NeoAxis.Component_FlowGraph
+	{
+		Name = Shader graph
+		EditorScrollPosition = 0 0
+		Specialization
+		{
+			GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = "Node "
+			Position = 10 -7
+			ControlledObject
+			{
+				GetByReference = "this:..\\.."
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 1
+			Position = -9 -9
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Import\\3463463734.png"
+				}
+			}
+		}
+	}
+}

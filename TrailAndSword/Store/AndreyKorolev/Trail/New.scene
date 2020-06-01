@@ -1,0 +1,339 @@
+.component NeoAxis.Component_Scene
+{
+	DisplayTextInfo = True
+	RenderingPipeline
+	{
+		GetByReference = "root:$Rendering Pipeline"
+	}
+	CameraEditor
+	{
+		GetByReference = "this:$Camera Editor"
+	}
+	CameraEditor2D
+	{
+		GetByReference = "this:$Camera Editor 2D"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor
+		Visible = False
+		Transform = "3.84743040670962 12.8304733563472 6.39572609345019; 0.180617806911202 0.134922983323937 -0.780523526421235 0.583057476669767; 1 1 1"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor 2D
+		Visible = False
+		Transform = "2.64918580053222 3.02745193504869 10; -0.502493739596367 0.497493760429674 0.497493760429674 0.502493739596367; 1 1 1"
+		Projection = Orthographic
+		Height = 16.8586419336498
+		FixedUp = 0 1 0
+		FarClipPlane = 100
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Ambient Light
+		Transform = "18.5822734231225 -5.39737456891382 0.8606866051066; 0.177025544047126 0 0 0.98420625722194; 1 1 1"
+		Type = Ambient
+		Brightness = 30000
+	}
+	.component NeoAxis.Component_RenderingPipeline_Default
+	{
+		Name = Rendering Pipeline
+		.component NeoAxis.Component
+		{
+			Name = Background Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Scene Effects
+			.component NeoAxis.Component_RenderingEffect_AmbientOcclusion
+			{
+				Name = Ambient Occlusion
+			}
+			.component NeoAxis.Component_RenderingEffect_MotionBlur
+			{
+				Name = Motion Blur
+			}
+			.component NeoAxis.Component_RenderingEffect_Bloom
+			{
+				Name = Bloom
+				BrightThreshold = 0.611
+				Scale = 3.817
+				BlurFactor = 3.355935
+			}
+			.component NeoAxis.Component_RenderingEffect_LensEffects
+			{
+				Name = Lens Effects
+			}
+			.component NeoAxis.Component_RenderingEffect_ToneMapping
+			{
+				Name = Tone Mapping
+			}
+			.component NeoAxis.Component_RenderingEffect_ToLDR
+			{
+				Name = To LDR
+			}
+			.component NeoAxis.Component_RenderingEffect_Antialiasing
+			{
+				Name = Antialiasing
+			}
+			.component NeoAxis.Component_RenderingEffect_Sharpen
+			{
+				Name = Sharpen
+				Shader = "Base\\Shaders\\Effects\\Sharpen_fs.sc"
+			}
+		}
+		.component NeoAxis.Component
+		{
+			Name = Final Image Effects
+		}
+	}
+	.component NeoAxis.Component_GameMode
+	{
+		Name = Game Mode
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Light 1
+		Transform = "23.4737008768449 -15.0814890020227 22.8055842838911; -0.48553441582008 -0.67324283509012 0.472744885192886 -0.295825437679109; 1 1 1"
+		Type = Directional
+		Brightness = 130000
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_Light
+	{
+		Enabled = False
+		Name = Light 2
+		Transform = "-16.276133519817 -13.7764744895929 22.8055842838911; -0.800753779408636 -0.218616030310482 0.553641801455134 0.066941554624803; 1 1 1"
+		Type = Spotlight
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Ground
+		CanBeSelected = False
+		Transform = "0 0 0; 0 0 0 1; 1 1 1"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Plane
+			{
+				Name = Mesh Geometry
+				Dimensions = 100 100
+				UVTilesPerUnit = 0.25 0.25
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform
+			{
+				GetByReference = "this:..\\Transform"
+			}
+			.component NeoAxis.Component_CollisionShape_Mesh
+			{
+				Mesh
+				{
+					GetByReference = "this:..\\..\\Mesh"
+				}
+				Vertices
+				{
+				}
+				Indices
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_GroupOfObjects
+	{
+		Name = Group Of Objects
+		BaseObjects
+		{
+			Count = 1
+			0 "NeoAxis.Reference<NeoAxis.Component>"
+			{
+				GetByReference = "root:$Ground"
+			}
+		}
+	}
+	.component NeoAxis.Component_ParticleSystemInSpace
+	{
+		Name = Particle System In Space
+		CanBeSelected = False
+		Transform
+		{
+			GetByReference = "root:$Curve In Space\\GetTransformBySceneTimeLooped"
+		}
+		ParticleSystem
+		{
+			GetByReference = "Store\\AndreyKorolev\\Trail\\File.particle"
+		}
+	}
+	.component NeoAxis.Component_ParticleSystemInSpace
+	{
+		Name = Particle System In Space 2
+		CanBeSelected = False
+		Transform
+		{
+			GetByReference = "root:$Curve In Space 2\\GetTransformBySceneTimeLooped"
+		}
+		ParticleSystem
+		{
+			GetByReference = "Store\\AndreyKorolev\\Trail\\File2.particle"
+		}
+	}
+	.component NeoAxis.Component_ParticleSystemInSpace
+	{
+		Name = Particle System In Space 3
+		Transform
+		{
+			GetByReference = "root:$Curve In Space 3\\GetTransformBySceneTimeLooped"
+		}
+		ParticleSystem
+		{
+			GetByReference = "Store\\AndreyKorolev\\Trail\\File22.particle"
+		}
+	}
+	.component NeoAxis.Component_ParticleSystemInSpace
+	{
+		Name = Particle System In Space 4
+		Transform = "4.70011385650295 8.31272976941205 4.72120513349719; 0 0 0 1; 1 1 1"
+		ParticleSystem
+		{
+			GetByReference = "Store\\AndreyKorolev\\Trail\\File22.particle"
+		}
+	}
+	.component NeoAxis.Component_CurveInSpace
+	{
+		Name = Curve In Space
+		Transform = "1.64102534756097 5.46433485972307 0.0117967414606759; 0 0 0 1; 1 1 1"
+		CurveTypePosition = Line
+		CurveTypeRotation = Line
+		CurveTypeScale = Line
+		TimeScale = 0.5
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point
+			Transform = "3.6508904723941 5.43042095068618 1.25970941794877; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 2
+			Transform = "3.6508904723941 5.43042095068618 3.33377692863946; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 3
+			Transform = "1.54301564672051 5.43042095068618 4.69500918733475; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 4
+			Transform = "-0.71219466890143 5.43042095068618 3.37816075208375; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 5
+			Transform = "-0.71219466890143 5.43042095068618 1.47233163196813; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 6
+			Transform = "1.66571830584976 5.43042095068618 0.0512009465136272; 0 0 0 1; 1 1 1"
+		}
+	}
+	.component NeoAxis.Component_CurveInSpace
+	{
+		Name = Curve In Space 2
+		Visible = False
+		Transform = "2.15004641107934 6.30515347054288 0.218659722919463; 0 0 0 1; 1 1 1"
+		CurveTypePosition = Line
+		CurveTypeRotation = Line
+		CurveTypeScale = Line
+		TimeScale = -1
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point
+			Transform = "4.15991153591247 6.27123956150599 1.46657239940756; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 2
+			Transform = "4.15991153591247 6.27123956150599 3.54063991009825; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 3
+			Transform = "2.05203671023888 6.27123956150599 4.90187216879354; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 4
+			Transform = "-0.203173605383063 6.27123956150599 3.58502373354254; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 5
+			Transform = "-0.203173605383063 6.27123956150599 1.67919461342692; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 6
+			Transform = "2.17473936936813 6.27123956150599 0.258063927972414; 0 0 0 1; 1 1 1"
+		}
+	}
+	.component NeoAxis.Component_CurveInSpace
+	{
+		Name = Curve In Space 3
+		Visible = False
+		Transform = "1.11042815379983 6.71372239694873 0.218659722919463; 0 0 0 1; 1 1 1"
+		CurveTypePosition = Line
+		CurveTypeRotation = Line
+		CurveTypeScale = Line
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point
+			Transform = "3.12029327863296 6.67980848791184 1.46657239940756; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 2
+			Transform = "3.12029327863296 6.67980848791184 3.54063991009825; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 3
+			Transform = "1.01241845295937 6.67980848791184 4.90187216879354; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 4
+			Transform = "-1.24279186266257 6.67980848791184 3.58502373354254; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 5
+			Transform = "-1.24279186266257 6.67980848791184 1.67919461342692; 0 0 0 1; 1 1 1"
+		}
+		.component NeoAxis.Component_CurveInSpacePoint
+		{
+			Name = Curve In Space Point 6
+			Transform = "1.13512111208862 6.67980848791184 0.258063927972414; 0 0 0 1; 1 1 1"
+		}
+	}
+}

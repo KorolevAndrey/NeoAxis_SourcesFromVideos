@@ -1,0 +1,6130 @@
+.component NeoAxis.Component_Scene
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1842, 879\"><KW V=\"1\" A=\"02E2298B00A74005F49FE59E68530CF9\"><CGD /><WS UN=\"4A87E34386084E14BC81ED10FBED4D99\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WS UN=\"EAD4A64C43624789F095082A549F05EE\" S=\"T,0,50:T,0,50\" D=\"Vertical\"><WC UN=\"E4C2CACAA7534DF8CC9351614556EE16\" S=\"T,0,50:T,0,688\" NM=\"BarTabGroup\" AR=\"True\" SP=\"02E2298B00A74005F49FE59E68530CF9\"><KP UN=\"02E2298B00A74005F49FE59E68530CF9\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"BE8DBA2AD8104B925A9B28070EE30D3D\" S=\"False\"><CPD ObjPath=\"$Render Target In Space\\$Material\\$Shader graph\" /></KP><KP UN=\"E5F854F471E84390119C9DE3DA3251B7\" S=\"True\" V=\"False\"><CPD /></KP><KP UN=\"05C26C0FEFFC4C63D483216B791BBE0F\" S=\"False\"><CPD ObjPath=\"$Box 2\\$Collision Body\\$C# Script\" /></KP><KP UN=\"12C5EC16544148EEBE89768F4DAA63F7\" S=\"False\"><CPD ObjPath=\"$Rigid Body 2D\\$C# Script\" /></KP></WC><WC UN=\"9082147FEF504F79B8A4E7F3B2358518\" S=\"T,0,50:T,0,186\" NM=\"BarTabGroup\" AR=\"True\" SP=\"C30F4D928C074C3DC2A8DD6BA892CC25\"><KP UN=\"C30F4D928C074C3DC2A8DD6BA892CC25\" S=\"False\"><CPD ObjPath=\"$Render Target In Space\\$Material\\$Shader graph\\$Node Shader 1\\$Shader\" /></KP></WC></WS></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	BackgroundColor = 1 1 1
+	Mode = _2D
+	DisplayTextInfo = True
+	DisplayPhysicalObjects = True
+	RenderingPipeline
+	{
+		GetByReference = "root:$Rendering Pipeline"
+	}
+	CameraEditor
+	{
+		GetByReference = "this:$Camera Editor"
+	}
+	CameraEditor2D
+	{
+		GetByReference = "this:$Camera Editor 2D"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor
+		Visible = False
+		Transform = "2.54755444460002 -2.98353098885791 3.3491828452653; -0.205306458415661 0.203494233957238 0.679913375290773 0.673911831755226; 1 1 1"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor 2D
+		Visible = False
+		Transform = "1.3480131237395 7.99993672655887 10; 0.5 -0.5 -0.5 -0.5; 1 1 1"
+		Projection = Orthographic
+		Height = 41
+		FixedUp = 0 1 0
+		FarClipPlane = 100
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Ambient Light
+		Transform = "18.5822734231225 -5.39737456891382 0.8606866051066; 0.177025544047126 0 0 0.98420625722194; 1 1 1"
+		Type = Ambient
+		Brightness = 30000
+	}
+	.component NeoAxis.Component_RenderingPipeline_Default
+	{
+		Name = Rendering Pipeline
+		Shadows = False
+		ShadowFarDistance = 15
+		ShadowDirectionalLightCascades = 1
+		.component NeoAxis.Component
+		{
+			Name = Background Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Scene Effects
+			.component NeoAxis.Component_RenderingEffect_AmbientOcclusion
+			{
+				Enabled = False
+				Name = Ambient Occlusion
+			}
+			.component NeoAxis.Component_RenderingEffect_MotionBlur
+			{
+				Enabled = False
+				Name = Motion Blur
+			}
+			.component NeoAxis.Component_RenderingEffect_Bloom
+			{
+				Enabled = False
+				Name = Bloom
+			}
+			.component NeoAxis.Component_RenderingEffect_LensEffects
+			{
+				Enabled = False
+				Name = Lens Effects
+			}
+			.component NeoAxis.Component_RenderingEffect_ToneMapping
+			{
+				Name = Tone Mapping
+			}
+			.component NeoAxis.Component_RenderingEffect_ToLDR
+			{
+				Name = To LDR
+			}
+			.component NeoAxis.Component_RenderingEffect_Antialiasing
+			{
+				Name = Antialiasing
+			}
+			.component NeoAxis.Component_RenderingEffect_Sharpen
+			{
+				Name = Sharpen
+				Shader = "Base\\Shaders\\Effects\\Sharpen_fs.sc"
+			}
+		}
+		.component NeoAxis.Component
+		{
+			Name = Final Image Effects
+		}
+	}
+	.component NeoAxis.Component_RenderingPipeline_Default
+	{
+		Name = Rendering Pipeline 2
+		DeferredShading = False
+		DebugMode = BaseColor
+		Shadows = False
+		ShadowFarDistance = 15
+		ShadowDirectionalLightCascades = 1
+		DebugDrawDeferredPass = False
+		DebugDrawForwardOpaquePass = False
+		DebugDrawLayers = False
+		DebugDrawDecals = False
+		DebugDrawSimple3DRenderer = False
+		DebugDrawUI = False
+		.component NeoAxis.Component
+		{
+			Name = Background Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Scene Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Final Image Effects
+		}
+	}
+	.component NeoAxis.Component_GameMode
+	{
+		Name = Game Mode
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Light 1
+		Transform = "23.4737008768449 -15.0814890020227 22.8055842838911; -0.48553441582008 -0.67324283509012 0.472744885192886 -0.295825437679109; 1 1 1"
+		Type = Directional
+		Brightness = 150000
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_Light
+	{
+		Enabled = False
+		Name = Light 2
+		Transform = "-16.276133519817 -13.7764744895929 22.8055842838911; -0.800753779408636 -0.218616030310482 0.553641801455134 0.066941554624803; 1 1 1"
+		Type = Spotlight
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Ground
+		CanBeSelected = False
+		Transform = "0 0 -1; 0 0 0 1; 1 1 1"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Plane
+			{
+				Name = Mesh Geometry
+				Dimensions = 200 200
+				UVTilesPerUnit = 0.25 0.25
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "7.91220044360835 2.58432436126872 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 2
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-2.50264853482271 2.50760699183231 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 7
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.23156419747332 2.50760699183231 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 8
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.96047986012392 2.50760699183231 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 9
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.21951600470223 4.23652265448291 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 10
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.3053593781962 4.23652265448291 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 3
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-0.622979000937307 3.7159055603956 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 11
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.982442685809681 5.56831519894981 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 4
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.62110187379932 2.23909619875009 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 5
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "10.0052844344252 3.77344358744338 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 6
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "5.99130561596339 2.02812343274095 -0.5; 0 0 0 1; 1 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_GroupOfObjects
+	{
+		Name = Group Of Objects
+		BaseObjects
+		{
+			Count = 1
+			0 "NeoAxis.Reference<NeoAxis.Component>"
+			{
+				GetByReference = "root:$Ground"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 2
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "2.47386149414559 -2.77896868342927 0; 0 0 0 1; 20 1 0.1"
+			MotionType = Kinematic
+			.component NeoAxis.Component_CollisionShape2D_Box
+			{
+			}
+			.component NeoAxis.Component_CSharpScript
+			{
+				Name = C# Script
+				Code = "public void CollisionBody_EnabledInSimulation(NeoAxis.Component obj)\r\n{\r\n\tvar this_obj = (Component_RigidBody2D)obj;\r\n\r\n\t//this_obj.AngularVelocity = 0.05;\r\n}\r\n"
+				Exit
+				{
+				}
+				.component NeoAxis.Component_EventHandler
+				{
+					Name = Event Handler EnabledInSimulation
+					Event
+					{
+						GetByReference = "this:..\\..\\event:EnabledInSimulation"
+					}
+					HandlerMethod
+					{
+						GetByReference = "this:..\\method:CollisionBody_EnabledInSimulation(NeoAxis.Component)"
+					}
+					HandlerFlow
+					{
+					}
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 3
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "12.7923476833419 6.71480578429411 0; 0 0 0.707106781186547 0.707106781186548; 20 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 5
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "3.28331153876358 6.71480578429411 0; 0 0 0.707106781186547 0.707106781186548; 20 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 6
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-1.65644749738099 6.71480578429411 0; 0 0 0.707106781186547 0.707106781186548; 20 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 4
+		Color = 0.6078432 0.6078432 0.6078432
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-7.97888009156447 6.71480578429411 0; 0 0 0.707106781186547 0.707106781186548; 20 1 0.1"
+			.component NeoAxis.Component_CollisionShape2D_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera 2
+		Transform = "2.45908921069602 7.0935060036673 10; 0.5 -0.5 -0.5 -0.5; 1 1 1"
+		Projection = Orthographic
+		Height = 41
+		FixedUp = 0 1 0
+		FarClipPlane = 100
+		RenderingPipelineOverride
+		{
+			GetByReference = "root:$Rendering Pipeline 2"
+		}
+	}
+	.component NeoAxis.Component_RenderTargetInSpace
+	{
+		Name = Render Target In Space
+		Transform = "1.02077900973494 5.81516649419425 0; 0 0 0 1; 1 1 1"
+		CastShadows = False
+		ReceiveDecals = False
+		HDR = False
+		CameraByName = Camera 2
+		AllowInteract = False
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Plane
+			{
+				Name = Mesh Geometry
+				Axis = 0
+				Dimensions = 1.333 1
+				UVTilesInTotal = 1 1
+				Material
+				{
+					GetByReference = "this:..\\..\\$Material"
+				}
+			}
+		}
+		.component NeoAxis.Component_Material
+		{
+			Name = Material
+			BaseColor
+			{
+				GetByReference = "this:$Shader graph\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+			}
+			.component NeoAxis.Component_FlowGraph
+			{
+				Name = Shader graph
+				EditorScrollPosition = -3.90617806518835 0.992093215105916
+				Specialization
+				{
+					GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node Material
+					Position = 10 -7
+					ControlledObject
+					{
+						GetByReference = "this:..\\.."
+					}
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node Shader Texture Sample 1
+					Position = -33 -12
+					ControlledObject
+					{
+						GetByReference = "this:$Shader Texture Sample"
+					}
+					.component NeoAxis.Component_ShaderTextureSample
+					{
+						Name = Shader Texture Sample
+						Location2 = 0 0
+						Location3 = 0 0 0
+						Texture
+						{
+							GetByReference = "this:..\\..\\..\\..\\CreatedImage"
+						}
+					}
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node Shader Parameter 1
+					Position = -32 1
+					ControlledObject
+					{
+						GetByReference = "this:$Shader Parameter"
+					}
+					.component NeoAxis.Component_ShaderParameter
+					{
+						Name = Shader Parameter
+						Source
+						{
+							GetByReference = NeoAxis.ShaderConstants|Color0
+						}
+					}
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node Shader Parameter 2
+					Position = -32 7
+					ControlledObject
+					{
+						GetByReference = "this:$Shader Parameter"
+					}
+					.component NeoAxis.Component_ShaderParameter
+					{
+						Name = Shader Parameter
+						Source
+						{
+							GetByReference = NeoAxis.ShaderConstants|TexCoord0
+						}
+					}
+				}
+				.component NeoAxis.Component_FlowGraphNode
+				{
+					Name = Node Shader 1
+					Position = -18 -1
+					ControlledObject
+					{
+						GetByReference = "this:$Shader"
+					}
+					.component NeoAxis.Component_ShaderScript
+					{
+						Name = Shader
+						Code = "/*!public*/ vec4 Method(vec4 sourceColor, vec2 texCoord)\r\n{\r\n    //vec4 color = floor(sourceColor/0.005)*0.02;\r\n    vec4 color = clamp(sourceColor,0.0,1.0)*5.0;\r\n\tvec4 ret = color;\r\n\treturn ret;\r\n}\r\n"
+						__parameter_SourceColor
+						{
+							GetByReference = "this:..\\..\\$Node Shader Texture Sample 1\\$Shader Texture Sample\\RGBA"
+						}
+						__parameter_TexCoord
+						{
+							GetByReference = "this:..\\..\\$Node Shader Parameter 2\\$Shader Parameter\\Output"
+						}
+					}
+				}
+			}
+		}
+		.component NeoAxis.Component_Camera
+		{
+			Enabled = False
+			Name = Camera
+			Transform
+			{
+				GetByReference = "this:$Attach Transform Offset\\Result"
+			}
+			.component NeoAxis.Component_TransformOffset
+			{
+				Name = Attach Transform Offset
+				PositionOffset = 0 0 0.55
+				Source
+				{
+					GetByReference = "this:..\\..\\Transform"
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Plane
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "root:$Render Target In Space\\$Material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Plane
+			{
+				Name = Mesh Geometry
+				Segments = 2 2
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 10.5 0 0
+			RotationOffset = 0.5 -0.5 -0.5 0.5
+			ScaleOffset = 54 41 1
+			Source
+			{
+				GetByReference = "this:..\\..\\$Camera 2\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "8.98601118893744 6.65034494130854 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			Mass = 10
+			LinearDamping = 1
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 41
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "8.4792805632308 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 81
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "9.55608314285741 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 11
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "8.06299969947244 6.65034494130854 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 42
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "7.5562690737658 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 82
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "8.63307165339241 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 21
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "9.84748857910478 6.65034494130854 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 43
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "9.34075795339814 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 83
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "10.4175605330247 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 31
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "6.89385181281676 6.65034494130854 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 44
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "6.38712118711012 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = WaterDrop 84
+		Color = 0 0.6390588 1
+		CastShadows = False
+		ReceiveDecals = False
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterial
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+				Material
+				{
+					GetByReference = "Base\\Materials\\White.material"
+				}
+			}
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "7.46392376673673 7.15707556701518 -0.5; 0 0 0 1; 0.5 0.5 0.01"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 8.87607749038674 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 13
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 8.87607749038674 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 24
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 8.87607749038674 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 35
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 8.87607749038674 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 63
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 8.87607749038674 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			Mass = 10
+			LinearDamping = 1
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 71
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 11.4694509843626 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 79
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 11.4694509843626 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 87
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 13.1983666470132 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 95
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 13.1983666470132 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 103
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 15.7917401409892 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 111
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 15.7917401409892 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 119
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 18.076378695206 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 127
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 18.076378695206 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 56
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 9.55529435785662 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 64
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 9.55529435785662 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 72
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 12.1486678518325 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 80
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 12.1486678518325 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 88
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 13.8775835144831 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 96
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 13.8775835144831 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 104
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 16.470957008459 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 112
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 16.470957008459 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 120
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 18.7555955626759 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 128
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 18.7555955626759 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 57
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 9.98752327351927 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 65
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 9.98752327351927 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 73
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 12.5808967674952 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 81
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 12.5808967674952 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 89
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 14.3098124301458 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 97
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 14.3098124301458 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 105
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 16.9031859241217 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 113
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 16.9031859241217 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 121
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 19.1878244783385 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 129
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 19.1878244783385 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 58
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 10.2962582132783 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 66
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 10.2962582132783 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 74
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 12.8896317072542 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 82
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 12.8896317072542 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 90
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 14.6185473699048 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 98
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 14.6185473699048 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 106
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 17.2119208638807 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 114
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 17.2119208638807 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 122
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 19.4965594180976 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 130
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 19.4965594180976 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 59
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 10.728487128941 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 67
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 10.728487128941 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 75
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 13.3218606229169 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 83
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 13.3218606229169 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 91
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 15.0507762855675 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 99
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 15.0507762855675 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 107
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 17.6441497795434 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 115
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 17.6441497795434 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 123
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 19.9287883337602 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 131
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 19.9287883337602 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 60
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 11.2842100205072 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 68
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 11.2842100205072 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 76
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 13.8775835144831 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 84
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 13.8775835144831 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 92
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 15.6064991771337 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 100
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 15.6064991771337 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 108
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 18.1998726711096 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 116
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 18.1998726711096 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 124
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 20.4845112253265 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 132
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 20.4845112253265 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 61
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 11.7781859241217 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 69
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 11.7781859241217 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 77
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 14.3715594180976 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 85
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 14.3715594180976 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 93
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 16.1004750807482 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 101
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 16.1004750807482 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 109
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 18.6938485747241 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 117
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 18.6938485747241 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 125
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 20.978487128941 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 133
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 20.978487128941 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 62
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.49271485689832 12.1486678518325 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 70
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 12.1486678518325 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 78
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.566510037621213 14.7420413458084 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 86
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 14.7420413458084 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 94
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.12223292918748 16.470957008459 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 102
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 16.470957008459 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 110
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.55446184485014 19.0643305024349 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 118
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 19.0643305024349 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 126
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "0.504763049669422 21.3489690566518 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 134
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "1.24572690509112 21.3489690566518 -0.5; 0 0 0 1; 0.1 0.1 0.1"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 15 15 15
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 46
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 8.87607749038674 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 2
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 9.67878833376023 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 14
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 9.67878833376023 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 25
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 9.67878833376023 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 36
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 9.67878833376023 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 47
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 9.67878833376023 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 3
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 10.5432461650855 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 15
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 10.5432461650855 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 26
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 10.5432461650855 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 37
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 10.5432461650855 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 48
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 10.5432461650855 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 4
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 11.0989690566518 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 16
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 11.0989690566518 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 27
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 11.0989690566518 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 38
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 11.0989690566518 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 49
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 11.0989690566518 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 5
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 11.7164389361699 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 17
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 11.7164389361699 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 28
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 11.7164389361699 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 39
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 11.7164389361699 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 50
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 11.7164389361699 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 6
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 12.0869208638807 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 18
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 12.0869208638807 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 29
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 12.0869208638807 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 40
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 12.0869208638807 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 51
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 12.0869208638807 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 7
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 12.4574027915916 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 19
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 12.4574027915916 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 30
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 12.4574027915916 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 41
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 12.4574027915916 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 52
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 12.4574027915916 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 8
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 12.7661377313506 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 20
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 12.7661377313506 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 31
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 12.7661377313506 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 42
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 12.7661377313506 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 53
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 12.7661377313506 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 9
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 13.1983666470132 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 21
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 13.1983666470132 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 32
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 13.1983666470132 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 43
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 13.1983666470132 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 54
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 13.1983666470132 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 10
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 13.6923425506277 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 22
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 13.6923425506277 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 33
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 13.6923425506277 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 44
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 13.6923425506277 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 55
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 13.6923425506277 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 11
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.38529719129445 14.1863184542422 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 12
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-3.8792730949089 14.1863184542422 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 23
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.31150201057155 14.1863184542422 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 34
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-4.6819839382824 14.1863184542422 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_Billboard
+	{
+		Name = Billboard 45
+		Color = 0 1 0.04309804
+		Transform
+		{
+			GetByReference = "this:$Attach Transform Offset\\Result"
+		}
+		Material
+		{
+			GetByReference = "Store\\AndreyKorolev\\Water2D\\File.material"
+		}
+		.component NeoAxis.Component_RigidBody2D
+		{
+			Name = Collision Body
+			Transform = "-5.05246586599324 14.1863184542422 -0.5; 0 0 0 1; 0.5 0.5 0.5"
+			MotionType = Dynamic
+			AllowSleep = False
+			.component NeoAxis.Component_CollisionShape2D_Ellipse
+			{
+			}
+		}
+		.component NeoAxis.Component_TransformOffset
+		{
+			Name = Attach Transform Offset
+			PositionOffset = 0.000000000000004 0.00000000000000178 -2
+			ScaleOffset = 3 3 3
+			Source
+			{
+				GetByReference = "this:..\\$Collision Body\\Transform"
+			}
+		}
+	}
+	.component NeoAxis.Component_RigidBody2D
+	{
+		Name = Rigid Body 2D
+		Transform = "-22.8645072730652 -1.40407682765801 0; 0 0 0 1; 17.5061994939029 1 1"
+		MotionType = Kinematic
+		.component NeoAxis.Component_CollisionShape2D_Box
+		{
+			Name = Collision Shape
+		}
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "public void RigidBody2D_EnabledInSimulation(NeoAxis.Component obj)\r\n{\r\n\tvar this_obj = (Component_RigidBody2D)obj;\r\n\r\n\tthis_obj.AngularVelocity = 0.5;\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler EnabledInSimulation
+				Event
+				{
+					GetByReference = "this:..\\..\\event:EnabledInSimulation"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:RigidBody2D_EnabledInSimulation(NeoAxis.Component)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+.component NeoAxis.Component_Material
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1646, 879\"><KW V=\"1\" A=\"05918737101C42B109BE29E0E876BB91\"><CGD /><WS UN=\"CFCCBAD43757469C44AEA103D29A7964\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WS UN=\"53726BD6A32D4F87FC8A620F16AB2A23\" S=\"T,0,50:T,0,50\" D=\"Vertical\"><WC UN=\"60958DC430B7433FCEB254B4A1448448\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"05918737101C42B109BE29E0E876BB91\"><KP UN=\"33ECB96883F0498E9F93A408319668D8\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"05918737101C42B109BE29E0E876BB91\" S=\"False\"><CPD ObjPath=\"$Shader graph\" /></KP></WC><WC UN=\"47991451D72946BFD3931D9D2422E5BF\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"06104C9ADCB84BC178A23288C7336F47\"><KP UN=\"06104C9ADCB84BC178A23288C7336F47\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 1\\$Shader\" /></KP></WC></WS></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	Metallic = 0.278
+	Roughness = 0.389
+	BaseColor
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+	}
+	Emissive
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+	}
+	.component NeoAxis.Component_FlowGraph
+	{
+		Name = Shader graph
+		EditorScrollPosition = -10.45209753903 -5.93230797966921
+		EditorZoomIndex = 7
+		Specialization
+		{
+			GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = "Node "
+			Position = 10 -7
+			ControlledObject
+			{
+				GetByReference = "this:..\\.."
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 1
+			Position = -22 -8
+			ControlledObject
+			{
+				GetByReference = "this:$Shader"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader
+				Code = "/*!public*/ vec4 Method(vec2 texCoords, vec4 s_color)\r\n{  \r\n    vec2 v_uv = s_color.rg;\r\n    vec2 uv = abs(v_uv - 0.5) * 2.0;\r\n    uv = pow(uv, vec2(10.0, 10.0))  - 0.3;\r\n    \r\n    float c = clamp(uv.x + uv.y, 0.0, 1.0) * 2.0;\r\n    \r\n\treturn vec4(c,c,c*2.0,1.0);\r\n\t\r\n\t//return s_color* texCoords.x;\r\n}\r\n"
+				__parameter_TexCoords
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+				__parameter_S_color
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 1\\$Texture Sample\\RGBA"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 1
+			Position = -46 -7
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Base\\Images\\4rdwrjwgudpb.jpg"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader Parameter 1
+			Position = -45 -15
+			ControlledObject
+			{
+				GetByReference = "this:$Shader Parameter"
+			}
+			.component NeoAxis.Component_ShaderParameter
+			{
+				Name = Shader Parameter
+				Source
+				{
+					GetByReference = NeoAxis.ShaderConstants|TexCoord0
+				}
+			}
+		}
+	}
+}

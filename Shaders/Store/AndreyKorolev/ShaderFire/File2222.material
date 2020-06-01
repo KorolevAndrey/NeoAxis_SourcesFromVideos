@@ -1,0 +1,159 @@
+.component NeoAxis.Component_Material
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1267, 771\"><KW V=\"1\" A=\"862EAA5CE5944ED7028726CF31F93722\"><CGD /><WS UN=\"AD75DE224DFF48441E84F630D08AADBF\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WS UN=\"C6B352AE0AAB4B7394A1862A3AEEC5ED\" S=\"T,0,50:T,0,50\" D=\"Vertical\"><WS UN=\"D2D2A26F33A04579F59D0B832F81AB73\" S=\"T,0,50:T,0,437\" D=\"Horizontal\"><WC UN=\"E1AB406EA0D74D92BF915E0FD0D70E35\" S=\"T,0,307:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"862EAA5CE5944ED7028726CF31F93722\"><KP UN=\"862EAA5CE5944ED7028726CF31F93722\" S=\"False\"><CPD ObjPath=\"\" /></KP></WC><WC UN=\"F520275C0A8A4B041085F10CEFE7A56B\" S=\"T,0,955:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"7E4DFDE8D62144CE0A897442F0444BA5\"><KP UN=\"862EAA5CE5944ED7028726CF31F93722\" S=\"True\" V=\"False\"><CPD /></KP><KP UN=\"7E4DFDE8D62144CE0A897442F0444BA5\" S=\"False\"><CPD ObjPath=\"$Shader graph\" /></KP><KP UN=\"064B85F797FA4073C9BE9A5B40546E93\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 2\\$Shader\" /></KP></WC></WS><WC UN=\"AC15CAB06B9842A781829B27CAF465FF\" S=\"T,0,50:T,0,329\" NM=\"BarTabGroup\" AR=\"True\" SP=\"DE31FB3C27DC4512978F5632469FC5A1\"><KP UN=\"DE31FB3C27DC4512978F5632469FC5A1\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 1\\$Shader\" /></KP></WC></WS></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	BlendMode = Transparent
+	Roughness = 1
+	Reflectance = 0
+	EditorAutoUpdate = False
+	BaseColor
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+	}
+	Opacity
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 2\\$Shader\\__parameter_ReturnValue"
+	}
+	.component NeoAxis.Component_FlowGraph
+	{
+		Name = Shader graph
+		EditorScrollPosition = -24.1877160230838 5.59887526945934
+		EditorZoomIndex = 10
+		Specialization
+		{
+			GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = "Node "
+			Position = 10 -7
+			ControlledObject
+			{
+				GetByReference = "this:..\\.."
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader Parameter 1
+			Position = -42 -9
+			ControlledObject
+			{
+				GetByReference = "this:$Shader Parameter"
+			}
+			.component NeoAxis.Component_ShaderParameter
+			{
+				Name = Shader Parameter
+				Source
+				{
+					GetByReference = "this:..\\..\\$Node Invoke Member 1\\$Invoke Member\\__value_Value"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 1
+			Position = -26 -3
+			ControlledObject
+			{
+				GetByReference = "this:$Shader"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader
+				Code = "\r\nvec3 random3(vec3 c) {\r\n\tfloat j = 4096.0*sin(dot(c,vec3(17.0, 59.4, 15.0)));\r\n\tvec3 r;\r\n\tr.z = fract(512.0*j);\r\n\tj *= .125;\r\n\tr.x = fract(512.0*j);\r\n\tj *= .125;\r\n\tr.y = fract(512.0*j);\r\n\treturn r - vec3(0.5,0.5,0.5);\r\n}\r\n\r\n\r\nfloat simplex3d(vec3 p) {\r\n\t vec3 s = floor(p + dot(p, vec3(0.3333333,0.3333333,0.3333333)));\r\n\t vec3 x = p - s + dot(s, vec3(0.1666667,0.1666667,0.1666667));\r\n\t \r\n\t vec3 e = step(vec3(0.0,0.0,0.0), x - x.yzx);\r\n\t vec3 i1 = e*(1.0 - e.zxy);\r\n\t vec3 i2 = 1.0 - e.zxy*(1.0 - e);\r\n\t \t\r\n\t vec3 x1 = x - i1 + 0.1666667;\r\n\t vec3 x2 = x - i2 + 2.0*0.1666667;\r\n\t vec3 x3 = x - 1.0 + 3.0*0.1666667;\r\n\t \r\n\t vec4 w, d;\r\n\t \r\n\t w.x = dot(x, x);\r\n\t w.y = dot(x1, x1);\r\n\t w.z = dot(x2, x2);\r\n\t w.w = dot(x3, x3);\r\n\t \r\n\t w = max(0.6 - w, 0.0);\r\n\t \r\n\t d.x = dot(random3(s), x);\r\n\t d.y = dot(random3(s + i1), x1);\r\n\t d.z = dot(random3(s + i2), x2);\r\n\t d.w = dot(random3(s + 1.0), x3);\r\n\t \r\n\t w *= w;\r\n\t w *= w;\r\n\t d *= w;\r\n\t \r\n\t return dot(d, vec4(52.0,52.0,52.0,52.0));\r\n}\r\n\r\nfloat noise(vec3 m) {\r\n    return 0.5333333*simplex3d(m)\r\n\t+0.2666667*simplex3d(2.0*m)\r\n\t+0.1333333*simplex3d(4.0*m)\r\n\t+0.0666667*simplex3d(8.0*m);\r\n}\r\n\r\nvec4 mainproc(float time, vec2 gl_FragCoord , vec2 resolution) {\r\n\tvec2 uv = gl_FragCoord.xy / resolution.xy;    \r\n\tuv = uv * 2.0 - vec2(1.0,1.0);  \r\n\t\r\n\tvec2 p = gl_FragCoord.xy/resolution.x;\r\n\tvec3 p3 = vec3(p.x, p.y, time*0.4);    \r\n\t\r\n\tfloat intensity = noise( vec3(p3*12.0+vec3(12.0,12.0,12.0) ) );\r\n\t\t\t  \r\n\tfloat t = clamp((uv.x * -uv.x * 0.16) + 0.15, 0., 1.);                         \r\n\tfloat y = abs(intensity * -t + uv.y);\r\n\t\r\n\tfloat g = pow(y, 0.2);\r\n\t\t\t  \r\n\tvec3 col = vec3(1.0, 1.48, 1.78);\r\n\tcol = col * -g + col;                    \r\n\tcol = col * col;\r\n\tcol = col * col;\r\n\t\r\n\tvec4 retc;\r\n\tretc.rgb = col;                          \r\n\tretc.w = 1.;\r\n\t\r\n    return retc;\r\n}\r\n\r\n\r\n\r\n/*!public*/ vec4 Method(float in_time, vec2 textCoord)\r\n{\r\n\treturn mainproc(in_time, textCoord, vec2(1.0,1.0));\r\n}\r\n"
+				__parameter_In_time
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+				__parameter_TextCoord
+				{
+					GetByReference = "this:..\\..\\$Node Invoke Member 2\\$Invoke Member\\__value_Value"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 2
+			Position = -26 6
+			ControlledObject
+			{
+				GetByReference = "this:$Shader"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader
+				Code = "\r\n\r\n/*!public*/ float Method1(float in_time, vec4 textC, vec4 textC1)\r\n{\r\n\treturn textC.b * textC1.b;\r\n}\r\n"
+				__parameter_In_time
+				{
+					GetByReference = "this:..\\..\\$Node Shader Parameter 1\\$Shader Parameter\\Output"
+				}
+				__parameter_TextC
+				{
+					GetByReference = "this:..\\..\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+				}
+				__parameter_TextC1
+				{
+					GetByReference = "this:..\\..\\$Node Texture Sample 1\\$Texture Sample\\RGBA"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Invoke Member 1
+			Position = -58 -14
+			ControlledObject
+			{
+				GetByReference = "this:$Invoke Member"
+			}
+			.component NeoAxis.Component_InvokeMember
+			{
+				Name = Invoke Member
+				Member
+				{
+					GetByReference = "NeoAxis.EngineApp|property:EngineTime"
+				}
+				Exit
+				{
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Invoke Member 2
+			Position = -58 -2
+			ControlledObject
+			{
+				GetByReference = "this:$Invoke Member"
+			}
+			.component NeoAxis.Component_InvokeMember
+			{
+				Name = Invoke Member
+				Member
+				{
+					GetByReference = "NeoAxis.ShaderConstants|property:TexCoord0"
+				}
+				Exit
+				{
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Texture Sample 1
+			Position = -42 6
+			ControlledObject
+			{
+				GetByReference = "this:$Texture Sample"
+			}
+			.component NeoAxis.Component_ShaderTextureSample
+			{
+				Name = Texture Sample
+				Location2 = 0 0
+				Location3 = 0 0 0
+				Texture
+				{
+					GetByReference = "Store\\AndreyKorolev\\ShaderFire\\68457457.png"
+				}
+			}
+		}
+	}
+}

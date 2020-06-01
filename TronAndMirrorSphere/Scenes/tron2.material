@@ -1,0 +1,90 @@
+.component NeoAxis.Component_Material
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1360, 827\"><KW V=\"1\" A=\"05918737101C42B109BE29E0E876BB91\"><CGD /><WS UN=\"CFCCBAD43757469C44AEA103D29A7964\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WS UN=\"53726BD6A32D4F87FC8A620F16AB2A23\" S=\"T,0,50:T,0,50\" D=\"Vertical\"><WS UN=\"1F4CA0FD9391435F50B266AEAC6F6883\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"60958DC430B7433FCEB254B4A1448448\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"05918737101C42B109BE29E0E876BB91\"><KP UN=\"33ECB96883F0498E9F93A408319668D8\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"05918737101C42B109BE29E0E876BB91\" S=\"False\"><CPD ObjPath=\"$Shader graph\" /></KP></WC><WC UN=\"9CD44974673E4ECC52AA12E811695FD9\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"0E4B0E8740CF49A670A20940C6E92417\"><KP UN=\"0E4B0E8740CF49A670A20940C6E92417\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 2\\$Shader1\" /></KP></WC></WS><WC UN=\"47991451D72946BFD3931D9D2422E5BF\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"06104C9ADCB84BC178A23288C7336F47\"><KP UN=\"06104C9ADCB84BC178A23288C7336F47\" S=\"False\"><CPD ObjPath=\"$Shader graph\\$Node Shader 1\\$Shader\" /></KP></WC></WS></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	Metallic = 0.278
+	Roughness = 0.389
+	EditorAutoUpdate = False
+	BaseColor
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 2\\$Shader1\\__parameter_ReturnValue"
+	}
+	Emissive
+	{
+		GetByReference = "this:$Shader graph\\$Node Shader 2\\$Shader1\\__parameter_ReturnValue"
+	}
+	.component NeoAxis.Component_FlowGraph
+	{
+		Name = Shader graph
+		EditorScrollPosition = -8.48504304614699 -1.46773883934782
+		EditorZoomIndex = 14
+		Specialization
+		{
+			GetByReference = NeoAxis.Component_FlowGraphSpecialization_Shader|Instance
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = "Node "
+			Position = 10 -7
+			ControlledObject
+			{
+				GetByReference = "this:..\\.."
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 1
+			Position = -28 -3
+			ControlledObject
+			{
+				GetByReference = "this:$Shader"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader
+				Code = "/*!public*/ vec4 Method(vec2 texCoords)\r\n{  \r\n    vec2 v_uv = texCoords;\r\n    vec2 uv = abs(v_uv - 0.5) * 2.0; // 0.0,1.0 -> -0.5,0.5\r\n    \r\n    uv = pow(uv, vec2(10.0, 10.0))  - 0.3;\r\n    \r\n    float c = clamp(uv.x + uv.y, 0.0, 1.0) * 2.0;\r\n    \r\n\treturn vec4(c,c,c,1.0);\r\n}\r\n"
+				__parameter_TexCoords
+				{
+					GetByReference = "this:..\\..\\$Node Invoke Member 1\\$Invoke Member\\__value_Value"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Shader 2
+			Position = -13 -2
+			ControlledObject
+			{
+				GetByReference = "this:$Shader1"
+			}
+			.component NeoAxis.Component_ShaderScript
+			{
+				Name = Shader1
+				Code = "/*!public*/ vec4 Method1(vec4 realcolor)\r\n{    \r\n\treturn vec4(realcolor.r,realcolor.g*2.0,realcolor.b/2.0,1.0);\r\n}\r\n"
+				__parameter_Realcolor
+				{
+					GetByReference = "this:..\\..\\$Node Shader 1\\$Shader\\__parameter_ReturnValue"
+				}
+			}
+		}
+		.component NeoAxis.Component_FlowGraphNode
+		{
+			Name = Node Invoke Member 1
+			Position = -41 -9
+			ControlledObject
+			{
+				GetByReference = "this:$Invoke Member"
+			}
+			.component NeoAxis.Component_InvokeMember
+			{
+				Name = Invoke Member
+				Member
+				{
+					GetByReference = "NeoAxis.ShaderConstants|property:TexCoord0"
+				}
+				Exit
+				{
+				}
+			}
+		}
+	}
+}

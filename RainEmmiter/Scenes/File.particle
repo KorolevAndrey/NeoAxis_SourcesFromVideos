@@ -1,0 +1,217 @@
+.component NeoAxis.Component_ParticleSystem
+{
+	.component NeoAxis.Component_ParticleEmitter
+	{
+		Name = Emitter
+		CastShadows = False
+		ReceiveDecals = False
+		StartTime
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Duration
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		SpawnRate
+		{
+			Value
+			{
+				Constant = 300
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		SpawnCount
+		{
+			Value
+			{
+				Constant = 1
+				Range = 1 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		DispersionAngle
+		{
+			Value
+			{
+				Constant = 0
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Speed
+		{
+			Value
+			{
+				Constant = 4
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Rotation
+		{
+			Value
+			{
+				Constant = 0 0 0
+				Range = 0 0 0 0 0 0
+				CurveX
+				{
+					Count = 0
+				}
+				CurveY
+				{
+					Count = 0
+				}
+				CurveZ
+				{
+					Count = 0
+				}
+			}
+		}
+		AngularVelocity
+		{
+			Value
+			{
+				Constant = 0 0 0
+				Range = 0 0 0 0 0 0
+				CurveX
+				{
+					Count = 0
+				}
+				CurveY
+				{
+					Count = 0
+				}
+				CurveZ
+				{
+					Count = 0
+				}
+			}
+		}
+		Lifetime
+		{
+			Value
+			{
+				Constant = 3
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Size
+		{
+			Value
+			{
+				Type = Range
+				Constant = 1
+				Range = 1 1.2
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		GravityMultiplier
+		{
+			Value
+			{
+				Constant = 2
+				Range = 0 1
+				Curve
+				{
+					Count = 0
+				}
+			}
+		}
+		Material
+		{
+			GetByReference = "Scenes\\File.material"
+		}
+		Color
+		{
+			Value
+			{
+				Constant = 0.6833726 0.8878824 1
+				Range = 1 1 1 1 1 1 1 1
+			}
+		}
+		.component NeoAxis.Component_ParticleEmitterShape_Box
+		{
+			Name = Box Shape
+			Dimensions = 100 100 1
+		}
+		.component NeoAxis.Component_ParticleColorMultiplierByTime
+		{
+			Name = Color Multiplier By Time
+			Channels = Alpha
+			Type = Curve
+			Curve
+			{
+				Count = 4
+				0
+				{
+					Value
+					{
+						Point = 0
+						Value = 0
+					}
+				}
+				1
+				{
+					Value
+					{
+						Point = 0.3
+						Value = 0.1
+					}
+				}
+				2
+				{
+					Value
+					{
+						Point = 2.7
+						Value = 0.1
+					}
+				}
+				3
+				{
+					Value
+					{
+						Point = 3
+						Value = 0
+					}
+				}
+			}
+		}
+	}
+}
