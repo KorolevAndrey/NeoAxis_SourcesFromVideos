@@ -1,0 +1,713 @@
+.component NeoAxis.Component_Scene
+{
+	EditorDocumentConfiguration = "\xfeff<?xml version=\"1.0\" encoding=\"utf-16\"?><KD V=\"1\"><DGD /><DM N=\"DockingManager\" C=\"2\"><DW N=\"DockingWorkspace\" O=\"0\" S=\"1842, 879\"><KW V=\"1\" A=\"D7124F83F80943E69DBC01BC63E8C1DA\"><CGD /><WS UN=\"4A87E34386084E14BC81ED10FBED4D99\" S=\"T,0,50:T,0,50\" D=\"Horizontal\"><WC UN=\"0CA7B942D3FF4151169BA1C8EF78553C\" S=\"T,0,50:T,0,50\" NM=\"BarTabGroup\" AR=\"True\" SP=\"D7124F83F80943E69DBC01BC63E8C1DA\"><KP UN=\"D7124F83F80943E69DBC01BC63E8C1DA\" S=\"False\"><CPD ObjPath=\"\" /></KP><KP UN=\"D3C36936B0EB42DD1C88C80E5D0F2220\" S=\"False\"><CPD ObjPath=\"$Kinect Reciever\\$C# Script\" /></KP></WC></WS></KW></DW><DF N=\"DockingFloating\" C=\"0\"></DF></DM></KD>"
+	DisplayDevelopmentDataInSimulation = True
+	DisplayTextInfo = True
+	DisplayPhysicalObjects = True
+	RenderingPipeline
+	{
+		GetByReference = "root:$Rendering Pipeline"
+	}
+	CameraEditor
+	{
+		GetByReference = "this:$Camera Editor"
+	}
+	CameraEditor2D
+	{
+		GetByReference = "this:$Camera Editor 2D"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor
+		Visible = False
+		Transform = "2.6178776100614 -10.5868097137543 6.48057588299376; -0.282152684044212 0.274546843314791 0.65882447857264 0.641064895424807; 1 1 1"
+	}
+	.component NeoAxis.Component_Camera
+	{
+		Name = Camera Editor 2D
+		Visible = False
+		Transform = "2.64918580053222 3.02745193504869 10; -0.502493739596367 0.497493760429674 0.497493760429674 0.502493739596367; 1 1 1"
+		Projection = Orthographic
+		Height = 16.8586419336498
+		FixedUp = 0 1 0
+		FarClipPlane = 100
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Ambient Light
+		Transform = "18.5822734231225 -5.39737456891382 0.8606866051066; 0.177025544047126 0 0 0.98420625722194; 1 1 1"
+		Type = Ambient
+		Brightness = 30000
+	}
+	.component NeoAxis.Component_RenderingPipeline_Default
+	{
+		Name = Rendering Pipeline
+		.component NeoAxis.Component
+		{
+			Name = Background Effects
+		}
+		.component NeoAxis.Component
+		{
+			Name = Scene Effects
+			.component NeoAxis.Component_RenderingEffect_AmbientOcclusion
+			{
+				Name = Ambient Occlusion
+			}
+			.component NeoAxis.Component_RenderingEffect_MotionBlur
+			{
+				Name = Motion Blur
+			}
+			.component NeoAxis.Component_RenderingEffect_Bloom
+			{
+				Enabled = False
+				Name = Bloom
+			}
+			.component NeoAxis.Component_RenderingEffect_LensEffects
+			{
+				Name = Lens Effects
+			}
+			.component NeoAxis.Component_RenderingEffect_ToneMapping
+			{
+				Name = Tone Mapping
+			}
+			.component NeoAxis.Component_RenderingEffect_ToLDR
+			{
+				Name = To LDR
+			}
+			.component NeoAxis.Component_RenderingEffect_Antialiasing
+			{
+				Name = Antialiasing
+			}
+			.component NeoAxis.Component_RenderingEffect_Sharpen
+			{
+				Name = Sharpen
+				Shader = "Base\\Shaders\\Effects\\Sharpen_fs.sc"
+			}
+		}
+		.component NeoAxis.Component
+		{
+			Name = Final Image Effects
+		}
+	}
+	.component NeoAxis.Component_GameMode
+	{
+		Name = Game Mode
+		UseBuiltInCamera = ThirdPerson
+		FreeCamera = True
+		ObjectControlledByPlayer
+		{
+			GetByReference = "root:$Character"
+		}
+	}
+	.component NeoAxis.Component_Light
+	{
+		Name = Light 1
+		Transform = "23.4737008768449 -15.0814890020227 22.8055842838911; -0.48553441582008 -0.67324283509012 0.472744885192886 -0.295825437679109; 1 1 1"
+		Type = Directional
+		Brightness = 130000
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_Light
+	{
+		Enabled = False
+		Name = Light 2
+		Transform = "-16.276133519817 -13.7764744895929 22.8055842838911; -0.800753779408636 -0.218616030310482 0.553641801455134 0.066941554624803; 1 1 1"
+		Type = Spotlight
+		AttenuationFar = 100
+		AttenuationPower = 1.5
+		SpotlightInnerAngle = 80
+		SpotlightOuterAngle = 91.429
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Ground
+		CanBeSelected = False
+		Transform = "0 0 0; 0 0 0 1; 1 1 1"
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Plane
+			{
+				Name = Mesh Geometry
+				Dimensions = 100 100
+				UVTilesPerUnit = 0.25 0.25
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform
+			{
+				GetByReference = "this:..\\Transform"
+			}
+			.component NeoAxis.Component_CollisionShape_Mesh
+			{
+				Mesh
+				{
+					GetByReference = "this:..\\..\\Mesh"
+				}
+				Vertices
+				{
+				}
+				Indices
+				{
+				}
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Sphere
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Sphere
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "0 -4.99912481123289 0.5; 0 0 0 1; 1 1 1"
+			MotionType = Kinematic
+			.component NeoAxis.Component_CollisionShape_Sphere
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "1.23910539009872 -4.91396293016476 0.500000000000008; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 3
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "1.23910539009872 -2.36543701682591 1.72035783957234; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 4
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-1.73801188773009 -0.467696830209842 0.500000000000008; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 5
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-0.192833411210431 -3.2167521680392 1.55619762572926; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 6
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-1.46456625788064 -2.18288986275073 0.500000000000008; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 7
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "1.16112046970906 -2.18288986275073 0.500000000000008; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 8
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "1.27065313759899 -4.93202888196577 1.6034549228112; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Box 2
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Box
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-0.176274368180096 -6.18758604005508 0.500000000000008; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Box
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-0.123436774715367 -3.455063003781 0.499999999999976; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Cylinder
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_MeshInSpace
+	{
+		Name = Cylinder 2
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		Mesh
+		{
+			GetByReference = "this:$Mesh"
+		}
+		ReplaceMaterialSelectively
+		{
+			Count = 0
+		}
+		.component NeoAxis.Component_Mesh
+		{
+			Name = Mesh
+			.component NeoAxis.Component_MeshGeometry_Cylinder
+			{
+				Name = Mesh Geometry
+			}
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			Transform = "-1.20097793329089 -4.7475269301114 0.499999999999976; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Cylinder
+			{
+			}
+		}
+	}
+	.component NeoAxis.Component_GroupOfObjects
+	{
+		Name = Group Of Objects
+		BaseObjects
+		{
+			Count = 1
+			0 "NeoAxis.Reference<NeoAxis.Component>"
+			{
+				GetByReference = "root:$Ground"
+			}
+		}
+	}
+	.component NeoAxis.Component_Text2D
+	{
+		Enabled = False
+		Name = Text 2D
+		Transform = "4.081885047585 -2.35055585032983 3.01127229723269; 0 0 0 1; 1.41999999061227 1.41999999061227 1.41999999061227"
+		FontSize = Screen 0.2
+	}
+	.component NeoAxis.Component_Character
+	{
+		Name = Character
+		RunSupport = True
+		FlyControlSupport = True
+		JumpSupport = True
+		Animate = True
+		RunAnimationSpeed = 0.5
+		Transform
+		{
+			GetByReference = "this:$Collision Body\\Transform"
+		}
+		IdleAnimation
+		{
+			GetByReference = "Base\\Models\\Human.fbx|$Mesh\\$Animations\\$Root|Idle"
+		}
+		WalkAnimation
+		{
+			GetByReference = "Base\\Models\\Human.fbx|$Mesh\\$Animations\\$Root|Walk_loop"
+		}
+		RunAnimation
+		{
+			GetByReference = "Base\\Models\\Human.fbx|$Mesh\\$Animations\\$Root|Run_loop"
+		}
+		.component NeoAxis.Component_RigidBody
+		{
+			Name = Collision Body
+			CanBeSelected = False
+			Transform = "-2.83706473344821 -1.75511182662935 1.15696507827433; 0 0 0 1; 1 1 1"
+			MotionType = Dynamic
+			Mass = 70
+			AngularDamping = 10
+			MaterialFriction = 0
+			MaterialSpinningFriction = 0
+			MaterialRollingFriction = 0
+			LinearSleepingThreshold = 0
+			AngularSleepingThreshold = 0
+			.component NeoAxis.Component_CollisionShape_Capsule
+			{
+				Name = CollisionShape Capsule
+				TransformRelativeToParent = "0 0 -0.25; 0 0 0 1; 1 1 1"
+				Radius = 0.3
+				Height = 1.2
+			}
+		}
+		.component NeoAxis.Component_MeshInSpace
+		{
+			Name = Mesh In Space
+			CanBeSelected = False
+			Transform
+			{
+				GetByReference = "this:$Transform Offset\\Result"
+			}
+			Mesh
+			{
+				GetByReference = "Base\\Models\\Human.fbx|$Mesh"
+			}
+			ReplaceMaterialSelectively
+			{
+				Count = 0
+			}
+			.component NeoAxis.Component_MeshInSpaceAnimationController
+			{
+				Name = Mesh In Space Animation Controller
+			}
+			.component NeoAxis.Component_TransformOffset
+			{
+				Name = Transform Offset
+				PositionOffset = 0 0 -1.15
+				Source
+				{
+					GetByReference = "this:..\\..\\$Collision Body\\Transform"
+				}
+			}
+		}
+		.component NeoAxis.Component_CharacterInputProcessing
+		{
+			Name = Character Input Processing
+		}
+		.component NeoAxis.Component_CharacterAI
+		{
+			Name = Character AI
+		}
+	}
+	.component Project.KinectReciever
+	{
+		Name = Kinect Reciever
+		isOK = False
+		.component NeoAxis.Component_CSharpScript
+		{
+			Name = C# Script
+			Code = "//using Microsoft.Kinect;\r\n\r\npublic void KinectReciever_OnKinectInitOK()\r\n{\r\n\tScreenMessages.Add(\"OK\");\r\n}\r\n\r\npublic void KinectReciever_OnKinect1(int indx, int clip, Microsoft.Kinect.Skeleton skel)\r\n{\r\n\tvar sc = Component_Scene.First;\r\n\tvar obj = (Component_RigidBody)(sc?.GetComponentByPath(\"Sphere\\\\Collision Body\"));\r\n\r\n\tobj.Transform = obj.TransformV.UpdatePosition(new Vector3(skel.Joints[JointType.Spine].Position.X*2, -skel.Joints[JointType.Spine].Position.Z*2, 1 + skel.Joints[JointType.Spine].Position.Y*2));\r\n\t\r\n\tScreenMessages.Add(\"OnKinect1 \" + skel.Joints[JointType.Spine].Position.Z.ToString());\r\n}\r\n\r\npublic void KinectReciever_OnKinectInitError(string e)\r\n{\r\n\tScreenMessages.Add(\"Error : \" + e);\r\n}\r\n"
+			Exit
+			{
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler OnKinectInitOK
+				Event
+				{
+					GetByReference = "this:..\\..\\event:OnKinectInitOK"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:KinectReciever_OnKinectInitOK()"
+				}
+				HandlerFlow
+				{
+				}
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler OnKinect1
+				Event
+				{
+					GetByReference = "this:..\\..\\event:OnKinect1"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:KinectReciever_OnKinect1(System.Int32,System.Int32,Microsoft.Kinect.Skeleton)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+			.component NeoAxis.Component_EventHandler
+			{
+				Name = Event Handler OnKinectInitError
+				Event
+				{
+					GetByReference = "this:..\\..\\event:OnKinectInitError"
+				}
+				HandlerMethod
+				{
+					GetByReference = "this:..\\method:KinectReciever_OnKinectInitError(System.String)"
+				}
+				HandlerFlow
+				{
+				}
+			}
+		}
+	}
+}
