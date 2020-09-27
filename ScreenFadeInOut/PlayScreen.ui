@@ -1,0 +1,17 @@
+.component Project.PlayScreen
+{
+	Size = Parent 1 1
+	EditorScrollPosition = 0 0
+	.component NeoAxis.UIImage
+	{
+		Name = Image
+		Size = Parent 1 1
+		TopMost = True
+		BackgroundColor = 0 0 0
+		EditorScrollPosition = 0 0
+		SourceImage
+		{
+			GetByReference = "Scenes\\7j5j4645g34f.png"
+		}
+	}
+}
